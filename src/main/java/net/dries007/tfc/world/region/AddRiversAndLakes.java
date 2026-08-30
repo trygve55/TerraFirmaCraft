@@ -13,7 +13,6 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.levelgen.XoroshiroRandomSource;
 import org.jetbrains.annotations.Nullable;
 
-import net.dries007.tfc.world.layer.TFCLayers;
 import net.dries007.tfc.world.river.River;
 
 public enum AddRiversAndLakes implements RegionTask
@@ -32,9 +31,9 @@ public enum AddRiversAndLakes implements RegionTask
 
         final RegionRiverGenerator riverGenerator = new RegionRiverGenerator(region);
 
-        createInitialDrains(context, region, riverGenerator);
+        createInitialSources(context, region, riverGenerator);
 
-        final List<RiverEdge> rivers = riverGenerator.build(e -> new RiverEdge(e, random));
+        final List<RiverEdge> rivers = riverGenerator.build(e -> new RiverEdge(e, random, AddRiversAndLakes.waterflowToWidth(e.waterflowTotal)));
 
         context.region.setRivers(rivers);
         if (!rivers.isEmpty())
@@ -43,11 +42,15 @@ public enum AddRiversAndLakes implements RegionTask
         }
     }
 
-    private void createInitialDrains(RegionGenerator.Context context, Region region, RegionRiverGenerator riverGenerator)
+    private static int waterflowToWidth(float waterflow) {
+        return (int) Math.round(Math.sqrt(waterflow) / 10);
+    }
+
+    private void createInitialSources(RegionGenerator.Context context, Region region, RegionRiverGenerator riverGenerator)
     {
-        for (final var point : region.points())
+        for (final var point : region.randomOrderPoints(context.random))
         {
-            if (point.shore())
+            if (point.land() && point.distanceToOcean > 1 && point.distanceToEdge > 1 && point.rainfall > 70f)
             {
                 // Mark as a possible river source
                 float bestAngle = findBestStartingAngle(region, context.random, point.index);
