@@ -6,8 +6,12 @@
 
 package net.dries007.tfc.world.region;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
+import java.util.stream.Collectors;
+import java.util.stream.StreamSupport;
+
 import com.google.common.collect.AbstractIterator;
 import net.minecraft.util.RandomSource;
 import org.jetbrains.annotations.Nullable;
@@ -48,6 +52,15 @@ public final class Region
         this.sizeZ = 1 + maxZ - minZ;
 
         this.data = new Point[0]; // Must initialize via `setRegionArea()` first
+    }
+
+    public Iterable<Point> randomOrderPoints(RandomSource random) {
+        List<Point> list = StreamSupport.stream(points().spliterator(), false)
+            .collect(Collectors.toList());
+
+        Collections.shuffle(list, random::nextLong);
+
+        return list;
     }
 
     /**

@@ -54,7 +54,11 @@ public enum AddRiversAndLakes implements RegionTask
                 if (!Float.isNaN(bestAngle))
                 {
                     final XoroshiroRandomSource rng = new XoroshiroRandomSource(context.random.nextLong());
-                    riverGenerator.add(new River.Builder(rng, point.x + 0.5f, point.z + 0.5f, bestAngle, RIVER_LENGTH, RIVER_DEPTH, RIVER_FEATHER));
+                    riverGenerator.add(new River.Builder(rng, point.x + 0.5f, point.z + 0.5f, bestAngle, RIVER_LENGTH, RIVER_DEPTH, RIVER_FEATHER, point.rainfall, (vertex -> {
+                        final int gridX = (int) Math.round(vertex.x());
+                        final int gridZ = (int) Math.round(vertex.y());
+                        return region.at(gridX, gridZ);
+                    })));
                 }
             }
         }
@@ -120,13 +124,13 @@ public enum AddRiversAndLakes implements RegionTask
         {
             if (!edge.sourceEdge())
             {
-                int width = RiverEdge.MIN_WIDTH;
-                while (edge != null)
-                {
-                    edge.width = Math.max(edge.width, width);
-                    edge = edge.drainEdge();
-                    width = Math.min(width + 2, RiverEdge.MAX_WIDTH);
-                }
+//                int width = RiverEdge.MIN_WIDTH;
+//                while (edge != null)
+//                {
+//                    edge.width = Math.max(edge.width, width);
+//                    edge = edge.drainEdge();
+//                    width = Math.min(width + 2, RiverEdge.MAX_WIDTH);
+//                }
             }
         }
 
@@ -175,7 +179,7 @@ public enum AddRiversAndLakes implements RegionTask
 
     private void setRiver(@Nullable Region.Point point)
     {
-        if (point != null && point.land())
+        if (point != null && (point.land() || point.shore()))
         {
             point.setRiver();
             point.rainfall += 0.09f * (500f - point.rainfall); // Small, localized rainfall increase around river valleys of ~45mm max
@@ -210,8 +214,12 @@ public enum AddRiversAndLakes implements RegionTask
             final Region.Point prevPoint = vertex2Point(prev), newPoint = vertex2Point(vertex);
             return newPoint != null && prevPoint != null
                 && newPoint.land() // River must be on land
-                && newPoint.distanceToOcean >= prevPoint.distanceToOcean // Further from the ocean or equal than the previous point
-                && newPoint.distanceToOcean >= Math.min(3, prev.distance() / 2); // And it should gradually work it's way inland
+                && !newPoint.mountain()
+                && !newPoint.volcanic()
+                && newPoint.biomeAltitude <= prevPoint.biomeAltitude;
+                //&& newPoint.distanceToOcean <= prevPoint.distanceToOcean // Further from the ocean or equal than the previous point
+                //&& newPoint.distanceToOcean <= Math.min(3, prev.distance() / 2); // And it should gradually work it's way inland
+
         }
 
         @Nullable

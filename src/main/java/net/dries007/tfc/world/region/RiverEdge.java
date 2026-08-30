@@ -34,8 +34,9 @@ public final class RiverEdge
     private boolean sourceEdge; // `true` if this river has a source edge, `false` if it does not.
     private @Nullable RiverEdge drainEdge; // The drain edge of this river
 
-    public RiverEdge(River.Edge edge, RandomSource random)
+    public RiverEdge(River.Edge edge, RandomSource random, int width)
     {
+        this.width = width;
         this.source = edge.source();
         this.drain = edge.drain();
         this.fractal = edge.fractal(random, 4);
