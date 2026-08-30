@@ -43,7 +43,7 @@ public enum AddRiversAndLakes implements RegionTask
     }
 
     private static int waterflowToWidth(float waterflow) {
-        return (int) Math.round(Math.sqrt(waterflow) / 10);
+        return (int) Math.round(Math.sqrt(waterflow) / 100);
     }
 
     private void createInitialSources(RegionGenerator.Context context, Region region, RegionRiverGenerator riverGenerator)
