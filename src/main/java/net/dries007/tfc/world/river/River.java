@@ -22,7 +22,7 @@ public class River
 {
     private static final double MIN_BRANCH_ANGLE = 0.4f;
     private static final int MIN_BRANCH_DISTANCE = 2;
-    private static final int MIN_RIVER_EDGE_COUNT = 2;
+    private static final int MIN_RIVER_EDGE_COUNT = 3;
     private static final Logger log = LoggerFactory.getLogger(River.class);
 
     /**
@@ -31,6 +31,11 @@ public class River
     private static double distance(Edge edge, Vertex vertex)
     {
         return RiverHelpers.distancePointToLineSq(edge.drain.x, edge.drain.y, edge.source.x, edge.source.y, vertex.x, vertex.y);
+    }
+
+    private static double distanceVertex(Vertex vertex, Vertex otherVertex)
+    {
+        return Math.sqrt(Math.pow(vertex.x - otherVertex.x, 2) + Math.pow(vertex.y - otherVertex.y, 2));
     }
 
     /**
@@ -74,7 +79,8 @@ public class River
 
     public interface Context
     {
-        Edge intersectAny(Edge edge);
+        @Nullable
+        Edge intersectClosestOther(Edge edge);
     }
 
     public record Vertex(double x, double y, double angle, double length, int distance) {}
@@ -139,7 +145,7 @@ public class River
     /**
      * A step based builder for rivers
      */
-    public static class Builder implements Context
+    public static class Builder
     {
         private final Queue<Edge> branchQueue;
         private final RandomSource random;
@@ -152,14 +158,14 @@ public class River
         private final float waterVolumeCubicMeters;
         private final Function<Vertex, Region.Point> vertexToPoint;
 
-        public Builder(RandomSource random, double drainX, double drainY, double angle, double length, int depth, double feather, float rainfall, Function<Vertex, Region.Point> vertexToPoint)
+        public Builder(RandomSource random, double sourceX, double sourceY, double angle, double length, int depth, double feather, float rainfall, Function<Vertex, Region.Point> vertexToPoint)
         {
             this.branchQueue = new LinkedList<>();
             this.random = random;
 
             this.edges = new ArrayList<>();
             this.startEdges = new ArrayList<>();
-            this.root = new Vertex(drainX, drainY, angle, length, 0);
+            this.root = new Vertex(sourceX, sourceY, angle, length, 0);
             this.depth = depth;
             this.waterVolumeCubicMeters = rainfall * (128f * 128f / 1000f);
             this.vertexToPoint = vertexToPoint;
@@ -176,30 +182,60 @@ public class River
             int prevBiomeAltitude = Integer.MAX_VALUE;
             int prevDistanceToOcean = Integer.MAX_VALUE;
 
-            Vertex prev = root;
-            int length  = 3000;
-            for (int i = 0; i < length; i++)
-            {
-                Vertex next = computeNext(prev, prev.length, prev.distance);
+            int stuckFor = 0;
+            int stuckForTotal = 0;
 
+            Vertex prev = root;
+
+            double nextAngle = root.angle;
+
+            int length  = 3000;
+            for (int i = 0; i < length && stuckFor <= 30; i++)
+            {
+                double nextLength = vertexToPoint.apply(prev).shore() ? 1 : prev.length;
+
+                Vertex next = computeNext(prev, nextLength, prev.distance, nextAngle);
                 Region.Point nextPoint = vertexToPoint.apply(next);
+
                 if (nextPoint == null) {
+                    stuckFor++;
+                    stuckForTotal++;
+                    nextAngle = computeNextAngle(prev);
                     continue;
                 }
 
                 if (nextPoint.mountain()) {
+                    stuckFor++;
+                    stuckForTotal++;
+                    nextAngle = computeNextAngle(prev);
+                    continue;
+                }
+
+                if (nextPoint.hotSpot()) {
+                    stuckFor++;
+                    stuckForTotal++;
+                    nextAngle = computeNextAngle(prev);
                     continue;
                 }
 
                 if (nextPoint.volcanic()) {
+                    stuckFor++;
+                    stuckForTotal++;
+                    nextAngle = computeNextAngle(prev);
                     continue;
                 }
 
                 if (nextPoint.biomeAltitude > prevBiomeAltitude) {
+                    stuckFor++;
+                    stuckForTotal++;
+                    nextAngle = computeNextAngle(prev);
                     continue;
                 }
 
                 if (nextPoint.distanceToOcean <= 3 && nextPoint.distanceToOcean > prevDistanceToOcean && prevDistanceToOcean != -2 && nextPoint.distanceToOcean != -1) { //
+                    stuckFor++;
+                    stuckForTotal++;
+                    nextAngle = computeNextAngle(prev);
                     continue;
                 }
 
@@ -207,12 +243,67 @@ public class River
                 prevDistanceToOcean = nextPoint.distanceToOcean;
 
                 Edge nextEdge = new Edge(prev, next, this);
-                Edge intersected = context.intersectAny(nextEdge);
+
+                if ((!nextPoint.land() && !nextPoint.shore())) { //  || nextPoint.oceanDepth > 0
+                    if (edges.size() < MIN_RIVER_EDGE_COUNT) {
+                        edges.clear();
+                        return false;
+                    }
+
+                    edges.add(nextEdge);
+                    annotateDownstream();
+                    edges.getFirst().addWaterflowSource(waterVolumeCubicMeters);
+                    startEdges.add(edges.getFirst());
+                    endEdge = edges.getLast();
+
+                    if (stuckForTotal > 0) {
+                        //log.info("stuck for {} (total: {})of {}", stuckFor, stuckForTotal, length);
+                    }
+                    return true;
+                }
+
+                Edge intersectedSelf = intersectSelf(nextEdge);
+                if (intersectedSelf != null) {
+                    stuckFor++;
+                    stuckForTotal++;
+                    nextAngle = computeNextAngle(prev);
+                    continue;
+                }
+
+                Edge intersected = context.intersectClosestOther(nextEdge);
                 if (intersected != null) {
                     if (intersected.river != this) {
                         Edge maybeDownstream = intersected.downstreamEdge != null ? intersected.downstreamEdge : intersected;
 
-                        nextEdge = new Edge(prev, intersected.drain, this, maybeDownstream);
+                        Vertex aimForVertex = intersected.source.distance() == 0 ? intersected.source : intersected.drain; // todo test this
+                        double distance = distanceVertex(prev, aimForVertex);
+
+                        if (distance > 2 && nextPoint.distanceToOcean <= 1) {
+                            edges.add(nextEdge);
+                            prev = next;
+                            nextAngle = findBestAngleToSea(nextPoint);
+                            stuckFor = 0;
+                            continue;
+                        }
+
+                        if (distance > 1.3f) {
+                            double angleToClosestRiver = Math.atan2(prev.y - aimForVertex.y, prev.x - aimForVertex.x);
+
+//                            if (absoluteDifferenceAngle(angleToClosestRiver, nextAngle) < Math.PI * 0.25) {
+//                                //edges.add(nextEdge); // todo turn initial edge correct direction
+//                                //prev = next;
+//                            }
+
+                            if (prev.distance > 0 || nextAngle == angleToClosestRiver) {
+                                edges.add(nextEdge);
+                                prev = next;
+                            }
+
+                            nextAngle = angleToClosestRiver;
+                            continue;
+                        }
+
+                        nextEdge = new Edge(prev, aimForVertex, this, intersected); // todo handle source
                         edges.add(nextEdge);
 
                         if (isRiverToShort())
@@ -230,24 +321,27 @@ public class River
                             edges.clear();
                         }
 
+                        if (stuckForTotal > 0) {
+                            //log.info("branch stuck for {} (total: {})of {}", stuckFor, stuckForTotal, length);
+                        }
                         return true;
-                    } else {
-                        continue;
                     }
+                }
+
+                if (nextPoint.distanceToOcean <= 1) {
+                    edges.add(nextEdge);
+                    prev = next;
+                    nextAngle = findBestAngleToSea(nextPoint);
+                    stuckFor = 0;
+                    continue;
                 }
 
                 edges.add(nextEdge);
                 prev = next;
-
-                if (!nextPoint.land() && !nextPoint.shore()) {
-                    annotateDownstream();
-                    edges.getFirst().addWaterflowSource(waterVolumeCubicMeters);
-                    startEdges.add(edges.getFirst());
-                    endEdge = edges.getLast();
-
-                    return true;
-                }
+                nextAngle = computeNextAngle(prev);
+                stuckFor = 0;
             }
+
             edges.clear();
             return false;
         }
@@ -263,13 +357,11 @@ public class River
             }
         }
 
-        @Override
         @Nullable
-        public Edge intersectAny(Edge edge)
-        {
+        public Edge intersectSelf(Edge edge) {
             for (Edge e : edges)
             {
-                if (e.drain != edge.source && ((distance(e, edge.drain) < 2.8f && edge.river == e.river) || (distance(e, edge.drain) < 16f && edge.river != e.river) || intersect(e.source, e.drain, edge.source, edge.drain)))
+                if (e.drain != edge.source && ((distance(e, edge.drain) < 0.8f && edge.river == e.river) || intersect(e.source, e.drain, edge.source, edge.drain)))
                 {
                     return e;
                 }
@@ -279,9 +371,16 @@ public class River
 
         private Vertex computeNext(Vertex prev, double length, int distance)
         {
-            double nextAngle = distance == 0 ?
-                prev.angle() : // For distance = 0, this is the mouth of a river, and we want to use the computed 'best' start angle directly
-                prev.angle() + (random.nextDouble() * 0.5f + 0.2f) * (random.nextBoolean() ? 1 : -1);
+            double nextAngle = computeNextAngle(prev);
+            return computeNext(prev, length, distance, nextAngle);
+        }
+
+        private double computeNextAngle(Vertex prev) {
+            return prev.angle() + (random.nextDouble() * 0.5f + 0.2f) * (random.nextBoolean() ? 1 : -1);
+        }
+
+        private Vertex computeNext(Vertex prev, double length, int distance, double nextAngle)
+        {
             double nextLength = length * (random.nextDouble() * 0.08f + 0.92f);
 
             // Extend in the direction of the next angle
@@ -289,6 +388,54 @@ public class River
             double x = prev.x() + dx, y = prev.y() + dy;
 
             return new Vertex(x, y, nextAngle, nextLength, distance + 1);
+        }
+
+        private float findBestAngleToSea(Region.Point point)
+        {
+            // Iterate to find the most likely direction towards the ocean
+            // Selects the best angle, out of eight choices, and if there are multiple ideal choices, will select uniformly
+            // Then, applies a slight variance on the chosen angle, so rivers don't start at exact pi/4 increments, as the river builder will respect the starting angle exactly.
+            float bestDistanceMetric = Float.MAX_VALUE;
+            int bestDistanceCount = 0;
+            float bestAngle = Float.NaN;
+
+            for (int dirX = -1; dirX <= 1; dirX++)
+            {
+                for (int dirZ = -1; dirZ <= 1; dirZ++)
+                {
+                    if (dirX == 0 && dirZ == 0) continue;
+
+                    final @Nullable Region.Point dirPoint = vertexToPoint.apply(new Vertex(point.x + 4 * dirX, point.z + 4 * dirZ, 0, 0, 0));
+                    if (dirPoint != null)
+                    {
+                        final float dirDistanceMetric = dirPoint.distanceToLand - dirPoint.distanceToOcean - Math.abs(dirX) - Math.abs(dirZ);
+                        if (dirDistanceMetric < bestDistanceMetric || (dirDistanceMetric == bestDistanceMetric && random.nextInt(1 + bestDistanceCount) == 0))
+                        {
+                            if (dirDistanceMetric < bestDistanceMetric)
+                            {
+                                bestDistanceMetric = dirDistanceMetric;
+                                bestDistanceCount = 0;
+                            }
+                            bestDistanceCount += 1;
+                            bestAngle = (float) Math.atan2(-dirZ, -dirX);
+                        }
+                    }
+                }
+            }
+            if (!Float.isNaN(bestAngle))
+            {
+                bestAngle += random.nextFloat() * 1.2f - 0.6f; // The rough area covered by each angle is pi/4 ~ 0.75, this gives each angle some wiggle room, but still directs it in the general vicinity of the target angle.
+            }
+
+            return bestAngle;
+        }
+
+        private static double normalizeAngle(double angle) {
+            return (angle % Math.PI + Math.PI) % Math.PI;
+        }
+
+        private static double absoluteDifferenceAngle(double angle1, double angle2) {
+            return Math.abs(angle1 - angle2);
         }
     }
 
@@ -329,22 +476,27 @@ public class River
 
         @Override
         @Nullable
-        public Edge intersectAny(Edge edge)
+        public Edge intersectClosestOther(Edge edge)
         {
-            for (Builder builder : builders)
-            {
-                Edge intersected = builder.intersectAny(edge);
-                if (intersected != null)
-                {
-                    return intersected;
+            double minDistance = 12f;
+
+            double closestDistance = Double.MAX_VALUE;
+            Edge closestEdge = null;
+            for (Builder river : builders) {
+                if (river == edge.river) {
+                    continue;
+                }
+
+                for (Edge e : river.edges) {
+                    double distance = distance(e, edge.drain);
+                    if (e.drain != edge.source && ((distance < closestDistance && distance < minDistance) || intersect(e.source, e.drain, edge.source, edge.drain)))
+                    {
+                        closestDistance = distance;
+                        closestEdge = e;
+                    }
                 }
             }
-            return null;
-        }
-
-        protected boolean isLegal(Vertex prev, Vertex vertex)
-        {
-            return true;
+            return closestEdge;
         }
     }
 }

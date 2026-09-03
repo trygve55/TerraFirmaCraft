@@ -19,7 +19,7 @@ public enum AddRiversAndLakes implements RegionTask
 {
     INSTANCE;
 
-    public static final float RIVER_LENGTH = 2.7f;
+    public static final float RIVER_LENGTH = 1f;
     public static final int RIVER_DEPTH = 17;
     public static final float RIVER_FEATHER = 0.8f;
 
@@ -43,14 +43,14 @@ public enum AddRiversAndLakes implements RegionTask
     }
 
     private static int waterflowToWidth(float waterflow) {
-        return (int) Math.round(Math.sqrt(waterflow) / 100);
+        return (int) Math.round(Math.sqrt(waterflow) / 50);
     }
 
     private void createInitialSources(RegionGenerator.Context context, Region region, RegionRiverGenerator riverGenerator)
     {
         for (final var point : region.randomOrderPoints(context.random))
         {
-            if (point.land() && point.distanceToOcean > 1 && point.distanceToEdge > 1 && point.rainfall > 70f)
+            if (point.land() && point.distanceToOcean > 1 && point.distanceToEdge >= 1 && point.rainfall > 70f && isSurroundedByLand(region, context.random, point.index))
             {
                 // Mark as a possible river source
                 float bestAngle = findBestStartingAngle(region, context.random, point.index);
@@ -72,7 +72,7 @@ public enum AddRiversAndLakes implements RegionTask
         // Iterate to find the most likely (projected) river direction to start out
         // Selects the best angle, out of eight choices, and if there are multiple ideal choices, will select uniformly
         // Then, applies a slight variance on the chosen angle, so rivers don't start at exact pi/4 increments, as the river builder will respect the starting angle exactly.
-        float bestDistanceMetric = Float.MIN_VALUE;
+        float bestDistanceMetric = Float.MAX_VALUE;
         int bestDistanceCount = 0;
         float bestAngle = Float.NaN;
 
@@ -86,9 +86,9 @@ public enum AddRiversAndLakes implements RegionTask
                 if (dirPoint != null && dirPoint.land())
                 {
                     final float dirDistanceMetric = dirPoint.distanceToOcean - Math.abs(dirX) - Math.abs(dirZ);
-                    if (dirDistanceMetric > bestDistanceMetric || (dirDistanceMetric == bestDistanceMetric && random.nextInt(1 + bestDistanceCount) == 0))
+                    if (dirDistanceMetric < bestDistanceMetric || (dirDistanceMetric == bestDistanceMetric && random.nextInt(1 + bestDistanceCount) == 0))
                     {
-                        if (dirDistanceMetric > bestDistanceMetric)
+                        if (dirDistanceMetric < bestDistanceMetric)
                         {
                             bestDistanceMetric = dirDistanceMetric;
                             bestDistanceCount = 0;
@@ -105,6 +105,25 @@ public enum AddRiversAndLakes implements RegionTask
         }
 
         return bestAngle;
+    }
+
+    private boolean isSurroundedByLand(Region region, RandomSource random, int index)
+    {
+        for (int dirX = -1; dirX <= 1; dirX++)
+        {
+            for (int dirZ = -1; dirZ <= 1; dirZ++)
+            {
+                if (dirX == 0 && dirZ == 0) continue;
+
+                final @Nullable Region.Point dirPoint = region.atOffset(index, dirX, dirZ);
+                if (dirPoint != null && !dirPoint.land())
+                {
+                    return false;
+                }
+            }
+        }
+
+        return true;
     }
 
     private void annotateRiverGridScale(Region region, RandomSource random, List<RiverEdge> rivers)
@@ -140,7 +159,7 @@ public enum AddRiversAndLakes implements RegionTask
         // Place lakes around the source of rivers.
         for (RiverEdge edge : rivers)
         {
-            if (!edge.sourceEdge() && random.nextInt(3) == 0)
+            if (!edge.sourceEdge() && random.nextInt(3) == 0 && false) // do not place lakes for debugging
             {
                 // Try and place a lake near this source
                 placeLakeNear(region, edge, 1, 1);
@@ -209,20 +228,6 @@ public enum AddRiversAndLakes implements RegionTask
         RegionRiverGenerator(Region region)
         {
             this.region = region;
-        }
-
-        @Override
-        protected boolean isLegal(River.Vertex prev, River.Vertex vertex)
-        {
-            final Region.Point prevPoint = vertex2Point(prev), newPoint = vertex2Point(vertex);
-            return newPoint != null && prevPoint != null
-                && newPoint.land() // River must be on land
-                && !newPoint.mountain()
-                && !newPoint.volcanic()
-                && newPoint.biomeAltitude <= prevPoint.biomeAltitude;
-                //&& newPoint.distanceToOcean <= prevPoint.distanceToOcean // Further from the ocean or equal than the previous point
-                //&& newPoint.distanceToOcean <= Math.min(3, prev.distance() / 2); // And it should gradually work it's way inland
-
         }
 
         @Nullable

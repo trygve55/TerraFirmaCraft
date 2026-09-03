@@ -39,7 +39,7 @@ public final class RiverEdge
         this.width = width;
         this.source = edge.source();
         this.drain = edge.drain();
-        this.fractal = edge.fractal(random, 4);
+        this.fractal = edge.fractal(random, 0); // testing generation with straighgt edges
 
         final int centerGridX = (int) Math.round(0.5f * (edge.source().x() + edge.drain().x()));
         final int centerGridZ = (int) Math.round(0.5f * (edge.source().y() + edge.drain().y()));
