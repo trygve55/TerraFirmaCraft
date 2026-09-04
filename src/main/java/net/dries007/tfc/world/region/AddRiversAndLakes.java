@@ -19,10 +19,6 @@ public enum AddRiversAndLakes implements RegionTask
 {
     INSTANCE;
 
-    public static final float RIVER_LENGTH = 1f;
-    public static final int RIVER_DEPTH = 17;
-    public static final float RIVER_FEATHER = 0.8f;
-
     @Override
     public void apply(RegionGenerator.Context context)
     {
@@ -57,9 +53,9 @@ public enum AddRiversAndLakes implements RegionTask
                 if (!Float.isNaN(bestAngle))
                 {
                     final XoroshiroRandomSource rng = new XoroshiroRandomSource(context.random.nextLong());
-                    riverGenerator.add(new River.Builder(rng, point.x + 0.5f, point.z + 0.5f, bestAngle, RIVER_LENGTH, RIVER_DEPTH, RIVER_FEATHER, point.rainfall, (vertex -> {
-                        final int gridX = (int) Math.round(vertex.x());
-                        final int gridZ = (int) Math.round(vertex.y());
+                    riverGenerator.add(new River.Builder(rng, point.x + 0.5f, point.z + 0.5f, bestAngle, point.rainfall, (vertex -> {
+                        final int gridX = (int) Math.round(vertex.x() - 0.5);
+                        final int gridZ = (int) Math.round(vertex.y() - 0.5);
                         return region.at(gridX, gridZ);
                     })));
                 }
@@ -159,8 +155,9 @@ public enum AddRiversAndLakes implements RegionTask
         // Place lakes around the source of rivers.
         for (RiverEdge edge : rivers)
         {
-            if (!edge.sourceEdge() && random.nextInt(3) == 0 && false) // do not place lakes for debugging
+            if (!edge.sourceEdge() && random.nextInt(10) == 0 && false) // do not place lakes for debugging
             {
+                // todo make lakes connect to rivers always
                 // Try and place a lake near this source
                 placeLakeNear(region, edge, 1, 1);
                 placeLakeNear(region, edge, -1, 1);
@@ -233,8 +230,8 @@ public enum AddRiversAndLakes implements RegionTask
         @Nullable
         private Region.Point vertex2Point(River.Vertex vertex)
         {
-            final int gridX = (int) Math.round(vertex.x());
-            final int gridZ = (int) Math.round(vertex.y());
+            final int gridX = (int) Math.round(vertex.x() - 0.5);
+            final int gridZ = (int) Math.round(vertex.y() - 0.5);
             return region.at(gridX, gridZ);
         }
     }
