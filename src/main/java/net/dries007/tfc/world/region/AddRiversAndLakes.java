@@ -9,11 +9,15 @@ package net.dries007.tfc.world.region;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.function.Function;
+
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.levelgen.XoroshiroRandomSource;
-import org.jetbrains.annotations.Nullable;
 
 import net.dries007.tfc.world.river.River;
+
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 
 public enum AddRiversAndLakes implements RegionTask
 {
@@ -46,21 +50,25 @@ public enum AddRiversAndLakes implements RegionTask
     {
         for (final var point : region.randomOrderPoints(context.random))
         {
-            if (point.land() && point.distanceToOcean > 1 && point.distanceToEdge >= 1 && point.rainfall > 70f && isSurroundedByLand(region, context.random, point.index))
+            if (point.land() && point.distanceToOcean > 1 && point.rainfall > 70f && isSurroundedByLand(region, context.random, point.index))
             {
                 // Mark as a possible river source
                 float bestAngle = findBestStartingAngle(region, context.random, point.index);
                 if (!Float.isNaN(bestAngle))
                 {
                     final XoroshiroRandomSource rng = new XoroshiroRandomSource(context.random.nextLong());
-                    riverGenerator.add(new River.Builder(rng, point.x + 0.5f, point.z + 0.5f, bestAngle, point.rainfall, (vertex -> {
-                        final int gridX = (int) Math.round(vertex.x() - 0.5);
-                        final int gridZ = (int) Math.round(vertex.y() - 0.5);
-                        return region.at(gridX, gridZ);
-                    })));
+                    riverGenerator.add(new River.Builder(rng, point.x + 0.5f, point.z + 0.5f, bestAngle, point.rainfall, vertex2point(region)));
                 }
             }
         }
+    }
+
+    private @Nonnull Function<River.Vertex, Region.Point> vertex2point(Region region) {
+        return vertex -> {
+            final int gridX = (int) Math.round(vertex.x() - 0.5);
+            final int gridZ = (int) Math.round(vertex.y() - 0.5);
+            return region.at(gridX, gridZ);
+        };
     }
 
     private float findBestStartingAngle(Region region, RandomSource random, int index)
@@ -167,6 +175,24 @@ public enum AddRiversAndLakes implements RegionTask
             else if (edge.width > RiverEdge.MIN_VALLEY_WIDTH)
             {
                 annotateRiverGridScale(region, edge);
+            }
+        }
+
+        // Place lakes around the drain of rivers into endorheic basin.
+        for (RiverEdge edge : rivers)
+        {
+            if (edge.drainEdge() == null)
+            {
+                Region.Point point = vertex2point(region).apply(edge.drain());
+                if (point == null || point.distanceToOcean < 4) {
+                    continue;
+                }
+
+                // Try and place a lake near this endorheic basin
+                placeLakeNear(region, edge, 1, 1);
+                placeLakeNear(region, edge, -1, 1);
+                placeLakeNear(region, edge, 1, -1);
+                placeLakeNear(region, edge, -1, -1);
             }
         }
     }

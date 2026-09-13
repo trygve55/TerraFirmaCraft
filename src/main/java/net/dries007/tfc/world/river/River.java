@@ -8,10 +8,13 @@ package net.dries007.tfc.world.river;
 
 import java.util.*;
 import java.util.function.Function;
+import java.util.function.Predicate;
 
+import com.google.common.collect.Queues;
 import net.dries007.tfc.world.region.Region;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
+import org.apache.commons.compress.utils.Lists;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -20,17 +23,17 @@ import javax.annotation.Nullable;
 
 public class River {
     public static final float INITIAL_RIVER_EDGE_LENGTH = 0.8f;
-    private static final int MIN_BRANCH_EDGE_COUNT = 3;
-    private static final int MIN_RIVER_EDGE_COUNT = 4;
-    private static final double SOURCE_MIN_DISTANCE_TO_NEAREST_RIVER = 3;
-    private static final double SOURCE_MIN_DISTANCE_TO_NEAREST_RIVER_RAINFALL_INFLUENCE = 0.5;
-
-    private static final Logger log = LoggerFactory.getLogger(River.class);
+    private static final int MIN_BRANCH_EDGE_COUNT = 4;
+    private static final int MIN_RIVER_EDGE_COUNT = 8;
+    private static final int MIN_ENDORHEIC_RIVER_EDGE_COUNT = 8;
+    private static final double SOURCE_MIN_DISTANCE_TO_NEAREST_RIVER = 4;
+    private static final double SOURCE_MIN_DISTANCE_TO_NEAREST_RIVER_RAINFALL_INFLUENCE = 0.4;
+    private static final boolean DEBUG_DRAW_UNPLACED_STARTING_EDGES = false;
 
     /**
      * @return The shortest square distance between a point {@code vertex} and the line segment {@code edge}
      */
-    private static double distance(Edge edge, Vertex vertex) {
+    private static double distanceSq(Edge edge, Vertex vertex) {
         return RiverHelpers.distancePointToLineSq(edge.drain.x, edge.drain.y, edge.source.x, edge.source.y, vertex.x, vertex.y);
     }
 
@@ -141,7 +144,6 @@ public class River {
     }
 
     public static class Builder {
-        private final Queue<Edge> branchQueue;
         private final RandomSource random;
 
         private final List<Edge> edges;
@@ -150,22 +152,28 @@ public class River {
         private final Vertex root;
         private Vertex prev;
         private double nextAngle;
+        private double nextLength;
         private final float waterVolumeCubicMeters;
         private final Function<Vertex, Region.Point> vertexToPoint;
         private int prevBiomeAltitude;
         private int prevDistanceToOcean;
+        private boolean requireReachingOcean = true;
 
         private final Region.Point initialPoint;
 
         private int stuckFor = 0;
         private int stuckForTotal = 0;
 
+        private boolean angleTowardsRiverSet = false;
+        private boolean angleTowardsLowerAltitudeSet = false;
+        private boolean angleTowardsOceanSet = false;
+
         public Builder(RandomSource random, double sourceX, double sourceY, double angle, float rainfall, Function<Vertex, Region.Point> vertexToPoint) {
-            this.branchQueue = new LinkedList<>();
             this.random = random;
 
             this.edges = new ArrayList<>();
             this.startEdges = new ArrayList<>();
+            this.nextLength = INITIAL_RIVER_EDGE_LENGTH;
             this.root = new Vertex(sourceX, sourceY, angle, INITIAL_RIVER_EDGE_LENGTH, 0);
             this.prev = root;
             this.nextAngle = root.angle;
@@ -182,22 +190,31 @@ public class River {
          * @return {@code true} if the initial branch reached a sufficient length
          */
         private boolean buildInitialBranch(Context context) {
-            boolean angleTowardsRiverSet = false;
+            if (isValidRiverRootSource()) {
+                return false;
+            }
 
-            int length = 3000;
-            for (int i = 0; i < length && stuckFor <= 30; i++) {
-                double nextLength = vertexToPoint.apply(prev).shore() ? 1 : prev.length;
+            while (stuckFor <= 15) {
+                if (pathToNextIntercepts(
+                    point -> point == null
+                        || point.mountain()
+                        || point.hotSpot()
+                        || point.volcanic()
+                        || point.island()
+                        || point.coastalMountain()
+                        || point.biomeAltitude > prevBiomeAltitude
+                        || (point.distanceToOcean <= 3 && point.distanceToOcean > prevDistanceToOcean
+                        && prevDistanceToOcean != -2 && point.distanceToOcean != -1))) {
+                    stuckFor++;
+                    stuckForTotal++;
+                    nextAngle = computeNextAngle(prev);
+                    continue;
+                }
 
-                Vertex next = computeNext(prev, nextLength, prev.distance, nextAngle);
+                Vertex next = computeNext(prev, nextLength, nextAngle);
                 Region.Point nextPoint = vertexToPoint.apply(next);
 
-                if (nextPoint == null
-                    || nextPoint.mountain()
-                    || nextPoint.hotSpot()
-                    || nextPoint.volcanic()
-                    || nextPoint.biomeAltitude > prevBiomeAltitude
-                    || (nextPoint.distanceToOcean <= 3 && nextPoint.distanceToOcean > prevDistanceToOcean
-                        && prevDistanceToOcean != -2 && nextPoint.distanceToOcean != -1)) {
+                if (nextPoint == null) {
                     stuckFor++;
                     stuckForTotal++;
                     nextAngle = computeNextAngle(prev);
@@ -205,22 +222,6 @@ public class River {
                 }
 
                 Edge nextEdge = new Edge(prev, next, this);
-
-                if ((!nextPoint.land() && !nextPoint.shore())) { // if shore, find closest ocean with atleast x connecting ocean points, at least one ocean point away from shore
-                    edges.add(nextEdge);
-
-                    if (isRiverToShort()) {
-                        edges.clear();
-                        return false;
-                    }
-
-                    commitRiver();
-
-                    if (stuckForTotal > 0) {
-                        //log.info("stuck for {} (total: {})of {}", stuckFor, stuckForTotal, length);
-                    }
-                    return true;
-                }
 
                 Edge intersectedSelf = intersectSelf(nextEdge);
                 if (intersectedSelf != null) {
@@ -230,9 +231,17 @@ public class River {
                     continue;
                 }
 
+                Vertex lowerBiomeAltitudeVertex = getNeighboringLowerBiomeAltitude(nextPoint);
+                if (lowerBiomeAltitudeVertex != null && !angleTowardsLowerAltitudeSet) {
+                    angleTowardsLowerAltitudeSet = true;
+                    nextAngle = getAngleToVertex(prev, lowerBiomeAltitudeVertex) + (random.nextDouble() * 0.3f) * (random.nextBoolean() ? 1 : -1);
+                    continue;
+                }
+
                 Edge intersected = context.intersectClosestOther(nextEdge);
-                if (intersected != null) {
-                    Vertex aimForVertex = distanceVertex(prev, intersected.source) < distanceVertex(prev, intersected.drain) - 0.15 ? intersected.source : intersected.drain;
+                if (intersected != null && !angleTowardsOceanSet) {
+
+                    Vertex aimForVertex = distanceVertex(prev, intersected.source) < distanceVertex(prev, intersected.drain) - 0.15 || intersected.source.distance == 0 ? intersected.source : intersected.drain;
                     double distance = distanceVertex(prev, aimForVertex);
 
                     if (edges.isEmpty() && distance < getMinDistanceToNearestRiver()) {
@@ -240,15 +249,22 @@ public class River {
                         return true;
                     }
 
-                    if ((distance > 2.5 && nextPoint.distanceToOcean <= 2) || (distance > 1.2 && nextPoint.distanceToOcean <= 1)) {
-                        confirmEdge(nextPoint, nextEdge, next);
-                        nextAngle = findBestAngleToSea(nextPoint);
+                    if ((distance > 2.8 && nextPoint.distanceToOcean <= 2) || (distance > 0.8 && nextPoint.distanceToOcean <= 1)) {
+                        Vertex oceanVertex = getPossibleOceanDrain(nextPoint);
+                        if (oceanVertex != null) {
+                            nextAngle = getAngleToVertex(prev, oceanVertex) + (random.nextDouble() * 0.4 - 0.2);
+                        } else {
+                            nextAngle = findBestAngleToSea(nextPoint) + (random.nextDouble() * 0.4 - 0.2);
+                        }
+                        angleTowardsOceanSet = true;
+                        stuckFor++;
+                        stuckForTotal++;
                         continue;
                     }
 
                     if (distance > prev.length * 1.3) {
                         if (angleTowardsRiverSet) {
-                            confirmEdge(nextPoint, nextEdge, next);
+                            commitEdge(nextEdge);
                             nextAngle = computeNextAngle(prev);
                             angleTowardsRiverSet = false;
                         } else {
@@ -256,6 +272,13 @@ public class River {
                             nextAngle = getAngleToVertex(prev, aimForVertex) + (random.nextDouble() * 0.5f + 0.2f) * (random.nextBoolean() ? 1 : -1);
                         }
 
+                        continue;
+                    }
+
+                    if (prevBiomeAltitude < vertexToPoint.apply(aimForVertex).biomeAltitude) {
+                        stuckFor++;
+                        stuckForTotal++;
+                        nextAngle = computeNextAngle(prev);
                         continue;
                     }
 
@@ -267,29 +290,396 @@ public class River {
                     } else {
                         connectBranchTo(intersected);
                     }
-
-                    if (stuckForTotal > 0) {
-                        //log.info("branch stuck for {} (total: {})of {}", stuckFor, stuckForTotal, length);
-                    }
                     return true;
                 }
 
-                if (nextPoint.distanceToOcean <= 2) {
-                    confirmEdge(nextPoint, nextEdge, next);
-                    nextAngle = findBestAngleToSea(nextPoint);
-                    continue;
+                if (!nextPoint.land() && !nextPoint.shore()) { // || nextPoint.distanceToOcean <= 1) {
+                    Vertex oceanVertex = getPossibleOceanDrain(nextPoint);
+                    if (oceanVertex != null && distanceVertex(prev, oceanVertex) <= 1.3) {
+                        nextEdge = new Edge(prev, oceanVertex, this);
+                        commitEdge(nextEdge);
+
+                        if (isRiverToShort()) {
+                            edges.clear();
+                            return false;
+                        }
+                        commitRiver();
+                        return true;
+                    }
                 }
 
-                confirmEdge(nextPoint, nextEdge, next);
+                if ((nextPoint.distanceToOcean <= 2) && !angleTowardsOceanSet) {
+                    Vertex oceanVertex = getPossibleOceanDrain(nextPoint);
+                    if (oceanVertex != null) {
+                        stuckFor++;
+                        stuckForTotal++;
+                        angleTowardsOceanSet = true;
+                        nextAngle = getAngleToVertex(prev, oceanVertex) + (random.nextDouble() * 0.4 - 0.2);
+                        continue;
+                    }
+                }
+
+                commitEdge(nextEdge);
                 nextAngle = computeNextAngle(prev);
+            }
+
+            if (!requireReachingOcean && !isEndorheicRiverToShort()) {
+                commitRiver();
+                return true;
             }
 
             edges.clear();
             return false;
         }
 
+        private @Nullable Vertex getClosestAcceptableInRange(Region.Point nextPoint, int maxDistance, Predicate<Region.Point> pointPredicate, float offsetToResultX, float offsetToResultY) {
+            List<Vertex> options = new ArrayList<>();
+
+            for (int distance = 1; distance <= maxDistance; distance++) {
+                for (int offsetX = -distance; offsetX <= distance; offsetX++) {
+                    for (int offsetY = -distance; offsetY <= distance; offsetY++) {
+                        Vertex testVertex = new Vertex(nextPoint.x + offsetX, nextPoint.z + offsetY, 0, 0, 0);
+                        Region.Point point = vertexToPoint.apply(testVertex);
+
+                        if (point == null) {
+                            continue;
+                        }
+
+                        if (pointPredicate.test(point)) {
+                            options.add(new Vertex(nextPoint.x + offsetX + offsetToResultX, nextPoint.z + offsetY + offsetToResultY, 0, 0, 0));
+                        }
+                    }
+                }
+
+                if (!options.isEmpty()) {
+                    double closestDistance = Double.MAX_VALUE;
+                    Vertex closest = null;
+                    for (Vertex vertex : options) {
+                        double newDistance = distanceVertex(prev, vertex);
+                        if (newDistance < closestDistance) {
+                            closestDistance = newDistance;
+                            closest = vertex;
+                        }
+                    }
+                    return closest;
+                }
+            }
+            return null;
+        }
+
+        private @Nullable Vertex getPossibleOceanDrain(Region.Point nextPoint) {
+            Vertex oceanDrain;
+
+            oceanDrain = getClosestAcceptableInRange(nextPoint, 2, this::is3x3ocean, 0.5f, 0.5f);
+
+            if (oceanDrain != null) {
+                return oceanDrain;
+            }
+
+            oceanDrain = getClosestAcceptableInRange(nextPoint, 3, this::is2x2ocean, 1.0f, 1.0f);
+
+            if (oceanDrain != null) {
+                return oceanDrain;
+            }
+
+            oceanDrain = getClosestAcceptableInRange(nextPoint, 3, this::isOceanWithShoreOrIslandAround3x3, 0.5f, 0.5f);
+
+            if (oceanDrain != null) {
+                return oceanDrain;
+            }
+
+            return null;
+        }
+
+        private boolean is2x2shore(Region.Point testPoint) {
+            if (!isShorePoint(new Vertex(testPoint.x, testPoint.z, 0, 0, 0))) {
+                return false;
+            }
+
+            int totalShoreTiles = 1;
+
+            if (isShorePoint(new Vertex(testPoint.x + 1, testPoint.z, 0, 0, 0))) {
+                totalShoreTiles++;
+            }
+            if (isShorePoint(new Vertex(testPoint.x, testPoint.z + 1, 0, 0, 0))) {
+                totalShoreTiles++;
+            }
+            if (isShorePoint(new Vertex(testPoint.x + 1, testPoint.z + 1, 0, 0, 0))) {
+                totalShoreTiles++;
+            }
+
+            return totalShoreTiles == 4;
+        }
+
+        private boolean is2x2ocean(Region.Point testPoint) {
+            if (!isOceanPoint(new Vertex(testPoint.x, testPoint.z, 0, 0, 0))) {
+                return false;
+            }
+
+            int totalShoreTiles = 1;
+
+            if (isOceanPoint(new Vertex(testPoint.x + 1, testPoint.z, 0, 0, 0))) {
+                totalShoreTiles++;
+            }
+            if (isOceanPoint(new Vertex(testPoint.x, testPoint.z + 1, 0, 0, 0))) {
+                totalShoreTiles++;
+            }
+            if (isOceanPoint(new Vertex(testPoint.x + 1, testPoint.z + 1, 0, 0, 0))) {
+                totalShoreTiles++;
+            }
+
+            return totalShoreTiles == 4;
+        }
+
+        private boolean is3x3ocean(Region.Point testPoint) {
+            for (int i = -1; i <= 1; i++) {
+                for (int j = -1; j <= 1; j++) {
+                    if (!isOceanPoint(new Vertex(testPoint.x + i, testPoint.z + j, 0, 0, 0))) {
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
+
+        private boolean isOceanWithShoreOrIslandAround3x3(Region.Point testPoint) {
+            if (!isOceanPoint(new Vertex(testPoint.x, testPoint.z, 0, 0, 0))) {
+                return false;
+            }
+
+            for (int i = -1; i <= 1; i++) {
+                for (int j = -1; j <= 1; j++) {
+                    Vertex testVertex = new Vertex(testPoint.x + i, testPoint.z + j, 0, 0, 0);
+                    if (!isOceanPoint(testVertex) && !isShoreOrIslandPoint(testVertex)) {
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
+
+        private boolean isShorePoint(Vertex testVertex) {
+            Region.Point point = vertexToPoint.apply(testVertex);
+
+            return point != null
+                && !point.land()
+                && point.shore()
+                && !point.island()
+                && !point.mountain()
+                && !point.hotSpot()
+                && !point.volcanic()
+                && !point.barrierIsland()
+                && !point.coastalMountain();
+        }
+
+        private boolean isShoreOrIslandPoint(Vertex testVertex) {
+            Region.Point point = vertexToPoint.apply(testVertex);
+
+            return point != null
+                && !point.land()
+                && !point.mountain()
+                && !point.hotSpot()
+                && !point.volcanic()
+                && !point.barrierIsland()
+                && !point.coastalMountain()
+                && (point.shore() || point.island());
+        }
+
+        private boolean isOceanPoint(Vertex testVertex) {
+            Region.Point point = vertexToPoint.apply(testVertex);
+
+            return point != null
+                && !point.land()
+                && !point.shore()
+                && !point.island()
+                && !point.mountain()
+                && !point.hotSpot()
+                && !point.volcanic()
+                && !point.barrierIsland()
+                && !point.coastalMountain();
+        }
+
+        private boolean isLandOrIslandNearby(Region.Point nextPoint) {
+            for (int distance = 1; distance <= 1; distance++) {
+                for (int offsetX = -distance; offsetX <= distance; offsetX++) {
+                    for (int offsetY = -distance; offsetY <= distance; offsetY++) {
+                        Vertex testVertex = new Vertex(nextPoint.x + offsetX, nextPoint.z + offsetY, 0, 0, 0);
+                        Region.Point point = vertexToPoint.apply(testVertex);
+
+                        if (point == null) {
+                            continue;
+                        }
+
+                        if (point.shore()) {
+                            continue;
+                        }
+
+                        if (point.land()
+                            || point.island()
+                            || point.mountain()
+                            || point.hotSpot()
+                            || point.volcanic()
+                            || point.barrierIsland()
+                            || point.coastalMountain()) {
+                            return true;
+                        }
+                    }
+                }
+            }
+            return false;
+        }
+
+        private boolean isOceanWithShoreAndTwoOceanAdjacent(Region.Point testPoint) {
+            if (!isOceanPoint(new Vertex(testPoint.x, testPoint.z, 0, 0, 0))) {
+                return false;
+            }
+
+            int totalOceanTiles = 0;
+
+            if (isOceanPoint(new Vertex(testPoint.x + 1, testPoint.z, 0, 0, 0))) {
+                totalOceanTiles++;
+            }
+            if (isOceanPoint(new Vertex(testPoint.x - 1, testPoint.z, 0, 0, 0))) {
+                totalOceanTiles++;
+            }
+            if (isOceanPoint(new Vertex(testPoint.x, testPoint.z + 1, 0, 0, 0))) {
+                totalOceanTiles++;
+            }
+            if (isOceanPoint(new Vertex(testPoint.x, testPoint.z - 1, 0, 0, 0))) {
+                totalOceanTiles++;
+            }
+            if (totalOceanTiles < 2) {
+                return false;
+            }
+
+            for (int distance = 1; distance <= 1; distance++) {
+                for (int offsetX = -distance; offsetX <= distance; offsetX++) {
+                    for (int offsetY = -distance; offsetY <= distance; offsetY++) {
+                        Vertex testVertex = new Vertex(testPoint.x + offsetX, testPoint.z + offsetY, 0, 0, 0);
+                        Region.Point point = vertexToPoint.apply(testVertex);
+
+                        if (point == null) {
+                            continue;
+                        }
+
+                        if (point.land()
+                            || point.island()
+                            || point.mountain()
+                            || point.hotSpot()
+                            || point.volcanic()
+                            || point.barrierIsland()
+                            || point.coastalMountain()) {
+                            return false;
+                        }
+                    }
+                }
+            }
+            return true;
+        }
+
+        private boolean pathToNextIntercepts(Predicate<Region.Point> pointPredicate) {
+            int testPoints = 5;
+            for (int i = testPoints; i >= 1; i--) {
+                Vertex testVertex = computeNext(prev, (nextLength / testPoints) * i, nextAngle);
+                Region.Point testPoint = vertexToPoint.apply(testVertex);
+                if (pointPredicate.test(testPoint)) {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        @Nullable
+        private Vertex getNeighboringLowerBiomeAltitude(Region.Point nextPoint) {
+            List<Vertex> options = new ArrayList<>(); // todo optimize
+
+            for (int distance = 1; distance <= 1; distance++) {
+                for (int offsetX = -distance; offsetX <= distance; offsetX++) {
+                    for (int offsetY = -distance; offsetY <= distance; offsetY++) {
+                        Vertex lowerAltiudeVertex = new Vertex(nextPoint.x + offsetX, nextPoint.z + offsetY, 0, 0, 0);
+                        Region.Point point = vertexToPoint.apply(lowerAltiudeVertex);
+
+                        if (point != null
+                            && point.land()
+                            && !point.shore()
+                            && !point.island()
+                            && !point.mountain()
+                            && !point.hotSpot()
+                            && !point.volcanic()
+                            && !point.barrierIsland()
+                            && !point.coastalMountain()
+                            && point.biomeAltitude < prevBiomeAltitude) {
+
+                            options.add(new Vertex(nextPoint.x + offsetX + 0.5f, nextPoint.z + offsetY + 0.5f, 0, 0, prev.distance));
+                        }
+                    }
+                }
+            }
+
+            if (options.isEmpty()) {
+                return null;
+            }
+            return options.get(random.nextInt(options.size()));
+        }
+
+        private boolean isValidRiverRootSource() {
+            return initialPoint.mountain()
+                || initialPoint.hotSpot()
+                || initialPoint.volcanic()
+                || initialPoint.island()
+                || initialPoint.shore()
+                || initialPoint.coastalMountain();
+        }
+
+        private boolean addRainfallToClosestRiverOrSea(Context context) {
+            int maxDistance = 12;
+            int maxDistanceToOcean = 12;
+
+            Edge intersected = context.intersectClosestOther(new Edge(root, computeNext(root, 0.01, 0), this));
+            if (intersected != null) {
+                Vertex aimForVertex = distanceVertex(root, intersected.source) < distanceVertex(root, intersected.drain) ? intersected.source : intersected.drain;
+                double distance = distanceVertex(root, aimForVertex);
+                if (distance < initialPoint.distanceToOcean) {
+                    if (distance <= maxDistance) {
+                        pruneBranchAndAddWaterVolumeTo(intersected);
+                        return true;
+                    }
+                    return false;
+                }
+            }
+
+            if (initialPoint.distanceToOcean <= maxDistanceToOcean) {
+                return true;
+            }
+
+            return false;
+        }
+
+        private void drawDebugEdge() {
+            if (DEBUG_DRAW_UNPLACED_STARTING_EDGES) {
+                Vertex left = new Vertex(root.x - 0.1, root.y, 0, 0, 0);
+                Vertex right = new Vertex(root.x + 0.1, root.y, 0, 0, 1);
+                commitEdge(new Edge(left, right, this));
+                commitRiver();
+            }
+        }
+
+        public boolean buildAllowInlandDrain(Context context) {
+            requireReachingOcean = false;
+
+            this.prev = root;
+            this.nextAngle = root.angle;
+
+            this.stuckFor = 0;
+            this.stuckForTotal = 0;
+
+            setBiomeAltitudeAndDistanceToOcean(initialPoint);
+
+            return buildInitialBranch(context);
+        }
+
         private double getMinDistanceToNearestRiver() {
-            return SOURCE_MIN_DISTANCE_TO_NEAREST_RIVER - (initialPoint.rainfall / 500) * SOURCE_MIN_DISTANCE_TO_NEAREST_RIVER_RAINFALL_INFLUENCE;
+            return SOURCE_MIN_DISTANCE_TO_NEAREST_RIVER - SOURCE_MIN_DISTANCE_TO_NEAREST_RIVER * (initialPoint.rainfall / 500) * SOURCE_MIN_DISTANCE_TO_NEAREST_RIVER_RAINFALL_INFLUENCE;
         }
 
         private void commitRiver() {
@@ -315,29 +705,37 @@ public class River {
             edges.clear();
         }
 
-        private void confirmEdge(Region.Point nextPoint, Edge nextEdge, Vertex next) {
+        private void commitEdge(Edge edge) {
+            Region.Point nextPoint = vertexToPoint.apply(edge.drain);
             setBiomeAltitudeAndDistanceToOcean(nextPoint);
-            edges.add(nextEdge);
-            prev = next;
+            edges.add(edge);
+            prev = edge.drain;
             stuckFor = 0;
+            angleTowardsRiverSet = false;
+            angleTowardsLowerAltitudeSet = false;
+            angleTowardsOceanSet = false;
         }
 
-        private void setBiomeAltitudeAndDistanceToOcean(Region.Point initialPoint) {
-            prevBiomeAltitude = initialPoint.biomeAltitude;
-            prevDistanceToOcean = initialPoint.distanceToOcean;
+        private void setBiomeAltitudeAndDistanceToOcean(Region.Point point) {
+            prevBiomeAltitude = point.biomeAltitude;
+            prevDistanceToOcean = point.distanceToOcean;
         }
 
         private double getAngleToVertex(Vertex prev, Vertex aimForVertex) {
             return Math.atan2(aimForVertex.y - prev.y, aimForVertex.x - prev.x);
         }
 
-        // Do a check to ensure that the river is of sufficient size and length, and if not, discard it
+        // Do a check to ensure that the river is of sufficient length, and if not, discard it
         private boolean isRiverToShort() {
             return edges.size() < MIN_RIVER_EDGE_COUNT;
         }
 
         private boolean isBranchToShort() {
             return edges.size() < MIN_BRANCH_EDGE_COUNT;
+        }
+
+        private boolean isEndorheicRiverToShort() {
+            return edges.size() < MIN_ENDORHEIC_RIVER_EDGE_COUNT;
         }
 
         private void annotateDownstream() {
@@ -349,7 +747,7 @@ public class River {
         @Nullable
         public Edge intersectSelf(Edge edge) {
             for (Edge e : edges) {
-                if (e.drain != edge.source && (distance(e, edge.drain) < 0.8f || intersect(e.source, e.drain, edge.source, edge.drain))) {
+                if (e.drain != edge.source && (distanceSq(e, edge.drain) < 0.8f || intersect(e.source, e.drain, edge.source, edge.drain))) {
                     return e;
                 }
             }
@@ -360,14 +758,14 @@ public class River {
             return prev.angle() + (random.nextDouble() * 0.5f + 0.2f) * (random.nextBoolean() ? 1 : -1);
         }
 
-        private Vertex computeNext(Vertex prev, double length, int distance, double nextAngle) {
-            double nextLength = Math.min(Math.max(length * (random.nextDouble() * 0.18f + 0.92f), 0.8f), 1.6f);
+        private Vertex computeNext(Vertex prev, double length, double nextAngle) {
+            //double nextLength = Math.min(Math.max(length * (random.nextDouble() * 0.18f + 0.92f), 0.8f), 1.6f); // todo increase length over time
 
             // Extend in the direction of the next angle
             double dx = Mth.cos((float) nextAngle) * nextLength, dy = Mth.sin((float) nextAngle) * nextLength;
             double x = prev.x() + dx, y = prev.y() + dy;
 
-            return new Vertex(x, y, nextAngle, nextLength, distance + 1);
+            return new Vertex(x, y, nextAngle, nextLength, prev.distance + 1);
         }
 
         private float findBestAngleToSea(Region.Point point) {
@@ -402,14 +800,6 @@ public class River {
 
             return bestAngle;
         }
-
-        private static double normalizeAngle(double angle) {
-            return (angle % Math.PI + Math.PI) % Math.PI;
-        }
-
-        private static double absoluteDifferenceAngle(double angle1, double angle2) {
-            return Math.abs(angle1 - angle2);
-        }
     }
 
     public static class MultiParallelBuilder implements Context {
@@ -426,15 +816,32 @@ public class River {
 
         public <E> List<E> build(Function<Edge, E> map) {
             // Use a heap, sorted by total river length (edge count), so we prioritize building large rivers, and discarding short ones.
-            final PriorityQueue<Builder> working = new PriorityQueue<>(Comparator.comparing(b -> -b.edges.size() - 10 * b.branchQueue.size()));
-            int i = 0;
+            //final PriorityQueue<Builder> remainingStartingBuilders = new PriorityQueue<>(Comparator.comparing(b -> -b.edges.size() - 10 * b.branchQueue.size()));
+            final Queue<Builder> remainingStartingBuilders = Queues.newConcurrentLinkedQueue();
+
             for (Builder builder : builders) {
-                if (builder.buildInitialBranch(this)) {
-                    working.offer(builder);
+                if (!builder.buildInitialBranch(this)) {
+                    remainingStartingBuilders.offer(builder);
                 }
             }
 
-            log.info("points processed {} of {}", working.size(), builders.size());
+            final Collection<Builder> remainingBuildersNotConnected = Lists.newArrayList();
+
+            for (Builder builder : remainingStartingBuilders) {
+                if (!builder.buildAllowInlandDrain(this)) {
+                    remainingBuildersNotConnected.add(builder);
+                }
+            }
+
+            for (Builder builder : remainingBuildersNotConnected) {
+                if (!builder.addRainfallToClosestRiverOrSea(this)) {
+                    builder.drawDebugEdge();
+                }
+            }
+
+            for (Builder builder : remainingStartingBuilders) {
+                builder.drawDebugEdge();
+            }
 
             return builders.stream().flatMap(e -> e.edges.stream().map(map)).toList();
         }
@@ -442,8 +849,8 @@ public class River {
         @Override
         @Nullable
         public Edge intersectClosestOther(Edge edge) {
-            double minDistance = 14f;
-            double minDistanceSquared = (minDistance + 1) * (minDistance + 1);
+            double maxDistance = 6f;
+            double maxDistanceSquared = maxDistance * maxDistance;
 
             double closestDistance = Double.MAX_VALUE;
             Edge closestEdge = null;
@@ -453,13 +860,13 @@ public class River {
                 }
 
                 for (Edge e : river.edges) {
-//                    if (River.distanceVertexFastSquared(e.drain, edge.drain) > minDistanceSquared && River.distanceVertexFastSquared(e.source, edge.drain) > minDistanceSquared) {
-//                        continue;
-//                    }
+                    if (River.distanceVertexFastSquared(e.drain, edge.drain) > maxDistanceSquared + 4 && River.distanceVertexFastSquared(e.source, edge.drain) > maxDistanceSquared + 4) {
+                        continue;
+                    }
 
-                    double distance = distance(e, edge.drain);
-                    if (e.drain != edge.source && ((distance < closestDistance && distance < minDistance) || intersect(e.source, e.drain, edge.source, edge.drain))) {
-                        closestDistance = distance;
+                    double distanceSquared = distanceSq(e, edge.drain);
+                    if (e.drain != edge.source && ((distanceSquared < closestDistance && distanceSquared < maxDistanceSquared) || intersect(e.source, e.drain, edge.source, edge.drain))) {
+                        closestDistance = distanceSquared;
                         closestEdge = e;
                     }
                 }
