@@ -23,12 +23,20 @@ import javax.annotation.Nullable;
 
 public class River {
     public static final float INITIAL_RIVER_EDGE_LENGTH = 0.8f;
-    private static final int MIN_BRANCH_EDGE_COUNT = 4;
-    private static final int MIN_RIVER_EDGE_COUNT = 8;
-    private static final int MIN_ENDORHEIC_RIVER_EDGE_COUNT = 8;
-    private static final double SOURCE_MIN_DISTANCE_TO_NEAREST_RIVER = 4;
-    private static final double SOURCE_MIN_DISTANCE_TO_NEAREST_RIVER_RAINFALL_INFLUENCE = 0.4;
-    private static final boolean DEBUG_DRAW_UNPLACED_STARTING_EDGES = false;
+    public static final int MIN_BRANCH_EDGE_COUNT = 4;
+    public static final int MIN_RIVER_EDGE_COUNT = 8;
+    public static final int MIN_ENDORHEIC_RIVER_EDGE_COUNT = 8;
+
+    public static final double SOURCE_MIN_DISTANCE_TO_NEAREST_RIVER = 4;
+    public static final double SOURCE_MIN_DISTANCE_TO_NEAREST_RIVER_RAINFALL_INFLUENCE = 0.4;
+
+    public static final float LAKE_GENERATION_AT_SOURCE_CHANCE = 0.1f;
+    public static final float LAKE_GENERATION_ALONG_RIVER_CHANCE = 0.02f;
+    public static final int LAKE_GENERATION_ALONG_RIVER_MINIMUM_DISTANCE_FROM_SOURCE = 4;
+    public static final int LAKE_GENERATION_AT_SOURCE_MINIMUM_WIDTH = 5;
+    public static final boolean LAKE_GENERATION_ENABLED = true;
+
+    public static final boolean DEBUG_DRAW_UNPLACED_STARTING_EDGES = false;
 
     /**
      * @return The shortest square distance between a point {@code vertex} and the line segment {@code edge}
@@ -215,7 +223,7 @@ public class River {
                 Region.Point nextPoint = vertexToPoint.apply(next);
 
                 if (nextPoint == null) {
-                    stuckFor++;
+                    stuckFor++; // todo find out why needed
                     stuckForTotal++;
                     nextAngle = computeNextAngle(prev);
                     continue;
@@ -241,7 +249,8 @@ public class River {
                 Edge intersected = context.intersectClosestOther(nextEdge);
                 if (intersected != null && !angleTowardsOceanSet) {
 
-                    Vertex aimForVertex = distanceVertex(prev, intersected.source) < distanceVertex(prev, intersected.drain) - 0.15 || intersected.source.distance == 0 ? intersected.source : intersected.drain;
+                    boolean aimForSourceVertex = distanceVertex(prev, intersected.source) < distanceVertex(prev, intersected.drain) - 0.15 - ((intersected.source.distance == 0) ? 0.1 : 0.);
+                    Vertex aimForVertex = aimForSourceVertex ? intersected.source : intersected.drain;
                     double distance = distanceVertex(prev, aimForVertex);
 
                     if (edges.isEmpty() && distance < getMinDistanceToNearestRiver()) {
@@ -262,7 +271,7 @@ public class River {
                         continue;
                     }
 
-                    if (distance > prev.length * 1.3) {
+                    if (distance > prev.length * 1.8) {
                         if (angleTowardsRiverSet) {
                             commitEdge(nextEdge);
                             nextAngle = computeNextAngle(prev);
@@ -280,6 +289,10 @@ public class River {
                         stuckForTotal++;
                         nextAngle = computeNextAngle(prev);
                         continue;
+                    }
+
+                    if (!aimForSourceVertex && intersected.downstreamEdge != null) {
+                        intersected = intersected.downstreamEdge;
                     }
 
                     nextEdge = new Edge(prev, aimForVertex, this, intersected);

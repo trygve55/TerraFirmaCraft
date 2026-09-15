@@ -33,17 +33,13 @@ public enum AddRiversAndLakes implements RegionTask
 
         createInitialSources(context, region, riverGenerator);
 
-        final List<RiverEdge> rivers = riverGenerator.build(e -> new RiverEdge(e, random, AddRiversAndLakes.waterflowToWidth(e.waterflowTotal)));
+        final List<RiverEdge> rivers = riverGenerator.build(e -> new RiverEdge(e, random));
 
         context.region.setRivers(rivers);
         if (!rivers.isEmpty())
         {
             annotateRiverGridScale(region, random, rivers);
         }
-    }
-
-    private static int waterflowToWidth(float waterflow) {
-        return (int) Math.round(Math.sqrt(waterflow) / 50);
     }
 
     private void createInitialSources(RegionGenerator.Context context, Region region, RegionRiverGenerator riverGenerator)
@@ -161,9 +157,11 @@ public enum AddRiversAndLakes implements RegionTask
         }
 
         // Place lakes around the source of rivers.
-        for (RiverEdge edge : rivers)
-        {
-            if (!edge.sourceEdge() && random.nextInt(10) == 0 && false) // do not place lakes for debugging
+        for (RiverEdge edge : rivers) {
+            if (River.LAKE_GENERATION_ENABLED &&
+                (!edge.sourceEdge()
+                    && random.nextFloat() <= River.LAKE_GENERATION_AT_SOURCE_CHANCE
+                    && edge.width >= River.LAKE_GENERATION_AT_SOURCE_MINIMUM_WIDTH))
             {
                 // todo make lakes connect to rivers always
                 // Try and place a lake near this source
@@ -187,6 +185,7 @@ public enum AddRiversAndLakes implements RegionTask
                 if (point == null || point.distanceToOcean < 4) {
                     continue;
                 }
+                // todo make sure it ends in the middle of the lake
 
                 // Try and place a lake near this endorheic basin
                 placeLakeNear(region, edge, 1, 1);
@@ -199,6 +198,7 @@ public enum AddRiversAndLakes implements RegionTask
 
     private void annotateRiverGridScale(Region region, RiverEdge edge)
     {
+        // todo make size dependent on river width
         final int ux = (int) (edge.source().x());
         final int uy = (int) (edge.source().y());
         final int vx = (int) (edge.drain().x());

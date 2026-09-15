@@ -30,6 +30,8 @@ import net.dries007.tfc.world.shore.ShoreNoiseSampler;
 import net.dries007.tfc.world.volcano.CenteredFeatureBlendType;
 import net.dries007.tfc.world.volcano.CenteredFeatureNoiseSampler;
 
+import static net.dries007.tfc.world.region.RiverEdge.MAX_WIDTH;
+
 public class ChunkHeightFiller
 {
     protected static final int RIVER_TYPE_NONE = RiverBlendType.NONE.ordinal();
@@ -344,7 +346,7 @@ public class ChunkHeightFiller
     @Nullable
     protected final RiverInfo sampleRiverEdge(RegionPartition.Point point)
     {
-        final float limitDistInGridSq = 50f * 50f / (Units.GRID_WIDTH_IN_BLOCK * Units.GRID_WIDTH_IN_BLOCK);
+        final float limitDistInGridSq = (MAX_WIDTH * 2f) * (MAX_WIDTH * 2f) / (Units.GRID_WIDTH_IN_BLOCK * Units.GRID_WIDTH_IN_BLOCK);
         double minDist = limitDistInGridSq; // Only concern ourselves with rivers within a range of 50 ^2 blocks. This helps `maybeIntersect` fail more often.
         double minDistAdjusted = Float.MAX_VALUE;
         RiverEdge minEdge = null;

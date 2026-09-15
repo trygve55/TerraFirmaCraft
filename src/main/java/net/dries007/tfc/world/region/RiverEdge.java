@@ -17,13 +17,14 @@ import net.dries007.tfc.world.river.RiverHelpers;
 
 public final class RiverEdge
 {
-    public static final int MIN_WIDTH = 8;
-    public static final int MAX_WIDTH = 24;
-    public static final int MIN_VALLEY_WIDTH = 20;
+    public static final int MIN_WIDTH = 3;
+    public static final int MAX_WIDTH = 100;
+    public static final int MIN_VALLEY_WIDTH = 40;
 
     private static final int MAX_AFFECTING_GRID_DISTANCE = 1 + Mth.ceil(1.5f * River.INITIAL_RIVER_EDGE_LENGTH);
 
     public int width;
+    public float waterflowTotal;
 
     private final River.Vertex source, drain;
     private final MidpointFractal fractal;
@@ -34,12 +35,13 @@ public final class RiverEdge
     private boolean sourceEdge; // `true` if this river has a source edge, `false` if it does not.
     private @Nullable RiverEdge drainEdge; // The drain edge of this river
 
-    public RiverEdge(River.Edge edge, RandomSource random, int width)
+    public RiverEdge(River.Edge edge, RandomSource random)
     {
-        this.width = width;
+        this.waterflowTotal = edge.waterflowTotal;
+        this.width = waterflowToWidth(waterflowTotal);
         this.source = edge.source();
         this.drain = edge.drain();
-        this.fractal = edge.fractal(random, 0); // testing generation with straighgt edges
+        this.fractal = edge.fractal(random, 3); // testing generation with straight edges
 
         final int centerGridX = (int) Math.round(0.5f * (edge.source().x() + edge.drain().x()));
         final int centerGridZ = (int) Math.round(0.5f * (edge.source().y() + edge.drain().y()));
@@ -118,5 +120,9 @@ public final class RiverEdge
         {
             edge.sourceEdge = true;
         }
+    }
+
+    private static int waterflowToWidth(float waterflow) {
+        return Math.min((int) Math.ceil(Math.pow(waterflow, 0.67) / 300), MAX_WIDTH);
     }
 }
