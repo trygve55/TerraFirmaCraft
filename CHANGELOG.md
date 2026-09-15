@@ -1,19 +1,15 @@
-### Additions
-- Armadillos! These new prey animals will curl up in a ball to survive attacks from predators. Thanks Strangelyng!
-
 ### Changes
-- Reorganized the Creative Menu to be more similar to the vanilla layout. Thanks Aleki for your hard work on this one!
-- Reorganized the Field Guide to be easier to navigate by moving many topics from the Advanced Mechanics tab into the new Core Mechanics, Food and Agriculture, Crafting, and Metalworking tabs
-- Add a reference to the in-world mud recipe to the mud bricks entry in the field guide
-- Butterfly particles no longer appear when it is raining
-
-### Technical
-- Add a rock settings registry, which allows datapacks to override the rock settings for a world without needing to rewrite the entire world preset file
-
-
-### Fixes
-- Fixed lentils being impossible to cook
-- Fixed beverages giving way too much nutrition (closes #3679)
-- Fixed obsidian hoes not being damaged by breaking grass
-- Fixed seasonal leaf colors not handling null positions properly
-- Made obsidian javelin texture the right color
+- Made the field guide respond dynamically to config values and temperature settings.
+  - All config values mentioned in the field guide (i.e. decay modifier values) now change when the config changes.
+  - All temperatures in the field guide respond to the user's temperature config setting.
+  - Climate ranges for growth will respond if the user changes the data associated (requires reloading the world).
+  - Worldgen related values (i.e. spawning ranges) do NOT change based on data, but will change units based on the user config.
+  - The online field guide will render the default values.
+- Made wild crop maturity months configurable.
+- Fix a rare worldgen crash.
+- Added a JEI category for lamp fuels.
+- Changed how plant slowdown works to be less punishing for midair/jumping entities.
+- Clarified and fixed several errors in the field guide.
+- Fix peanut butter and cassava nutrition.
+- Fixed bell molds being in the wrong position in the creative menu.
+- Fixed rotten eggs being hatchable (though I think this isn't an issue on 1.21 because eggs laid by chickens aren't decayable)

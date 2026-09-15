@@ -40,7 +40,7 @@
         }
       },
       "name": "Свечи",
-      "text": "Свечи горят 11 дней и их можно зажечь снова.",
+      "text": "Candles last for $(cfg:candleTicks), and may also be relit.",
       "enable_visualize": false
     },
     {
@@ -65,7 +65,7 @@
         }
       },
       "name": "Тыквы-фонари",
-      "text": "Тыквы-фонари — это светящаяся версия $(thing)вырезанных тыкв$(), и горят они 4,5 дня, прежде чем снова превратиться в вырезанные тыквы.",
+      "text": "Jack 'o Lanterns are the lit version of $(thing)Carved Pumpkins$(), and last for $(cfg:jackOLanternTicks), before reverting to carved pumpkins.",
       "enable_visualize": false
     },
     {

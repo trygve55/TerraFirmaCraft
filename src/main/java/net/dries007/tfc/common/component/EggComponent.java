@@ -17,8 +17,10 @@ import net.minecraft.network.codec.ByteBufCodecs;
 import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 
+import net.dries007.tfc.common.component.food.FoodCapability;
 import net.dries007.tfc.common.entities.livestock.OviparousAnimal;
 import net.dries007.tfc.util.calendar.Calendars;
 import net.dries007.tfc.util.calendar.ICalendar;
@@ -76,11 +78,12 @@ public record EggComponent(
 
     /**
      * Should only be invoked on logical server
-     * @return {@code true} if the egg is fertilized and is able to hatch today.
+     * @return {@code true} if the egg is fertilized and is able to hatch today. An egg that rotted before reaching its hatch day
+     * will never hatch, as the nest box would have hatched it on the day it was due, had it still been viable.
      */
-    public boolean canHatch()
+    public boolean canHatch(ItemStack stack)
     {
-        return fertilized && hatchDay <= Calendars.SERVER.getTotalCalendarDays();
+        return fertilized && hatchDay <= Calendars.SERVER.getTotalCalendarDays() && !FoodCapability.isRotten(stack);
     }
 
     /**

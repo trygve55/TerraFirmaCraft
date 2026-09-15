@@ -684,7 +684,7 @@
       "item": "tfc:kaolin_clay",
       "title": "Kaolinit",
       "link_recipes": false,
-      "text": "Kaolinit, $(l:metalworking/fire_clay)Ateş Kili$() yapımında kullanılan yumuşak bir $(thing)Mineraldir$(). Platolar, Eski Dağlar, Engebeli Tepeler ve Yüksek Yaylalarda, en az 18°C $(l:core_mechanics/climate#temperature)sıcaklık$() ve en az 300mm $(l:core_mechanics/climate#rainfall)yağış$() değerlerine sahip yüksek rakımlı bölgelerde oluşur. $(thing)Kan Zambağı$() çiçeği Kaolin kili üzerinde yetişir."
+      "text": "Kaolinit, $(l:metalworking/fire_clay)Ateş Kili$() yapımında kullanılan yumuşak bir $(thing)Mineraldir$(). Platolar, Eski Dağlar, Engebeli Tepeler ve Yüksek Yaylalarda, en az $(cfg:temperature:18) $(l:core_mechanics/climate#temperature)sıcaklık$() ve en az 300mm $(l:core_mechanics/climate#rainfall)yağış$() değerlerine sahip yüksek rakımlı bölgelerde oluşur. $(thing)Kan Zambağı$() çiçeği Kaolin kili üzerinde yetişir."
     },
     {
       "type": "tfc:multimultiblock",

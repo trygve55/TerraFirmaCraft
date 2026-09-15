@@ -22,6 +22,7 @@ import org.jetbrains.annotations.Nullable;
 import net.dries007.tfc.common.capabilities.PartialItemHandler;
 import net.dries007.tfc.common.component.EggComponent;
 import net.dries007.tfc.common.component.TFCComponents;
+import net.dries007.tfc.common.component.food.FoodCapability;
 import net.dries007.tfc.common.container.NestBoxContainer;
 import net.dries007.tfc.common.entities.livestock.OviparousAnimal;
 import net.dries007.tfc.common.entities.misc.Seat;
@@ -76,7 +77,7 @@ public class NestBoxBlockEntity extends TickableInventoryBlockEntity<ItemStackHa
             {
                 final ItemStack stack = nest.inventory.getStackInSlot(slot);
                 final @Nullable EggComponent egg = stack.get(TFCComponents.EGG);
-                if (egg != null && egg.canHatch())
+                if (egg != null && egg.canHatch(stack))
                 {
                     egg.hatch(level).ifPresent(entity -> {
                         entity.moveTo(pos, 0f, 0f);
@@ -107,7 +108,7 @@ public class NestBoxBlockEntity extends TickableInventoryBlockEntity<ItemStackHa
     @Override
     public boolean isItemValid(int slot, ItemStack stack)
     {
-        return stack.has(TFCComponents.EGG);
+        return stack.has(TFCComponents.EGG) && !FoodCapability.isRotten(stack);
     }
 
     @Override

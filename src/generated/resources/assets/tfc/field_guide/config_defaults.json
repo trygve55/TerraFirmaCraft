@@ -1,0 +1,1241 @@
+{
+  "bloomeryCapacity": "16",
+  "bloomeryTotalCapacity": "48",
+  "candleTicks": {
+    "translate": "tfc.tooltip.time_delta_days",
+    "with": [
+      10
+    ]
+  },
+  "climate.alfalfa.hydration": {
+    "translate": "tfc.field_guide.range",
+    "with": [
+      40,
+      100
+    ]
+  },
+  "climate.alfalfa.temperature": {
+    "translate": "tfc.field_guide.range",
+    "with": [
+      {
+        "translate": "tfc.tooltip.temperature_celsius",
+        "with": [
+          "-32"
+        ]
+      },
+      {
+        "translate": "tfc.tooltip.temperature_celsius",
+        "with": [
+          "8"
+        ]
+      }
+    ]
+  },
+  "climate.banana.hydration": {
+    "translate": "tfc.field_guide.range",
+    "with": [
+      25,
+      100
+    ]
+  },
+  "climate.banana.temperature": {
+    "translate": "tfc.field_guide.range",
+    "with": [
+      {
+        "translate": "tfc.tooltip.temperature_celsius",
+        "with": [
+          "10"
+        ]
+      },
+      {
+        "translate": "tfc.tooltip.temperature_celsius",
+        "with": [
+          "41"
+        ]
+      }
+    ]
+  },
+  "climate.barley.hydration": {
+    "translate": "tfc.field_guide.range",
+    "with": [
+      10,
+      70
+    ]
+  },
+  "climate.barley.temperature": {
+    "translate": "tfc.field_guide.range",
+    "with": [
+      {
+        "translate": "tfc.tooltip.temperature_celsius",
+        "with": [
+          "-7"
+        ]
+      },
+      {
+        "translate": "tfc.tooltip.temperature_celsius",
+        "with": [
+          "23"
+        ]
+      }
+    ]
+  },
+  "climate.beet.hydration": {
+    "translate": "tfc.field_guide.range",
+    "with": [
+      10,
+      70
+    ]
+  },
+  "climate.beet.temperature": {
+    "translate": "tfc.field_guide.range",
+    "with": [
+      {
+        "translate": "tfc.tooltip.temperature_celsius",
+        "with": [
+          "-10"
+        ]
+      },
+      {
+        "translate": "tfc.tooltip.temperature_celsius",
+        "with": [
+          "27"
+        ]
+      }
+    ]
+  },
+  "climate.blackberry.hydration": {
+    "translate": "tfc.field_guide.range",
+    "with": [
+      17,
+      100
+    ]
+  },
+  "climate.blackberry.temperature": {
+    "translate": "tfc.field_guide.range",
+    "with": [
+      {
+        "translate": "tfc.tooltip.temperature_celsius",
+        "with": [
+          "-6"
+        ]
+      },
+      {
+        "translate": "tfc.tooltip.temperature_celsius",
+        "with": [
+          "21"
+        ]
+      }
+    ]
+  },
+  "climate.blueberry.hydration": {
+    "translate": "tfc.field_guide.range",
+    "with": [
+      12,
+      90
+    ]
+  },
+  "climate.blueberry.temperature": {
+    "translate": "tfc.field_guide.range",
+    "with": [
+      {
+        "translate": "tfc.tooltip.temperature_celsius",
+        "with": [
+          "-10"
+        ]
+      },
+      {
+        "translate": "tfc.tooltip.temperature_celsius",
+        "with": [
+          "10"
+        ]
+      }
+    ]
+  },
+  "climate.bunchberry.hydration": {
+    "translate": "tfc.field_guide.range",
+    "with": [
+      25,
+      100
+    ]
+  },
+  "climate.bunchberry.temperature": {
+    "translate": "tfc.field_guide.range",
+    "with": [
+      {
+        "translate": "tfc.tooltip.temperature_celsius",
+        "with": [
+          "-15"
+        ]
+      },
+      {
+        "translate": "tfc.tooltip.temperature_celsius",
+        "with": [
+          "3"
+        ]
+      }
+    ]
+  },
+  "climate.cabbage.hydration": {
+    "translate": "tfc.field_guide.range",
+    "with": [
+      10,
+      65
+    ]
+  },
+  "climate.cabbage.temperature": {
+    "translate": "tfc.field_guide.range",
+    "with": [
+      {
+        "translate": "tfc.tooltip.temperature_celsius",
+        "with": [
+          "-10"
+        ]
+      },
+      {
+        "translate": "tfc.tooltip.temperature_celsius",
+        "with": [
+          "27"
+        ]
+      }
+    ]
+  },
+  "climate.canola.hydration": {
+    "translate": "tfc.field_guide.range",
+    "with": [
+      20,
+      75
+    ]
+  },
+  "climate.canola.temperature": {
+    "translate": "tfc.field_guide.range",
+    "with": [
+      {
+        "translate": "tfc.tooltip.temperature_celsius",
+        "with": [
+          "-30"
+        ]
+      },
+      {
+        "translate": "tfc.tooltip.temperature_celsius",
+        "with": [
+          "6"
+        ]
+      }
+    ]
+  },
+  "climate.carrot.hydration": {
+    "translate": "tfc.field_guide.range",
+    "with": [
+      15,
+      85
+    ]
+  },
+  "climate.carrot.temperature": {
+    "translate": "tfc.field_guide.range",
+    "with": [
+      {
+        "translate": "tfc.tooltip.temperature_celsius",
+        "with": [
+          "-10"
+        ]
+      },
+      {
+        "translate": "tfc.tooltip.temperature_celsius",
+        "with": [
+          "27"
+        ]
+      }
+    ]
+  },
+  "climate.cassava.hydration": {
+    "translate": "tfc.field_guide.range",
+    "with": [
+      45,
+      100
+    ]
+  },
+  "climate.cassava.temperature": {
+    "translate": "tfc.field_guide.range",
+    "with": [
+      {
+        "translate": "tfc.tooltip.temperature_celsius",
+        "with": [
+          "10"
+        ]
+      },
+      {
+        "translate": "tfc.tooltip.temperature_celsius",
+        "with": [
+          "31"
+        ]
+      }
+    ]
+  },
+  "climate.cherry.hydration": {
+    "translate": "tfc.field_guide.range",
+    "with": [
+      7,
+      80
+    ]
+  },
+  "climate.cherry.temperature": {
+    "translate": "tfc.field_guide.range",
+    "with": [
+      {
+        "translate": "tfc.tooltip.temperature_celsius",
+        "with": [
+          "-6"
+        ]
+      },
+      {
+        "translate": "tfc.tooltip.temperature_celsius",
+        "with": [
+          "15"
+        ]
+      }
+    ]
+  },
+  "climate.cloudberry.hydration": {
+    "translate": "tfc.field_guide.range",
+    "with": [
+      5,
+      80
+    ]
+  },
+  "climate.cloudberry.temperature": {
+    "translate": "tfc.field_guide.range",
+    "with": [
+      {
+        "translate": "tfc.tooltip.temperature_celsius",
+        "with": [
+          "-15"
+        ]
+      },
+      {
+        "translate": "tfc.tooltip.temperature_celsius",
+        "with": [
+          "8"
+        ]
+      }
+    ]
+  },
+  "climate.cranberry.hydration": {
+    "translate": "tfc.field_guide.range",
+    "with": [
+      25,
+      100
+    ]
+  },
+  "climate.cranberry.temperature": {
+    "translate": "tfc.field_guide.range",
+    "with": [
+      {
+        "translate": "tfc.tooltip.temperature_celsius",
+        "with": [
+          "-15"
+        ]
+      },
+      {
+        "translate": "tfc.tooltip.temperature_celsius",
+        "with": [
+          "10"
+        ]
+      }
+    ]
+  },
+  "climate.elderberry.hydration": {
+    "translate": "tfc.field_guide.range",
+    "with": [
+      9,
+      85
+    ]
+  },
+  "climate.elderberry.temperature": {
+    "translate": "tfc.field_guide.range",
+    "with": [
+      {
+        "translate": "tfc.tooltip.temperature_celsius",
+        "with": [
+          "-6"
+        ]
+      },
+      {
+        "translate": "tfc.tooltip.temperature_celsius",
+        "with": [
+          "17"
+        ]
+      }
+    ]
+  },
+  "climate.garlic.hydration": {
+    "translate": "tfc.field_guide.range",
+    "with": [
+      10,
+      70
+    ]
+  },
+  "climate.garlic.temperature": {
+    "translate": "tfc.field_guide.range",
+    "with": [
+      {
+        "translate": "tfc.tooltip.temperature_celsius",
+        "with": [
+          "-3"
+        ]
+      },
+      {
+        "translate": "tfc.tooltip.temperature_celsius",
+        "with": [
+          "22"
+        ]
+      }
+    ]
+  },
+  "climate.gooseberry.hydration": {
+    "translate": "tfc.field_guide.range",
+    "with": [
+      17,
+      100
+    ]
+  },
+  "climate.gooseberry.temperature": {
+    "translate": "tfc.field_guide.range",
+    "with": [
+      {
+        "translate": "tfc.tooltip.temperature_celsius",
+        "with": [
+          "-8"
+        ]
+      },
+      {
+        "translate": "tfc.tooltip.temperature_celsius",
+        "with": [
+          "13"
+        ]
+      }
+    ]
+  },
+  "climate.green_apple.hydration": {
+    "translate": "tfc.field_guide.range",
+    "with": [
+      10,
+      75
+    ]
+  },
+  "climate.green_apple.temperature": {
+    "translate": "tfc.field_guide.range",
+    "with": [
+      {
+        "translate": "tfc.tooltip.temperature_celsius",
+        "with": [
+          "-12"
+        ]
+      },
+      {
+        "translate": "tfc.tooltip.temperature_celsius",
+        "with": [
+          "12"
+        ]
+      }
+    ]
+  },
+  "climate.green_bean.hydration": {
+    "translate": "tfc.field_guide.range",
+    "with": [
+      25,
+      90
+    ]
+  },
+  "climate.green_bean.temperature": {
+    "translate": "tfc.field_guide.range",
+    "with": [
+      {
+        "translate": "tfc.tooltip.temperature_celsius",
+        "with": [
+          "-2"
+        ]
+      },
+      {
+        "translate": "tfc.tooltip.temperature_celsius",
+        "with": [
+          "25"
+        ]
+      }
+    ]
+  },
+  "climate.jute.hydration": {
+    "translate": "tfc.field_guide.range",
+    "with": [
+      15,
+      90
+    ]
+  },
+  "climate.jute.temperature": {
+    "translate": "tfc.field_guide.range",
+    "with": [
+      {
+        "translate": "tfc.tooltip.temperature_celsius",
+        "with": [
+          "2"
+        ]
+      },
+      {
+        "translate": "tfc.tooltip.temperature_celsius",
+        "with": [
+          "25"
+        ]
+      }
+    ]
+  },
+  "climate.lemon.hydration": {
+    "translate": "tfc.field_guide.range",
+    "with": [
+      19,
+      95
+    ]
+  },
+  "climate.lemon.temperature": {
+    "translate": "tfc.field_guide.range",
+    "with": [
+      {
+        "translate": "tfc.tooltip.temperature_celsius",
+        "with": [
+          "6"
+        ]
+      },
+      {
+        "translate": "tfc.tooltip.temperature_celsius",
+        "with": [
+          "26"
+        ]
+      }
+    ]
+  },
+  "climate.lentil.hydration": {
+    "translate": "tfc.field_guide.range",
+    "with": [
+      15,
+      50
+    ]
+  },
+  "climate.lentil.temperature": {
+    "translate": "tfc.field_guide.range",
+    "with": [
+      {
+        "translate": "tfc.tooltip.temperature_celsius",
+        "with": [
+          "-5"
+        ]
+      },
+      {
+        "translate": "tfc.tooltip.temperature_celsius",
+        "with": [
+          "25"
+        ]
+      }
+    ]
+  },
+  "climate.maize.hydration": {
+    "translate": "tfc.field_guide.range",
+    "with": [
+      50,
+      100
+    ]
+  },
+  "climate.maize.temperature": {
+    "translate": "tfc.field_guide.range",
+    "with": [
+      {
+        "translate": "tfc.tooltip.temperature_celsius",
+        "with": [
+          "-7"
+        ]
+      },
+      {
+        "translate": "tfc.tooltip.temperature_celsius",
+        "with": [
+          "27"
+        ]
+      }
+    ]
+  },
+  "climate.melon.hydration": {
+    "translate": "tfc.field_guide.range",
+    "with": [
+      35,
+      100
+    ]
+  },
+  "climate.melon.temperature": {
+    "translate": "tfc.field_guide.range",
+    "with": [
+      {
+        "translate": "tfc.tooltip.temperature_celsius",
+        "with": [
+          "5"
+        ]
+      },
+      {
+        "translate": "tfc.tooltip.temperature_celsius",
+        "with": [
+          "31"
+        ]
+      }
+    ]
+  },
+  "climate.oat.hydration": {
+    "translate": "tfc.field_guide.range",
+    "with": [
+      25,
+      85
+    ]
+  },
+  "climate.oat.temperature": {
+    "translate": "tfc.field_guide.range",
+    "with": [
+      {
+        "translate": "tfc.tooltip.temperature_celsius",
+        "with": [
+          "-7"
+        ]
+      },
+      {
+        "translate": "tfc.tooltip.temperature_celsius",
+        "with": [
+          "22"
+        ]
+      }
+    ]
+  },
+  "climate.olive.hydration": {
+    "translate": "tfc.field_guide.range",
+    "with": [
+      22,
+      95
+    ]
+  },
+  "climate.olive.temperature": {
+    "translate": "tfc.field_guide.range",
+    "with": [
+      {
+        "translate": "tfc.tooltip.temperature_celsius",
+        "with": [
+          "1"
+        ]
+      },
+      {
+        "translate": "tfc.tooltip.temperature_celsius",
+        "with": [
+          "24"
+        ]
+      }
+    ]
+  },
+  "climate.onion.hydration": {
+    "translate": "tfc.field_guide.range",
+    "with": [
+      15,
+      85
+    ]
+  },
+  "climate.onion.temperature": {
+    "translate": "tfc.field_guide.range",
+    "with": [
+      {
+        "translate": "tfc.tooltip.temperature_celsius",
+        "with": [
+          "-5"
+        ]
+      },
+      {
+        "translate": "tfc.tooltip.temperature_celsius",
+        "with": [
+          "26"
+        ]
+      }
+    ]
+  },
+  "climate.orange.hydration": {
+    "translate": "tfc.field_guide.range",
+    "with": [
+      27,
+      100
+    ]
+  },
+  "climate.orange.temperature": {
+    "translate": "tfc.field_guide.range",
+    "with": [
+      {
+        "translate": "tfc.tooltip.temperature_celsius",
+        "with": [
+          "8"
+        ]
+      },
+      {
+        "translate": "tfc.tooltip.temperature_celsius",
+        "with": [
+          "41"
+        ]
+      }
+    ]
+  },
+  "climate.papyrus.hydration": {
+    "translate": "tfc.field_guide.range",
+    "with": [
+      50,
+      100
+    ]
+  },
+  "climate.papyrus.temperature": {
+    "translate": "tfc.field_guide.range",
+    "with": [
+      {
+        "translate": "tfc.tooltip.temperature_celsius",
+        "with": [
+          "11"
+        ]
+      },
+      {
+        "translate": "tfc.tooltip.temperature_celsius",
+        "with": [
+          "31"
+        ]
+      }
+    ]
+  },
+  "climate.peach.hydration": {
+    "translate": "tfc.field_guide.range",
+    "with": [
+      15,
+      95
+    ]
+  },
+  "climate.peach.temperature": {
+    "translate": "tfc.field_guide.range",
+    "with": [
+      {
+        "translate": "tfc.tooltip.temperature_celsius",
+        "with": [
+          "-5"
+        ]
+      },
+      {
+        "translate": "tfc.tooltip.temperature_celsius",
+        "with": [
+          "17"
+        ]
+      }
+    ]
+  },
+  "climate.peanut.hydration": {
+    "translate": "tfc.field_guide.range",
+    "with": [
+      20,
+      80
+    ]
+  },
+  "climate.peanut.temperature": {
+    "translate": "tfc.field_guide.range",
+    "with": [
+      {
+        "translate": "tfc.tooltip.temperature_celsius",
+        "with": [
+          "11"
+        ]
+      },
+      {
+        "translate": "tfc.tooltip.temperature_celsius",
+        "with": [
+          "31"
+        ]
+      }
+    ]
+  },
+  "climate.plum.hydration": {
+    "translate": "tfc.field_guide.range",
+    "with": [
+      9,
+      75
+    ]
+  },
+  "climate.plum.temperature": {
+    "translate": "tfc.field_guide.range",
+    "with": [
+      {
+        "translate": "tfc.tooltip.temperature_celsius",
+        "with": [
+          "-8"
+        ]
+      },
+      {
+        "translate": "tfc.tooltip.temperature_celsius",
+        "with": [
+          "13"
+        ]
+      }
+    ]
+  },
+  "climate.potato.hydration": {
+    "translate": "tfc.field_guide.range",
+    "with": [
+      35,
+      90
+    ]
+  },
+  "climate.potato.temperature": {
+    "translate": "tfc.field_guide.range",
+    "with": [
+      {
+        "translate": "tfc.tooltip.temperature_celsius",
+        "with": [
+          "-7"
+        ]
+      },
+      {
+        "translate": "tfc.tooltip.temperature_celsius",
+        "with": [
+          "22"
+        ]
+      }
+    ]
+  },
+  "climate.pumpkin.hydration": {
+    "translate": "tfc.field_guide.range",
+    "with": [
+      20,
+      85
+    ]
+  },
+  "climate.pumpkin.temperature": {
+    "translate": "tfc.field_guide.range",
+    "with": [
+      {
+        "translate": "tfc.tooltip.temperature_celsius",
+        "with": [
+          "-7"
+        ]
+      },
+      {
+        "translate": "tfc.tooltip.temperature_celsius",
+        "with": [
+          "27"
+        ]
+      }
+    ]
+  },
+  "climate.radish.hydration": {
+    "translate": "tfc.field_guide.range",
+    "with": [
+      30,
+      90
+    ]
+  },
+  "climate.radish.temperature": {
+    "translate": "tfc.field_guide.range",
+    "with": [
+      {
+        "translate": "tfc.tooltip.temperature_celsius",
+        "with": [
+          "-28"
+        ]
+      },
+      {
+        "translate": "tfc.tooltip.temperature_celsius",
+        "with": [
+          "10"
+        ]
+      }
+    ]
+  },
+  "climate.raspberry.hydration": {
+    "translate": "tfc.field_guide.range",
+    "with": [
+      15,
+      95
+    ]
+  },
+  "climate.raspberry.temperature": {
+    "translate": "tfc.field_guide.range",
+    "with": [
+      {
+        "translate": "tfc.tooltip.temperature_celsius",
+        "with": [
+          "-12"
+        ]
+      },
+      {
+        "translate": "tfc.tooltip.temperature_celsius",
+        "with": [
+          "15"
+        ]
+      }
+    ]
+  },
+  "climate.red_apple.hydration": {
+    "translate": "tfc.field_guide.range",
+    "with": [
+      16,
+      75
+    ]
+  },
+  "climate.red_apple.temperature": {
+    "translate": "tfc.field_guide.range",
+    "with": [
+      {
+        "translate": "tfc.tooltip.temperature_celsius",
+        "with": [
+          "-12"
+        ]
+      },
+      {
+        "translate": "tfc.tooltip.temperature_celsius",
+        "with": [
+          "12"
+        ]
+      }
+    ]
+  },
+  "climate.red_bell_pepper.hydration": {
+    "translate": "tfc.field_guide.range",
+    "with": [
+      30,
+      95
+    ]
+  },
+  "climate.red_bell_pepper.temperature": {
+    "translate": "tfc.field_guide.range",
+    "with": [
+      {
+        "translate": "tfc.tooltip.temperature_celsius",
+        "with": [
+          "11"
+        ]
+      },
+      {
+        "translate": "tfc.tooltip.temperature_celsius",
+        "with": [
+          "31"
+        ]
+      }
+    ]
+  },
+  "climate.rice.hydration": {
+    "translate": "tfc.field_guide.range",
+    "with": [
+      35,
+      100
+    ]
+  },
+  "climate.rice.temperature": {
+    "translate": "tfc.field_guide.range",
+    "with": [
+      {
+        "translate": "tfc.tooltip.temperature_celsius",
+        "with": [
+          "8"
+        ]
+      },
+      {
+        "translate": "tfc.tooltip.temperature_celsius",
+        "with": [
+          "31"
+        ]
+      }
+    ]
+  },
+  "climate.rye.hydration": {
+    "translate": "tfc.field_guide.range",
+    "with": [
+      15,
+      80
+    ]
+  },
+  "climate.rye.temperature": {
+    "translate": "tfc.field_guide.range",
+    "with": [
+      {
+        "translate": "tfc.tooltip.temperature_celsius",
+        "with": [
+          "-7"
+        ]
+      },
+      {
+        "translate": "tfc.tooltip.temperature_celsius",
+        "with": [
+          "18"
+        ]
+      }
+    ]
+  },
+  "climate.snowberry.hydration": {
+    "translate": "tfc.field_guide.range",
+    "with": [
+      17,
+      100
+    ]
+  },
+  "climate.snowberry.temperature": {
+    "translate": "tfc.field_guide.range",
+    "with": [
+      {
+        "translate": "tfc.tooltip.temperature_celsius",
+        "with": [
+          "-12"
+        ]
+      },
+      {
+        "translate": "tfc.tooltip.temperature_celsius",
+        "with": [
+          "6"
+        ]
+      }
+    ]
+  },
+  "climate.soybean.hydration": {
+    "translate": "tfc.field_guide.range",
+    "with": [
+      25,
+      90
+    ]
+  },
+  "climate.soybean.temperature": {
+    "translate": "tfc.field_guide.range",
+    "with": [
+      {
+        "translate": "tfc.tooltip.temperature_celsius",
+        "with": [
+          "-7"
+        ]
+      },
+      {
+        "translate": "tfc.tooltip.temperature_celsius",
+        "with": [
+          "22"
+        ]
+      }
+    ]
+  },
+  "climate.squash.hydration": {
+    "translate": "tfc.field_guide.range",
+    "with": [
+      15,
+      85
+    ]
+  },
+  "climate.squash.temperature": {
+    "translate": "tfc.field_guide.range",
+    "with": [
+      {
+        "translate": "tfc.tooltip.temperature_celsius",
+        "with": [
+          "-7"
+        ]
+      },
+      {
+        "translate": "tfc.tooltip.temperature_celsius",
+        "with": [
+          "25"
+        ]
+      }
+    ]
+  },
+  "climate.strawberry.hydration": {
+    "translate": "tfc.field_guide.range",
+    "with": [
+      11,
+      90
+    ]
+  },
+  "climate.strawberry.temperature": {
+    "translate": "tfc.field_guide.range",
+    "with": [
+      {
+        "translate": "tfc.tooltip.temperature_celsius",
+        "with": [
+          "-3"
+        ]
+      },
+      {
+        "translate": "tfc.tooltip.temperature_celsius",
+        "with": [
+          "19"
+        ]
+      }
+    ]
+  },
+  "climate.sugarcane.hydration": {
+    "translate": "tfc.field_guide.range",
+    "with": [
+      25,
+      100
+    ]
+  },
+  "climate.sugarcane.temperature": {
+    "translate": "tfc.field_guide.range",
+    "with": [
+      {
+        "translate": "tfc.tooltip.temperature_celsius",
+        "with": [
+          "16"
+        ]
+      },
+      {
+        "translate": "tfc.tooltip.temperature_celsius",
+        "with": [
+          "31"
+        ]
+      }
+    ]
+  },
+  "climate.tomato.hydration": {
+    "translate": "tfc.field_guide.range",
+    "with": [
+      20,
+      85
+    ]
+  },
+  "climate.tomato.temperature": {
+    "translate": "tfc.field_guide.range",
+    "with": [
+      {
+        "translate": "tfc.tooltip.temperature_celsius",
+        "with": [
+          "2"
+        ]
+      },
+      {
+        "translate": "tfc.tooltip.temperature_celsius",
+        "with": [
+          "31"
+        ]
+      }
+    ]
+  },
+  "climate.wheat.hydration": {
+    "translate": "tfc.field_guide.range",
+    "with": [
+      15,
+      85
+    ]
+  },
+  "climate.wheat.temperature": {
+    "translate": "tfc.field_guide.range",
+    "with": [
+      {
+        "translate": "tfc.tooltip.temperature_celsius",
+        "with": [
+          "-7"
+        ]
+      },
+      {
+        "translate": "tfc.tooltip.temperature_celsius",
+        "with": [
+          "22"
+        ]
+      }
+    ]
+  },
+  "climate.wintergreen_berry.hydration": {
+    "translate": "tfc.field_guide.range",
+    "with": [
+      7,
+      85
+    ]
+  },
+  "climate.wintergreen_berry.temperature": {
+    "translate": "tfc.field_guide.range",
+    "with": [
+      {
+        "translate": "tfc.tooltip.temperature_celsius",
+        "with": [
+          "-10"
+        ]
+      },
+      {
+        "translate": "tfc.tooltip.temperature_celsius",
+        "with": [
+          "8"
+        ]
+      }
+    ]
+  },
+  "climate.yellow_bell_pepper.hydration": {
+    "translate": "tfc.field_guide.range",
+    "with": [
+      30,
+      95
+    ]
+  },
+  "climate.yellow_bell_pepper.temperature": {
+    "translate": "tfc.field_guide.range",
+    "with": [
+      {
+        "translate": "tfc.tooltip.temperature_celsius",
+        "with": [
+          "11"
+        ]
+      },
+      {
+        "translate": "tfc.tooltip.temperature_celsius",
+        "with": [
+          "31"
+        ]
+      }
+    ]
+  },
+  "composterTicks": {
+    "translate": "tfc.tooltip.time_delta_days",
+    "with": [
+      10
+    ]
+  },
+  "jackOLanternTicks": {
+    "translate": "tfc.tooltip.time_delta_days",
+    "with": [
+      4
+    ]
+  },
+  "jugCapacity": {
+    "translate": "tfc.tooltip.fluid_units",
+    "with": [
+      100
+    ]
+  },
+  "metalBucketCapacity": {
+    "translate": "tfc.tooltip.fluid_units",
+    "with": [
+      1000
+    ]
+  },
+  "pitKilnHeat": {
+    "color": "white",
+    "translate": "tfc.enum.heat.white"
+  },
+  "pitKilnTemperature": {
+    "translate": "tfc.tooltip.temperature_celsius",
+    "with": [
+      "1400"
+    ]
+  },
+  "pitKilnTicks": {
+    "translate": "tfc.field_guide.hours",
+    "with": [
+      6
+    ]
+  },
+  "torchTicks": {
+    "translate": "tfc.tooltip.time_delta_days",
+    "with": [
+      3
+    ]
+  },
+  "traitCharcoalGrilledModifier": "0.8",
+  "traitPreservedModifier": "2",
+  "traitWoodGrilledModifier": "1.25",
+  "woodenBucketCapacity": {
+    "translate": "tfc.tooltip.fluid_units",
+    "with": [
+      1000
+    ]
+  }
+}

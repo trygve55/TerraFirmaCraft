@@ -57,23 +57,37 @@
       "text": "Другим видом топлива для ламп является $(thing)жир$(). Чтобы сделать его, растопите 5 $(thing)жира$() в $(l:food/pot)горшке$() с водой. Единица жира горит два часа. Его можно использовать для приготовления $(l:core_mechanics/lighting#candles)свечей$()."
     },
     {
-      "type": "patchouli:multiblock",
-      "multiblock": {
-        "pattern": [
-          [
-            "X"
-          ],
-          [
-            "0"
-          ]
-        ],
-        "mapping": {
-          "X": "tfc:metal/lamp/blue_steel[lit=true]"
-        }
-      },
+      "type": "tfc:multimultiblock",
       "name": "Лампы на лаве",
-      "text": "Лава горит вечно, но может содержаться только в лампе из $(l:metalworking/steel#blue_steel)синей стали$().",
-      "enable_visualize": false
+      "text": "Lava will keep burning forever, but can only be held in a $(l:metalworking/steel#blue_steel)Blue Steel$() or $(l:metalworking/steel#red_steel)Red Steel$() lamp.",
+      "multiblocks": [
+        {
+          "pattern": [
+            [
+              "X"
+            ],
+            [
+              "0"
+            ]
+          ],
+          "mapping": {
+            "X": "tfc:metal/lamp/blue_steel[lit=true]"
+          }
+        },
+        {
+          "pattern": [
+            [
+              "X"
+            ],
+            [
+              "0"
+            ]
+          ],
+          "mapping": {
+            "X": "tfc:metal/lamp/red_steel[lit=true]"
+          }
+        }
+      ]
     },
     {
       "type": "tfc:anvil_recipe",

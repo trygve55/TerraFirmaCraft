@@ -31,7 +31,7 @@
     },
     {
       "type": "patchouli:text",
-      "text": "Ortam sıcaklığını okurken Termometre, 0 sinyalinin -40°C, 15 sinyalinin ise +40°C anlamına geldiği güçlü bir analog sinyal verir. Cihaz sıcaklığını okurken Termometre, 0 sinyalinin ısı olmadığını, 15 sinyalinin ise Göz Alıcı Beyaz anlamına geldiği zayıf bir analog sinyal verir. Termometrenin sinyal gücünü okumak için karşılaştırıcıya ihtiyacınız yoktur."
+      "text": "Ortam sıcaklığını okurken Termometre, 0 sinyalinin $(cfg:temperature:-40), 15 sinyalinin ise +$(cfg:temperature:40) anlamına geldiği güçlü bir analog sinyal verir. Cihaz sıcaklığını okurken Termometre, 0 sinyalinin ısı olmadığını, 15 sinyalinin ise Göz Alıcı Beyaz anlamına geldiği zayıf bir analog sinyal verir. Termometrenin sinyal gücünü okumak için karşılaştırıcıya ihtiyacınız yoktur."
     },
     {
       "type": "patchouli:crafting",

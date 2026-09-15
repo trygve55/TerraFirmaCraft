@@ -49,7 +49,7 @@
     {
       "type": "patchouli:text",
       "anchor": "vessel",
-      "text": "A pequena vessel é um desses itens. Como todos os itens de cerâmica, deve ser $(l:https://en.wikipedia.org/wiki/Pottery)despedida$() antes que possa ser usado. Disparar é um processo de $(l:core_mechanics/heating)aquecimento$() o item até um ponto em que a argila se transformará em um difícil $(thing)Cerâmica$() material, que requer aquecimento a 1200 ° C, ou $(e)$(bold)$(t:Yellow)Amarela$().$(br2)Para fazer isso no início do jogo, você precisará usar um $(l:getting_started/pit_kiln)Forno do poço$().",
+      "text": "The small vessel is one such item. Like all pottery items, it must be $(l:https://en.wikipedia.org/wiki/Pottery)fired$() before it can be used. Firing is a process of $(l:core_mechanics/heating)heating$() the item up to a point where the clay will turn into a hard $(thing)Ceramic$() material, which requires heating to $(cfg:pitKilnTemperature), or $(bold)$(cfg:pitKilnHeat)$().$(br2)In order to do this in the early game, you will need to use a $(l:getting_started/pit_kiln)Pit Kiln$().",
       "title": "Small Vessel"
     },
     {

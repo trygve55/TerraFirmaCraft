@@ -10,7 +10,7 @@
     },
     {
       "type": "patchouli:text",
-      "text": "The temperature of an item is represented by a color, which will change through the following values:$(br2)$(7)$(bold)Warming$(): 1 - 80 °C$(br)$(7)$(bold)Hot$(): 80 - 210 °C$(br)$(7)$(bold)Very Hot$(): 210 - 480 °C$(br)$(4)$(bold)Faint Red$(): 480 - 580 °C$(br)$(bold)$(4)Dark Red$(): 580 - 730 °C$(br)$(c)$(bold)Bright Red$(): 730 - 930 °C$(br)$(6)$(bold)Orange$(): 930 - 1100 °C$(br)$(#FFDD00)$(bold)$(t:Yellow)Yellow$(): 1100 - 1300 °C$(br)$(#FFDD00)$(t:Yellow White)$(bold)Yellow White$(): 1300 - 1400 °C$(br)$(d)$(bold)$(t:White)White$(): 1400 - 1500 °C$(br)$(d)$(bold)$(t:Brilliant White)Brilliant White$(): >1500 °C"
+      "text": "The temperature of an item is represented by a color, which will change through the following values:$(br2)$(7)$(bold)Warming$(): $(cfg:heat:1) - $(cfg:heat:80)$(br)$(7)$(bold)Hot$(): $(cfg:heat:80) - $(cfg:heat:210)$(br)$(7)$(bold)Very Hot$(): $(cfg:heat:210) - $(cfg:heat:480)$(br)$(4)$(bold)Faint Red$(): $(cfg:heat:480) - $(cfg:heat:580)$(br)$(bold)$(4)Dark Red$(): $(cfg:heat:580) - $(cfg:heat:730)$(br)$(c)$(bold)Bright Red$(): $(cfg:heat:730) - $(cfg:heat:930)$(br)$(6)$(bold)Orange$(): $(cfg:heat:930) - $(cfg:heat:1100)$(br)$(#FFDD00)$(bold)$(t:Yellow)Yellow$(): $(cfg:heat:1100) - $(cfg:heat:1300)$(br)$(#FFDD00)$(t:Yellow White)$(bold)Yellow White$(): $(cfg:heat:1300) - $(cfg:heat:1400)$(br)$(d)$(bold)$(t:White)White$(): $(cfg:heat:1400) - $(cfg:heat:1500)$(br)$(d)$(bold)$(t:Brilliant White)Brilliant White$(): >$(cfg:heat:1500)"
     }
   ],
   "read_by_default": true,

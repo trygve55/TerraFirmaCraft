@@ -57,23 +57,37 @@
       "text": "另一种较弱的燃料是$(thing)蜡脂$()。要制作蜡脂，在$(l:food/pot)陶锅$()中用淡水中煮 5 份$(thing)鲸脂$()。每单位蜡脂的燃烧时间为 2 游戏内小时。蜡脂可以用于制作$(l:core_mechanics/lighting#candles)蜡烛$()。"
     },
     {
-      "type": "patchouli:multiblock",
-      "multiblock": {
-        "pattern": [
-          [
-            "X"
-          ],
-          [
-            "0"
-          ]
-        ],
-        "mapping": {
-          "X": "tfc:metal/lamp/blue_steel[lit=true]"
-        }
-      },
+      "type": "tfc:multimultiblock",
       "name": "熔岩灯",
-      "text": "熔岩灯是一种$(thing)永久光源$()。不过，只有$(l:metalworking/steel#blue_steel)蓝钢$()灯才能盛装熔岩。",
-      "enable_visualize": false
+      "text": "Lava will keep burning forever, but can only be held in a $(l:metalworking/steel#blue_steel)Blue Steel$() or $(l:metalworking/steel#red_steel)Red Steel$() lamp.",
+      "multiblocks": [
+        {
+          "pattern": [
+            [
+              "X"
+            ],
+            [
+              "0"
+            ]
+          ],
+          "mapping": {
+            "X": "tfc:metal/lamp/blue_steel[lit=true]"
+          }
+        },
+        {
+          "pattern": [
+            [
+              "X"
+            ],
+            [
+              "0"
+            ]
+          ],
+          "mapping": {
+            "X": "tfc:metal/lamp/red_steel[lit=true]"
+          }
+        }
+      ]
     },
     {
       "type": "tfc:anvil_recipe",

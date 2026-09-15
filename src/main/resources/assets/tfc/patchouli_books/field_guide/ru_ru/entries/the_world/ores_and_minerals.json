@@ -684,7 +684,7 @@
       "item": "tfc:kaolin_clay",
       "title": "Каолинит",
       "link_recipes": false,
-      "text": "Каолинит — это мягкий $(thing)минерал$(), который используется в производстве $(l:metalworking/fire_clay)огнеупорной глины$(). Его можно найти на вершинах плато, в древних горах и на высокогорьях при $(l:core_mechanics/climate#temperature)температуре$() выше 18°C и $(l:core_mechanics/climate#rainfall)осадках$() более 300 мм. Цветок $(thing)кровавой лилии$() растет на каолиновой глине."
+      "text": "Каолинит — это мягкий $(thing)минерал$(), который используется в производстве $(l:metalworking/fire_clay)огнеупорной глины$(). Его можно найти на вершинах плато, в древних горах и на высокогорьях при $(l:core_mechanics/climate#temperature)температуре$() выше $(cfg:temperature:18) и $(l:core_mechanics/climate#rainfall)осадках$() более 300 мм. Цветок $(thing)кровавой лилии$() растет на каолиновой глине."
     },
     {
       "type": "tfc:multimultiblock",

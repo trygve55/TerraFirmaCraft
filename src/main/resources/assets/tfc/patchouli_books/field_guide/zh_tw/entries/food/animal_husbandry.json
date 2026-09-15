@@ -97,7 +97,7 @@
     {
       "type": "patchouli:text",
       "anchor": "pig",
-      "text": "$(thing)豬$()會在$(l:core_mechanics/climate#temperature)溫度$()在 -10 到 35°C 之間、$(l:core_mechanics/climate#rainfall)降雨量$()至少 200 毫米的溫和森林中生成。它們是沒有特殊功能的$(l:food/animal_husbandry#mammals)哺乳動物$()。它們會吃任何食物（可以是腐爛的）。它們一胎能生產 1-10 個幼崽，懷孕 19 天，80 天成年。衰老前它們可以產仔 6 次。",
+      "text": "$(thing)豬$()會在$(l:core_mechanics/climate#temperature)溫度$()在 $(cfg:temperature:-10) 到 $(cfg:temperature:35) 之間、$(l:core_mechanics/climate#rainfall)降雨量$()至少 200 毫米的溫和森林中生成。它們是沒有特殊功能的$(l:food/animal_husbandry#mammals)哺乳動物$()。它們會吃任何食物（可以是腐爛的）。它們一胎能生產 1-10 個幼崽，懷孕 19 天，80 天成年。衰老前它們可以產仔 6 次。",
       "title": "豬"
     },
     {
@@ -110,7 +110,7 @@
     {
       "type": "patchouli:text",
       "anchor": "rabbit",
-      "text": "$(thing)Rabbits$() spawn in $(l:core_mechanics/climate#temperature)temperatures$() above -16°C, and at least 15mm of $(l:core_mechanics/climate#rainfall)rainfall$(), changing their coat based on climate. They are $(l:food/animal_husbandry#mammals)Mammals$() with no special abilities, aside from being known for chewing on carrots and cabbage. They will eat any food, even if it is rotten. They have 1-6 children, are pregnant for just 19 days, and reach adulthood in 20 days. They can have children 6 times.",
+      "text": "$(thing)Rabbits$() spawn in $(l:core_mechanics/climate#temperature)temperatures$() above $(cfg:temperature:-16), and at least 15mm of $(l:core_mechanics/climate#rainfall)rainfall$(), changing their coat based on climate. They are $(l:food/animal_husbandry#mammals)Mammals$() with no special abilities, aside from being known for chewing on carrots and cabbage. They will eat any food, even if it is rotten. They have 1-6 children, are pregnant for just 19 days, and reach adulthood in 20 days. They can have children 6 times.",
       "title": "Rabbits"
     },
     {
@@ -123,7 +123,7 @@
     {
       "type": "patchouli:text",
       "anchor": "cow",
-      "text": "$(thing)牛$()是一種會在$(l:core_mechanics/climate#temperature)溫度$()在 -10 和 35°C 之間、$(l:core_mechanics/climate#rainfall)降雨量$()至少 250 毫米的大多數氣候中生成的$(l:food/animal_husbandry#dairy_animals)產奶動物$()。它們只吃$(thing)穀物$()（可以是腐爛的）。他們一胎能生產 1-2 個幼崽，懷孕 58 天，192 天成年。若從未擠過奶，衰老前它們可以產仔 13 次。若從未產過仔，衰老前它們可以擠奶 128 次，且每天都可擠奶。",
+      "text": "$(thing)牛$()是一種會在$(l:core_mechanics/climate#temperature)溫度$()在 $(cfg:temperature:-10) 和 $(cfg:temperature:35) 之間、$(l:core_mechanics/climate#rainfall)降雨量$()至少 250 毫米的大多數氣候中生成的$(l:food/animal_husbandry#dairy_animals)產奶動物$()。它們只吃$(thing)穀物$()（可以是腐爛的）。他們一胎能生產 1-2 個幼崽，懷孕 58 天，192 天成年。若從未擠過奶，衰老前它們可以產仔 13 次。若從未產過仔，衰老前它們可以擠奶 128 次，且每天都可擠奶。",
       "title": "牛"
     },
     {
@@ -136,7 +136,7 @@
     {
       "type": "patchouli:text",
       "anchor": "goat",
-      "text": "$(thing)山羊$()是一種會在$(l:core_mechanics/climate#temperature)溫度$()在 -12 到 25°C 之間、$(l:core_mechanics/climate#rainfall)降雨量$()至少 300 毫米的溫和的氣候中生成的$(l:food/animal_husbandry#dairy_animals)產奶動物$()。它們會吃$(thing)穀物$()、$(thing)水果$()和$(thing)蔬菜$()（可以是腐爛的）。他們一胎能生產 1-2 個幼崽，懷孕 32 天，96 天成年。若從未擠過奶，衰老前它們可以產仔 6 次。若從未產過仔，衰老前它們可以擠奶 60 次，且每三天可擠一次奶。",
+      "text": "$(thing)山羊$()是一種會在$(l:core_mechanics/climate#temperature)溫度$()在 $(cfg:temperature:-12) 到 $(cfg:temperature:25) 之間、$(l:core_mechanics/climate#rainfall)降雨量$()至少 300 毫米的溫和的氣候中生成的$(l:food/animal_husbandry#dairy_animals)產奶動物$()。它們會吃$(thing)穀物$()、$(thing)水果$()和$(thing)蔬菜$()（可以是腐爛的）。他們一胎能生產 1-2 個幼崽，懷孕 32 天，96 天成年。若從未擠過奶，衰老前它們可以產仔 6 次。若從未產過仔，衰老前它們可以擠奶 60 次，且每三天可擠一次奶。",
       "title": "山羊"
     },
     {
@@ -149,7 +149,7 @@
     {
       "type": "patchouli:text",
       "anchor": "yak",
-      "text": "$(thing)犛牛$()是一種會在$(l:core_mechanics/climate#temperature)溫度$()不超過 -11°C、$(l:core_mechanics/climate#rainfall)降雨量$()至少 100 毫米的寒冷的氣候中生成的$(l:food/animal_husbandry#dairy_animals)產奶動物$()。它們只吃新鮮的$(thing)穀物$()。它們一胎只能產 1 個幼崽，懷孕 64 天，180 天成年。若從未擠過奶，衰老前它們可以產仔 23 次。若從未產過仔，衰老前它們可以擠奶 230 次，且每天都可擠奶。",
+      "text": "$(thing)犛牛$()是一種會在$(l:core_mechanics/climate#temperature)溫度$()不超過 $(cfg:temperature:-11)、$(l:core_mechanics/climate#rainfall)降雨量$()至少 100 毫米的寒冷的氣候中生成的$(l:food/animal_husbandry#dairy_animals)產奶動物$()。它們只吃新鮮的$(thing)穀物$()。它們一胎只能產 1 個幼崽，懷孕 64 天，180 天成年。若從未擠過奶，衰老前它們可以產仔 23 次。若從未產過仔，衰老前它們可以擠奶 230 次，且每天都可擠奶。",
       "title": "犛牛"
     },
     {
@@ -162,7 +162,7 @@
     {
       "type": "patchouli:text",
       "anchor": "alpaca",
-      "text": "$(thing)羊駝$()是一種會在$(l:core_mechanics/climate#temperature)溫度$()在 -8 到 20°C 之間、$(l:core_mechanics/climate#rainfall)降雨量$()至少 250 毫米的溫和的氣候中生成的$(l:food/animal_husbandry#wooly_animals)產毛動物$()。它們會吃$(thing)穀物$()和$(thing)水果。他們一胎能生產 1-2 個幼崽，懷孕 36 天，98 天成年。若從未剪過毛，衰老前它們可以產仔 13 次。若從未產過仔，衰老前它們可以剪毛 180 次，且每 6 天長出一次羊毛。",
+      "text": "$(thing)羊駝$()是一種會在$(l:core_mechanics/climate#temperature)溫度$()在 $(cfg:temperature:-8) 到 $(cfg:temperature:20) 之間、$(l:core_mechanics/climate#rainfall)降雨量$()至少 250 毫米的溫和的氣候中生成的$(l:food/animal_husbandry#wooly_animals)產毛動物$()。它們會吃$(thing)穀物$()和$(thing)水果。他們一胎能生產 1-2 個幼崽，懷孕 36 天，98 天成年。若從未剪過毛，衰老前它們可以產仔 13 次。若從未產過仔，衰老前它們可以剪毛 180 次，且每 6 天長出一次羊毛。",
       "title": "羊駝"
     },
     {
@@ -175,7 +175,7 @@
     {
       "type": "patchouli:text",
       "anchor": "sheep",
-      "text": "$(thing)綿羊$()是一種會在$(l:core_mechanics/climate#temperature)溫度$()在 0 到 35°C 之間、$(l:core_mechanics/climate#rainfall)降雨量$() 70 到 300 毫米的較乾燥的氣候中生成的$(l:food/animal_husbandry#wooly_animals)產毛動物$()。它們會吃$(thing)穀物$()。它們一胎能生產 1-2 個幼崽，懷孕 32 天，56 天成年。若從未剪過毛，衰老前它們可以產仔 6 次。若從未產過仔，衰老前它們可以剪毛 60 次，且每 9 天長出一次羊毛。",
+      "text": "$(thing)綿羊$()是一種會在$(l:core_mechanics/climate#temperature)溫度$()在 $(cfg:temperature:0) 到 $(cfg:temperature:35) 之間、$(l:core_mechanics/climate#rainfall)降雨量$() 70 到 300 毫米的較乾燥的氣候中生成的$(l:food/animal_husbandry#wooly_animals)產毛動物$()。它們會吃$(thing)穀物$()。它們一胎能生產 1-2 個幼崽，懷孕 32 天，56 天成年。若從未剪過毛，衰老前它們可以產仔 6 次。若從未產過仔，衰老前它們可以剪毛 60 次，且每 9 天長出一次羊毛。",
       "title": "綿羊"
     },
     {
@@ -188,7 +188,7 @@
     {
       "type": "patchouli:text",
       "anchor": "musk_ox",
-      "text": "$(thing)Musk Oxen$() spawn in cold climates, with $(l:core_mechanics/climate#temperature)temperature$() between -25 and 0°C, and at least 100mm of $(l:core_mechanics/climate#rainfall)rainfall$(). They are $(l:food/animal_husbandry#wooly_animals)Wooly Animals$(). They eat $(thing)grains$(). They always have 1 child, are pregnant for 64 days, and reach adulthood in 168 days. They can have children 16 times, if they are never sheared, or be sheared 160 times if they are never bred. They grow wool every 3 days.",
+      "text": "$(thing)Musk Oxen$() spawn in cold climates, with $(l:core_mechanics/climate#temperature)temperature$() between $(cfg:temperature:-25) and $(cfg:temperature:0), and at least 100mm of $(l:core_mechanics/climate#rainfall)rainfall$(). They are $(l:food/animal_husbandry#wooly_animals)Wooly Animals$(). They eat $(thing)grains$(). They always have 1 child, are pregnant for 64 days, and reach adulthood in 168 days. They can have children 16 times, if they are never sheared, or be sheared 160 times if they are never bred. They grow wool every 3 days.",
       "title": "麝牛"
     },
     {
@@ -201,7 +201,7 @@
     {
       "type": "patchouli:text",
       "anchor": "bactrian_camel",
-      "text": "$(thing)Bactrian Camels$() spawn in cold deserts, with $(l:core_mechanics/climate#temperature)temperature$() of at most -5°C, and at most 100mm of $(l:core_mechanics/climate#rainfall)rainfall$(). They are $(l:food/animal_husbandry#wooly_animals)Wooly Animals$() and can be ridden. They are slower than horses, but faster on sand and snow. They eat $(thing)grains$() and $(thing)fruits$(). They have 1 child, are pregnant for 24 days, and become adults in 80 days. They can have children 8 times if they are never sheared, or be sheared 80 times if they are never bred. They grow wool every 7 days.",
+      "text": "$(thing)Bactrian Camels$() spawn in cold deserts, with $(l:core_mechanics/climate#temperature)temperature$() of at most $(cfg:temperature:-5), and at most 100mm of $(l:core_mechanics/climate#rainfall)rainfall$(). They are $(l:food/animal_husbandry#wooly_animals)Wooly Animals$() and can be ridden. They are slower than horses, but faster on sand and snow. They eat $(thing)grains$() and $(thing)fruits$(). They have 1 child, are pregnant for 24 days, and become adults in 80 days. They can have children 8 times if they are never sheared, or be sheared 80 times if they are never bred. They grow wool every 7 days.",
       "title": "Bactrian Camel"
     },
     {
@@ -214,7 +214,7 @@
     {
       "type": "patchouli:text",
       "anchor": "chicken",
-      "text": "$(thing)雞$()是一種會在$(l:core_mechanics/climate#temperature)溫度$()不低於 14°C、$(l:core_mechanics/climate#rainfall)降雨量$()至少 225 毫米的溫暖的森林中生成的$(l:food/animal_husbandry#oviparous_animals)卵生動物$()。它們會吃$(thing)穀物$()、$(thing)水果$()、$(thing)蔬菜$()和$(thing)種子$()（可以是腐爛的）。每 30 小時產一次卵，8 天孵化，24 天成年。衰老前可以產卵 100 次。",
+      "text": "$(thing)雞$()是一種會在$(l:core_mechanics/climate#temperature)溫度$()不低於 $(cfg:temperature:14)、$(l:core_mechanics/climate#rainfall)降雨量$()至少 225 毫米的溫暖的森林中生成的$(l:food/animal_husbandry#oviparous_animals)卵生動物$()。它們會吃$(thing)穀物$()、$(thing)水果$()、$(thing)蔬菜$()和$(thing)種子$()（可以是腐爛的）。每 30 小時產一次卵，8 天孵化，24 天成年。衰老前可以產卵 100 次。",
       "title": "雞"
     },
     {
@@ -227,7 +227,7 @@
     {
       "type": "patchouli:text",
       "anchor": "duck",
-      "text": "$(thing)鴨$()是一種會在$(l:core_mechanics/climate#temperature)溫度$()在 -25 到 30°C、$(l:core_mechanics/climate#rainfall)降雨量$()至少 100 毫米的大多數平原中生成的$(l:food/animal_husbandry#oviparous_animals)卵生動物$()。它們會吃$(thing)穀物$()、$(thing)水果$()、$(thing)蔬菜$()和$(thing)種子$()（可以是腐爛的）。每 32 小時產一次卵，8 天孵化，32 天成年。衰老前可以產卵 72 次。",
+      "text": "$(thing)鴨$()是一種會在$(l:core_mechanics/climate#temperature)溫度$()在 $(cfg:temperature:-25) 到 $(cfg:temperature:30)、$(l:core_mechanics/climate#rainfall)降雨量$()至少 100 毫米的大多數平原中生成的$(l:food/animal_husbandry#oviparous_animals)卵生動物$()。它們會吃$(thing)穀物$()、$(thing)水果$()、$(thing)蔬菜$()和$(thing)種子$()（可以是腐爛的）。每 32 小時產一次卵，8 天孵化，32 天成年。衰老前可以產卵 72 次。",
       "title": "鴨"
     },
     {
@@ -240,7 +240,7 @@
     {
       "type": "patchouli:text",
       "anchor": "quail",
-      "text": "$(thing)鵪鶉$()是一種會在$(l:core_mechanics/climate#temperature)溫度$()在 -15 到 15°C、$(l:core_mechanics/climate#rainfall)降雨量$()至少 200 毫米的較冷的氣候中生成的$(l:food/animal_husbandry#oviparous_animals)卵生動物$()。它們會吃$(thing)穀物$()、$(thing)水果$()、$(thing)蔬菜$()和$(thing)種子$()（可以是腐爛的）。每 28 小時產一次卵，8 天孵化， 22 天成年。衰老前可以產卵 48 次。",
+      "text": "$(thing)鵪鶉$()是一種會在$(l:core_mechanics/climate#temperature)溫度$()在 $(cfg:temperature:-15) 到 $(cfg:temperature:15)、$(l:core_mechanics/climate#rainfall)降雨量$()至少 200 毫米的較冷的氣候中生成的$(l:food/animal_husbandry#oviparous_animals)卵生動物$()。它們會吃$(thing)穀物$()、$(thing)水果$()、$(thing)蔬菜$()和$(thing)種子$()（可以是腐爛的）。每 28 小時產一次卵，8 天孵化， 22 天成年。衰老前可以產卵 48 次。",
       "title": "鵪鶉"
     },
     {
@@ -253,7 +253,7 @@
     {
       "type": "patchouli:text",
       "anchor": "donkey",
-      "text": "$(thing)驢$()是一種會在$(l:core_mechanics/climate#temperature)溫度$()在至少 -15°C、$(l:core_mechanics/climate#rainfall)降雨量$() 130 到 400mm 的潮溼的平原中生成的$(l:food/animal_husbandry#horses)騎乘動物$()。可以在它們身上放置一個$(thing)箱子$()。它們會吃$(thing)穀物$()和$(thing)水果$()。它們一胎只能產 1 個幼崽，懷孕 19 天，80 天成年。衰老前它們可以產仔 6 次。",
+      "text": "$(thing)驢$()是一種會在$(l:core_mechanics/climate#temperature)溫度$()在至少 $(cfg:temperature:-15)、$(l:core_mechanics/climate#rainfall)降雨量$() 130 到 400mm 的潮溼的平原中生成的$(l:food/animal_husbandry#horses)騎乘動物$()。可以在它們身上放置一個$(thing)箱子$()。它們會吃$(thing)穀物$()和$(thing)水果$()。它們一胎只能產 1 個幼崽，懷孕 19 天，80 天成年。衰老前它們可以產仔 6 次。",
       "title": "驢"
     },
     {
@@ -266,7 +266,7 @@
     {
       "type": "patchouli:text",
       "anchor": "mule",
-      "text": "$(thing)騾子$()是一種會在$(l:core_mechanics/climate#temperature)溫度$()在至少 -15°C、$(l:core_mechanics/climate#rainfall)降雨量$()在 130 到 400mm 的平原中生成的$(l:food/animal_husbandry#horses)騎乘動物$()。可以在它們身上放置一個$(thing)箱子$()。它們是$(thing)馬$()和$(thing)驢$()雜交的產物，只有雄性，無法繁殖。他們吃$(thing)穀物$()和$(thing)水果$()。80 天成年。",
+      "text": "$(thing)騾子$()是一種會在$(l:core_mechanics/climate#temperature)溫度$()在至少 $(cfg:temperature:-15)、$(l:core_mechanics/climate#rainfall)降雨量$()在 130 到 400mm 的平原中生成的$(l:food/animal_husbandry#horses)騎乘動物$()。可以在它們身上放置一個$(thing)箱子$()。它們是$(thing)馬$()和$(thing)驢$()雜交的產物，只有雄性，無法繁殖。他們吃$(thing)穀物$()和$(thing)水果$()。80 天成年。",
       "title": "騾子"
     },
     {
@@ -279,7 +279,7 @@
     {
       "type": "patchouli:text",
       "anchor": "horse",
-      "text": "$(thing)馬$()是一種會在$(l:core_mechanics/climate#temperature)溫度$()在至少 -15°C、$(l:core_mechanics/climate#rainfall)降雨量$()在 130 到 400 毫米的平原中生成的$(l:food/animal_husbandry#horses)騎乘動物$()。它們會吃$(thing)穀物$()和$(thing)水果$()。它們一胎只能產 1 個幼崽，懷孕 19 天，80 天成年。衰老前它們可以產仔 6 次。",
+      "text": "$(thing)馬$()是一種會在$(l:core_mechanics/climate#temperature)溫度$()在至少 $(cfg:temperature:-15)、$(l:core_mechanics/climate#rainfall)降雨量$()在 130 到 400 毫米的平原中生成的$(l:food/animal_husbandry#horses)騎乘動物$()。它們會吃$(thing)穀物$()和$(thing)水果$()。它們一胎只能產 1 個幼崽，懷孕 19 天，80 天成年。衰老前它們可以產仔 6 次。",
       "title": "馬"
     },
     {
@@ -292,7 +292,7 @@
     {
       "type": "patchouli:text",
       "anchor": "dromedary_camel",
-      "text": "$(thing)Dromedary Camels$() spawn in drier climates, with $(l:core_mechanics/climate#temperature)temperature$() of at least -5°C, and at most 100mm of $(l:core_mechanics/climate#rainfall)rainfall$(). They are $(l:food/animal_husbandry#mammals)Mammals$() that can be ridden. They are slower than horses, but are immune to cacti and run fast on sand. They eat $(thing)grains$() and $(thing)fruits$(). They have 1 child, are pregnant for 19 days, and reach adulthood in 80 days. They can have children 6 times.",
+      "text": "$(thing)Dromedary Camels$() spawn in drier climates, with $(l:core_mechanics/climate#temperature)temperature$() of at least $(cfg:temperature:-5), and at most 100mm of $(l:core_mechanics/climate#rainfall)rainfall$(). They are $(l:food/animal_husbandry#mammals)Mammals$() that can be ridden. They are slower than horses, but are immune to cacti and run fast on sand. They eat $(thing)grains$() and $(thing)fruits$(). They have 1 child, are pregnant for 19 days, and reach adulthood in 80 days. They can have children 6 times.",
       "title": "Dromedary Camels"
     },
     {
@@ -305,7 +305,7 @@
     {
       "type": "patchouli:text",
       "anchor": "frog",
-      "text": "$(thing)Frogs$() spawn in $(l:core_mechanics/climate#temperature)temperatures$() above -13°C, and at least 150mm of $(l:core_mechanics/climate#rainfall)rainfall$(). They can be familiarized, and when bred they will lay eggs in fresh water, which hatch into tadpoles. They will eat fish and spider eyes. ",
+      "text": "$(thing)Frogs$() spawn in $(l:core_mechanics/climate#temperature)temperatures$() above $(cfg:temperature:-13), and at least 150mm of $(l:core_mechanics/climate#rainfall)rainfall$(). They can be familiarized, and when bred they will lay eggs in fresh water, which hatch into tadpoles. They will eat fish and spider eyes. ",
       "title": "Frogs"
     },
     {

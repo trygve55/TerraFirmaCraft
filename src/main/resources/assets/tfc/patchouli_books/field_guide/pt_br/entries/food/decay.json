@@ -15,7 +15,7 @@
     {
       "type": "patchouli:text",
       "anchor": "small_vessels",
-      "text": "One of the easiest ways to preserve food is to use a $(thing)Vessel$(). $(thing)Large Vessels$() are a block which can store up to nine items, and when $(thing)sealed$() the items inside will gain the $(5)$(bold)Preserved$() status, which extends their remaining lifetime by 2x.$(br2)$(thing)Small Vessels$() are a item which can store up to four other items, and will also apply the $(5)$(bold)Preserved$() status to their contents.",
+      "text": "One of the easiest ways to preserve food is to use a $(thing)Vessel$(). $(thing)Large Vessels$() are a block which can store up to nine items, and when $(thing)sealed$() the items inside will gain the $(5)$(bold)Preserved$() status, which extends their remaining lifetime by $(cfg:traitPreservedModifier)x.$(br2)$(thing)Small Vessels$() are a item which can store up to four other items, and will also apply the $(5)$(bold)Preserved$() status to their contents.",
       "title": "Vessels"
     },
     {
@@ -46,7 +46,7 @@
     {
       "type": "tfc:heat_recipe",
       "recipe": "tfc:heating/food/cooked_mutton",
-      "text": "Instead, a $(l:getting_started/firepit)Firepit$() or a $(l:food/grill)Grill$() can even provide a buff for using it! For example, cooking mutton (pictured above) in a $(thing)Firepit$() will increase its lifetime by 1.33x, and cooking in a $(thing)Grill$() will increase its lifetime by 1.66x!"
+      "text": "Instead, a $(l:food/grill)Grill$() can even provide a buff for using it! Cooking mutton (pictured above) in a $(thing)Grill$() gives it the $(thing)Wood Grilled$() trait, multiplying its remaining lifetime by $(cfg:traitWoodGrilledModifier)x. Cooking in a $(l:metalworking/charcoal_forge)Charcoal Forge$() instead gives the $(thing)Charcoal Grilled$() trait, which multiplies its lifetime by $(cfg:traitCharcoalGrilledModifier)x."
     },
     {
       "type": "patchouli:text",

@@ -15,7 +15,7 @@
     {
       "type": "patchouli:text",
       "anchor": "small_vessels",
-      "text": "食品を保存する最も簡単な方法の 1 つは、$(thing)壺$() を使用することです。 $(thing)大きな壺$() は最大 9 個のアイテムを保管できるブロックで、$(thing)密封$() すると、中のアイテムは $(5)$(bold)保存済み$() ステータスを獲得します。 $(br2)$(thing)小さな壺$() は、アイテムを最大 4 つ保管できるアイテムで、$(5)$(bold)保存済み$() も適用されます。",
+      "text": "One of the easiest ways to preserve food is to use a $(thing)Vessel$(). $(thing)Large Vessels$() are a block which can store up to nine items, and when $(thing)sealed$() the items inside will gain the $(5)$(bold)Preserved$() status, which extends their remaining lifetime by $(cfg:traitPreservedModifier)x.$(br2)$(thing)Small Vessels$() are a item which can store up to four other items, and will also apply the $(5)$(bold)Preserved$() status to their contents.",
       "title": "壺"
     },
     {
@@ -46,7 +46,7 @@
     {
       "type": "tfc:heat_recipe",
       "recipe": "tfc:heating/food/cooked_mutton",
-      "text": "代わりに、 $(l:getting_started/firepit)焚き火$() または $(l:food/grill)グリル$() を使用すると、腐敗時間を延長するバフを得ることもできます。 たとえば、$(thing)焚き火$() で羊肉を調理すると期限が 1.33 倍に伸び、$(thing)グリル$() で調理すると期限が 1.66 倍に伸びます。"
+      "text": "Instead, a $(l:food/grill)Grill$() can even provide a buff for using it! Cooking mutton (pictured above) in a $(thing)Grill$() gives it the $(thing)Wood Grilled$() trait, multiplying its remaining lifetime by $(cfg:traitWoodGrilledModifier)x. Cooking in a $(l:metalworking/charcoal_forge)Charcoal Forge$() instead gives the $(thing)Charcoal Grilled$() trait, which multiplies its lifetime by $(cfg:traitCharcoalGrilledModifier)x."
     },
     {
       "type": "patchouli:text",

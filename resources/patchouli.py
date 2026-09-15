@@ -14,6 +14,7 @@ PAGE_BREAK = 'page_break'
 EMPTY_LAST_PAGE = 'empty_last_page'
 TABLE_PAGE = 'table'
 TABLE_PAGE_SMALL = 'table_small'
+MACRO = re.compile(r'\$\([^)]*\)')
 TABLE_KEYS = {'strings': '#strings', 'columns': '#columns', 'first_column_width': '#first_column_width', 'column_width': '#column_width', 'row_height': '#row_height', 'left_buffer': '#left_buffer', 'top_buffer': '#top_buffer', 'title': '#title', 'legend': '#legend', 'draw_background': '#draw_background'}
 
 
@@ -68,8 +69,9 @@ class Page(NamedTuple):
                 elif isinstance(value, list):
                     for i, subValue in enumerate(value):
                         text = subValue.get('text')
-                        # Only translate cells that contain translatable characters
-                        if text is not None and any(c.isalpha() for c in text):
+                        # Only translate cells that contain translatable characters, ignoring macros such as
+                        # $(cfg:temperature:12), which are resolved at render time
+                        if text is not None and any(c.isalpha() for c in MACRO.sub('', text)):
                             self.data[key][i]['text'] = i18n.translate(text)
                 else:
                     self.data[key] = i18n.translate(value)
@@ -418,8 +420,12 @@ def blank() -> Page:
 # ==============
 
 
-def multimultiblock(text_content: TranslatableStr, *pages) -> Page:
-    return page('multimultiblock', {'text': text_content, 'multiblocks': [p.data['multiblock'] if 'multiblock' in p.data else p.data['multiblock_id'] for p in pages]}, custom=True, translation_keys=('text',))
+def multimultiblock(text_content: TranslatableStr, *pages, title: TranslatableStr | None = None) -> Page:
+    return page('multimultiblock', {
+        'name': title,  # Not rendered in game, as this is a template page, but the online field guide uses it
+        'text': text_content,
+        'multiblocks': [p.data['multiblock'] if 'multiblock' in p.data else p.data['multiblock_id'] for p in pages]
+    }, custom=True, translation_keys=('text', 'name'))
 
 
 def knapping(recipe: str, text_content: TranslatableStr) -> Page: return recipe_page('knapping_recipe', recipe, text_content)

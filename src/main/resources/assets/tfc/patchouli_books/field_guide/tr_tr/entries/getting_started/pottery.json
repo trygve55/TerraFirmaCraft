@@ -49,7 +49,7 @@
     {
       "type": "patchouli:text",
       "anchor": "vessel",
-      "text": "Küçük kap bu tür eşyalardan biridir. Tüm çömlek eşyaları gibi, kullanılmadan önce $(l:https://en.wikipedia.org/wiki/Pottery)pişirilmesi$() gerekir. Pişirme, eşyanın kilin sert bir $(thing)Seramik$() malzemeye dönüşeceği noktaya kadar $(l:core_mechanics/heating)ısıtılması$() işlemidir; bu da 1400 °C'ye veya $(#FFDF00)$(bold)$(t:Yellow White)Sarı Beyaz$() renge kadar ısıtılmayı gerektirir.$(br2)Bunu oyunun başlarında yapabilmek için bir $(l:getting_started/pit_kiln)Çukur Fırın$() kullanmanız gerekecektir.",
+      "text": "The small vessel is one such item. Like all pottery items, it must be $(l:https://en.wikipedia.org/wiki/Pottery)fired$() before it can be used. Firing is a process of $(l:core_mechanics/heating)heating$() the item up to a point where the clay will turn into a hard $(thing)Ceramic$() material, which requires heating to $(cfg:pitKilnTemperature), or $(bold)$(cfg:pitKilnHeat)$().$(br2)In order to do this in the early game, you will need to use a $(l:getting_started/pit_kiln)Pit Kiln$().",
       "title": "Küçük Kap"
     },
     {

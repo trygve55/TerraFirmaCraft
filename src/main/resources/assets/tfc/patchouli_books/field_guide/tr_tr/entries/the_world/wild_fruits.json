@@ -44,7 +44,7 @@
     {
       "type": "patchouli:text",
       "anchor": "cherry",
-      "text": "Şu özelliklere sahip bölgelerde bulunabilir: $(br)$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): -5.2 - 14 °C$(br)$(bold)$(l:core_mechanics/climate#rainfall)Yağış$(): 100 - 350mm$(br2)Büyüme için gereken koşullar:$(br)$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): -6.4 - 15.2 °C$(br)$(bold)$(l:food/hydration)Hidrasyon$(): 7 - 80%$(br2)Kiraz ağaçları Ocak'tan Mart'a kadar olan aylarda büyür, Nisan ve Mayıs aylarında çiçek açmaya başlar ve Haziran ayında meyve verir.",
+      "text": "Şu özelliklere sahip bölgelerde bulunabilir: $(br)$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): $(cfg:temperature:-5.2) - $(cfg:temperature:14)$(br)$(bold)$(l:core_mechanics/climate#rainfall)Yağış$(): 100 - 350mm$(br2)Büyüme için gereken koşullar:$(br)$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): $(cfg:climate.cherry.temperature)$(br)$(bold)$(l:food/hydration)Hidrasyon$(): $(cfg:climate.cherry.hydration)%$(br2)Kiraz ağaçları Ocak'tan Mart'a kadar olan aylarda büyür, Nisan ve Mayıs aylarında çiçek açmaya başlar ve Haziran ayında meyve verir.",
       "title": "Kiraz Ağacı"
     },
     {
@@ -268,7 +268,7 @@
     {
       "type": "patchouli:text",
       "anchor": "green_apple",
-      "text": "Şu özelliklere sahip bölgelerde bulunabilir: $(br)$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): -10.6 - 10.4 °C$(br)$(bold)$(l:core_mechanics/climate#rainfall)Yağış$(): 130 - 280mm$(br2)Büyüme için gereken koşullar:$(br)$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): -11.8 - 11.6 °C$(br)$(bold)$(l:food/hydration)Hidrasyon$(): 10 - 75%$(br2)Yeşil elma ağaçları Mart'tan Temmuz'a kadar büyür, Ağustos ve Eylül aylarında çiçek açmaya başlar ve Ekim ayında meyve verir.",
+      "text": "Şu özelliklere sahip bölgelerde bulunabilir: $(br)$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): $(cfg:temperature:-10.6) - $(cfg:temperature:10.4)$(br)$(bold)$(l:core_mechanics/climate#rainfall)Yağış$(): 130 - 280mm$(br2)Büyüme için gereken koşullar:$(br)$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): $(cfg:climate.green_apple.temperature)$(br)$(bold)$(l:food/hydration)Hidrasyon$(): $(cfg:climate.green_apple.hydration)%$(br2)Yeşil elma ağaçları Mart'tan Temmuz'a kadar büyür, Ağustos ve Eylül aylarında çiçek açmaya başlar ve Ekim ayında meyve verir.",
       "title": "Yeşil Elma Ağacı"
     },
     {
@@ -492,7 +492,7 @@
     {
       "type": "patchouli:text",
       "anchor": "lemon",
-      "text": "Şu özelliklere sahip bölgelerde bulunabilir: $(br)$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): 7.4 - 24.8 °C$(br)$(bold)$(l:core_mechanics/climate#rainfall)Yağış$(): 220 - 440mm$(br2)Büyüme için gereken koşullar:$(br)$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): 6.2 - 26 °C$(br)$(bold)$(l:food/hydration)Hidrasyon$(): 19 - 95%$(br2)Limon ağaçları Şubat'tan Mayıs'a kadar büyür, Haziran ve Temmuz aylarında çiçek açmaya başlar ve Ağustos ayında meyve verir.",
+      "text": "Şu özelliklere sahip bölgelerde bulunabilir: $(br)$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): $(cfg:temperature:7.4) - $(cfg:temperature:24.8)$(br)$(bold)$(l:core_mechanics/climate#rainfall)Yağış$(): 220 - 440mm$(br2)Büyüme için gereken koşullar:$(br)$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): $(cfg:climate.lemon.temperature)$(br)$(bold)$(l:food/hydration)Hidrasyon$(): $(cfg:climate.lemon.hydration)%$(br2)Limon ağaçları Şubat'tan Mayıs'a kadar büyür, Haziran ve Temmuz aylarında çiçek açmaya başlar ve Ağustos ayında meyve verir.",
       "title": "Limon Ağacı"
     },
     {
@@ -716,7 +716,7 @@
     {
       "type": "patchouli:text",
       "anchor": "olive",
-      "text": "Şu özelliklere sahip bölgelerde bulunabilir: $(br)$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): 2 - 23 °C$(br)$(bold)$(l:core_mechanics/climate#rainfall)Yağış$(): 250 - 450mm$(br2)Büyüme için gereken koşullar:$(br)$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): 0.8 - 24.2 °C$(br)$(bold)$(l:food/hydration)Hidrasyon$(): 22 - 95%$(br2)Zeytin ağaçları Mart'tan Temmuz'a kadar büyür, Ağustos ve Eylül aylarında çiçek açmaya başlar ve Ekim ayında meyve verir.$(br2)Zeytinler, lambalarda yakıt olarak kullanılabilen $(l:mechanics/lamps#olives)Zeytinyağı$() üretmek için kullanılabilir.",
+      "text": "Şu özelliklere sahip bölgelerde bulunabilir: $(br)$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): $(cfg:temperature:2) - $(cfg:temperature:23)$(br)$(bold)$(l:core_mechanics/climate#rainfall)Yağış$(): 250 - 450mm$(br2)Büyüme için gereken koşullar:$(br)$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): $(cfg:climate.olive.temperature)$(br)$(bold)$(l:food/hydration)Hidrasyon$(): $(cfg:climate.olive.hydration)%$(br2)Zeytin ağaçları Mart'tan Temmuz'a kadar büyür, Ağustos ve Eylül aylarında çiçek açmaya başlar ve Ekim ayında meyve verir.$(br2)Zeytinler, lambalarda yakıt olarak kullanılabilen $(l:mechanics/lamps#olives)Zeytinyağı$() üretmek için kullanılabilir.",
       "title": "Zeytin Ağacı"
     },
     {
@@ -940,7 +940,7 @@
     {
       "type": "patchouli:text",
       "anchor": "orange",
-      "text": "Şu özelliklere sahip bölgelerde bulunabilir: $(br)$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): 9.2 - 40 °C$(br)$(bold)$(l:core_mechanics/climate#rainfall)Yağış$(): 300 - 500mm$(br2)Büyüme için gereken koşullar:$(br)$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): 8 - 41.2 °C$(br)$(bold)$(l:food/hydration)Hidrasyon$(): 27 - 100%$(br2)Portakal ağaçları Mart'tan Haziran'a kadar büyür, Temmuz ve Ağustos aylarında çiçek açmaya başlar ve Eylül ayında meyve verir.",
+      "text": "Şu özelliklere sahip bölgelerde bulunabilir: $(br)$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): $(cfg:temperature:9.2) - $(cfg:temperature:40)$(br)$(bold)$(l:core_mechanics/climate#rainfall)Yağış$(): 300 - 500mm$(br2)Büyüme için gereken koşullar:$(br)$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): $(cfg:climate.orange.temperature)$(br)$(bold)$(l:food/hydration)Hidrasyon$(): $(cfg:climate.orange.hydration)%$(br2)Portakal ağaçları Mart'tan Haziran'a kadar büyür, Temmuz ve Ağustos aylarında çiçek açmaya başlar ve Eylül ayında meyve verir.",
       "title": "Portakal Ağacı"
     },
     {
@@ -1164,7 +1164,7 @@
     {
       "type": "patchouli:text",
       "anchor": "peach",
-      "text": "Şu özelliklere sahip bölgelerde bulunabilir: $(br)$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): -3.4 - 15.8 °C$(br)$(bold)$(l:core_mechanics/climate#rainfall)Yağış$(): 180 - 470mm$(br2)Büyüme için gereken koşullar:$(br)$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): -4.6 - 17 °C$(br)$(bold)$(l:food/hydration)Hidrasyon$(): 15 - 95%$(br2)Şeftali ağaçları Aralık'tan Mart'a kadar büyür, Nisan ve Mayıs aylarında çiçek açmaya başlar ve Haziran ayında meyve verir.",
+      "text": "Şu özelliklere sahip bölgelerde bulunabilir: $(br)$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): $(cfg:temperature:-3.4) - $(cfg:temperature:15.8)$(br)$(bold)$(l:core_mechanics/climate#rainfall)Yağış$(): 180 - 470mm$(br2)Büyüme için gereken koşullar:$(br)$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): $(cfg:climate.peach.temperature)$(br)$(bold)$(l:food/hydration)Hidrasyon$(): $(cfg:climate.peach.hydration)%$(br2)Şeftali ağaçları Aralık'tan Mart'a kadar büyür, Nisan ve Mayıs aylarında çiçek açmaya başlar ve Haziran ayında meyve verir.",
       "title": "Şeftali Ağacı"
     },
     {
@@ -1388,7 +1388,7 @@
     {
       "type": "patchouli:text",
       "anchor": "plum",
-      "text": "Şu özelliklere sahip bölgelerde bulunabilir: $(br)$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): -7 - 12.2 °C$(br)$(bold)$(l:core_mechanics/climate#rainfall)Yağış$(): 120 - 300mm$(br2)Büyüme için gereken koşullar:$(br)$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): -8.2 - 13.4 °C$(br)$(bold)$(l:food/hydration)Hidrasyon$(): 9 - 75%$(br2)Erik ağaçları Ocak'tan Nisan'a kadar büyür, Mayıs ve Haziran aylarında çiçek açmaya başlar ve Temmuz ayında meyve verir.",
+      "text": "Şu özelliklere sahip bölgelerde bulunabilir: $(br)$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): $(cfg:temperature:-7) - $(cfg:temperature:12.2)$(br)$(bold)$(l:core_mechanics/climate#rainfall)Yağış$(): 120 - 300mm$(br2)Büyüme için gereken koşullar:$(br)$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): $(cfg:climate.plum.temperature)$(br)$(bold)$(l:food/hydration)Hidrasyon$(): $(cfg:climate.plum.hydration)%$(br2)Erik ağaçları Ocak'tan Nisan'a kadar büyür, Mayıs ve Haziran aylarında çiçek açmaya başlar ve Temmuz ayında meyve verir.",
       "title": "Erik Ağacı"
     },
     {
@@ -1612,7 +1612,7 @@
     {
       "type": "patchouli:text",
       "anchor": "red_apple",
-      "text": "Şu özelliklere sahip bölgelerde bulunabilir: $(br)$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): -10.6 - 10.4 °C$(br)$(bold)$(l:core_mechanics/climate#rainfall)Yağış$(): 190 - 310mm$(br2)Büyüme için gereken koşullar:$(br)$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): -11.8 - 11.6 °C$(br)$(bold)$(l:food/hydration)Hidrasyon$(): 16 - 75%$(br2)Kırmızı elma ağaçları Mart'tan Temmuz'a kadar büyür, Ağustos ve Eylül aylarında çiçek açmaya başlar ve Ekim ayında meyve verir.",
+      "text": "Şu özelliklere sahip bölgelerde bulunabilir: $(br)$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): $(cfg:temperature:-10.6) - $(cfg:temperature:10.4)$(br)$(bold)$(l:core_mechanics/climate#rainfall)Yağış$(): 190 - 310mm$(br2)Büyüme için gereken koşullar:$(br)$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): $(cfg:climate.red_apple.temperature)$(br)$(bold)$(l:food/hydration)Hidrasyon$(): $(cfg:climate.red_apple.hydration)%$(br2)Kırmızı elma ağaçları Mart'tan Temmuz'a kadar büyür, Ağustos ve Eylül aylarında çiçek açmaya başlar ve Ekim ayında meyve verir.",
       "title": "Kırmızı Elma Ağacı"
     },
     {
@@ -1836,7 +1836,7 @@
     {
       "type": "patchouli:text",
       "anchor": "banana",
-      "text": "Şu özelliklere sahip bölgelerde bulunabilir: $(br)$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): 11 - 40 °C$(br)$(bold)$(l:core_mechanics/climate#rainfall)Yağış$(): 280 - 500mm$(br2)Büyüme için gereken koşullar:$(br)$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): 9.8 - 41.2 °C$(br)$(bold)$(l:food/hydration)Hidrasyon$(): 25 - 100%$(br2)Muzlar özel bir meyve ağacı türüdür. Sadece dikey olarak büyürler, yaprakları yoktur ve sadece en üst blokta meyve verirler. Fidanlar, bitkinin çiçek açan kısmından düşer. Bir muz bitkisi hasat edildikten sonra ölür ve bir daha meyve vermez. İlkbaharda yeniden dikilmesi gerekir.",
+      "text": "Can be found in regions with: $(br)$(bold)$(l:core_mechanics/climate#temperature)Temperature$(): $(cfg:temperature:11) - $(cfg:temperature:40)$(br)$(bold)$(l:core_mechanics/climate#rainfall)Rainfall$(): 280 - 500mm$(br2)Conditions required for growth:$(br)$(bold)$(l:core_mechanics/climate#temperature)Temperature$(): $(cfg:climate.banana.temperature)$(br)$(bold)$(l:food/hydration)Hydration$(): $(cfg:climate.banana.hydration)%$(br2)Bananas grow only vertically, lack leaves, and only fruit at the topmost block. Saplings are dropped from the flowering part of the plant. Once a banana plant is harvested, it dies, and must be replanted in the spring.",
       "title": "Muz Ağacı"
     },
     {
@@ -2353,7 +2353,7 @@
     {
       "type": "patchouli:text",
       "anchor": "blackberry",
-      "text": "Şu özelliklere sahip bölgelerde bulunabilir: $(br)$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): -5.2 - 19.4 °C$(br)$(bold)$(l:core_mechanics/climate#rainfall)Yağış$(): 200 - 500mm$(br2)Büyüme için gereken koşullar:$(br)$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): -6.4 - 20.6 °C$(br)$(bold)$(l:food/hydration)Hidrasyon$(): 17 - 100%$(br2)Böğürtlen çalıları Şubat'tan Mayıs'a kadar büyür, Haziran ve Temmuz aylarında çiçek açmaya başlar ve Ağustos ayında meyve verir.$(br2)Az ağaçlı alanlarda bulunabilirler.",
+      "text": "Şu özelliklere sahip bölgelerde bulunabilir: $(br)$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): $(cfg:temperature:-5.2) - $(cfg:temperature:19.4)$(br)$(bold)$(l:core_mechanics/climate#rainfall)Yağış$(): 200 - 500mm$(br2)Büyüme için gereken koşullar:$(br)$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): $(cfg:climate.blackberry.temperature)$(br)$(bold)$(l:food/hydration)Hidrasyon$(): $(cfg:climate.blackberry.hydration)%$(br2)Böğürtlen çalıları Şubat'tan Mayıs'a kadar büyür, Haziran ve Temmuz aylarında çiçek açmaya başlar ve Ağustos ayında meyve verir.$(br2)Az ağaçlı alanlarda bulunabilirler.",
       "title": "Böğürtlen Çalısı"
     },
     {
@@ -2453,7 +2453,7 @@
     {
       "type": "patchouli:text",
       "anchor": "raspberry",
-      "text": "Şu özelliklere sahip bölgelerde bulunabilir: $(br)$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): -10.6 - 14 °C$(br)$(bold)$(l:core_mechanics/climate#rainfall)Yağış$(): 180 - 450mm$(br2)Büyüme için gereken koşullar:$(br)$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): -11.8 - 15.2 °C$(br)$(bold)$(l:food/hydration)Hidrasyon$(): 15 - 95%$(br2)Ahududu çalıları Nisan'dan Temmuz'a kadar büyür, Ağustos ve Eylül aylarında çiçek açmaya başlar ve Ekim ayında meyve verir.$(br2)Az ağaçlı alanlarda bulunabilirler.",
+      "text": "Şu özelliklere sahip bölgelerde bulunabilir: $(br)$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): $(cfg:temperature:-10.6) - $(cfg:temperature:14)$(br)$(bold)$(l:core_mechanics/climate#rainfall)Yağış$(): 180 - 450mm$(br2)Büyüme için gereken koşullar:$(br)$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): $(cfg:climate.raspberry.temperature)$(br)$(bold)$(l:food/hydration)Hidrasyon$(): $(cfg:climate.raspberry.hydration)%$(br2)Ahududu çalıları Nisan'dan Temmuz'a kadar büyür, Ağustos ve Eylül aylarında çiçek açmaya başlar ve Ekim ayında meyve verir.$(br2)Az ağaçlı alanlarda bulunabilirler.",
       "title": "Ahududu Çalısı"
     },
     {
@@ -2553,7 +2553,7 @@
     {
       "type": "patchouli:text",
       "anchor": "blueberry",
-      "text": "Şu özelliklere sahip bölgelerde bulunabilir: $(br)$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): -8.8 - 8.6 °C$(br)$(bold)$(l:core_mechanics/climate#rainfall)Yağış$(): 150 - 400mm$(br2)Büyüme için gereken koşullar:$(br)$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): -10 - 9.8 °C$(br)$(bold)$(l:food/hydration)Hidrasyon$(): 12 - 90%$(br2)Yaban mersini çalıları Şubat'tan Mayıs'a kadar büyür, Haziran ve Temmuz aylarında çiçek açmaya başlar ve Ağustos ayında meyve verir.$(br2)Az ağaçlı alanlarda bulunabilirler.",
+      "text": "Şu özelliklere sahip bölgelerde bulunabilir: $(br)$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): $(cfg:temperature:-8.8) - $(cfg:temperature:8.6)$(br)$(bold)$(l:core_mechanics/climate#rainfall)Yağış$(): 150 - 400mm$(br2)Büyüme için gereken koşullar:$(br)$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): $(cfg:climate.blueberry.temperature)$(br)$(bold)$(l:food/hydration)Hidrasyon$(): $(cfg:climate.blueberry.hydration)%$(br2)Yaban mersini çalıları Şubat'tan Mayıs'a kadar büyür, Haziran ve Temmuz aylarında çiçek açmaya başlar ve Ağustos ayında meyve verir.$(br2)Az ağaçlı alanlarda bulunabilirler.",
       "title": "Yaban Mersini Çalısı"
     },
     {
@@ -2653,7 +2653,7 @@
     {
       "type": "patchouli:text",
       "anchor": "elderberry",
-      "text": "Şu özelliklere sahip bölgelerde bulunabilir: $(br)$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): -5.2 - 15.8 °C$(br)$(bold)$(l:core_mechanics/climate#rainfall)Yağış$(): 120 - 380mm$(br2)Büyüme için gereken koşullar:$(br)$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): -6.4 - 17 °C$(br)$(bold)$(l:food/hydration)Hidrasyon$(): 9 - 85%$(br2)Mürver çalıları Şubat'tan Mayıs'a kadar büyür, Haziran ve Temmuz aylarında çiçek açmaya başlar ve Ağustos ayında meyve verir.$(br2)Az ağaçlı alanlarda bulunabilirler.",
+      "text": "Şu özelliklere sahip bölgelerde bulunabilir: $(br)$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): $(cfg:temperature:-5.2) - $(cfg:temperature:15.8)$(br)$(bold)$(l:core_mechanics/climate#rainfall)Yağış$(): 120 - 380mm$(br2)Büyüme için gereken koşullar:$(br)$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): $(cfg:climate.elderberry.temperature)$(br)$(bold)$(l:food/hydration)Hidrasyon$(): $(cfg:climate.elderberry.hydration)%$(br2)Mürver çalıları Şubat'tan Mayıs'a kadar büyür, Haziran ve Temmuz aylarında çiçek açmaya başlar ve Ağustos ayında meyve verir.$(br2)Az ağaçlı alanlarda bulunabilirler.",
       "title": "Mürver Çalısı"
     },
     {
@@ -3035,7 +3035,7 @@
     {
       "type": "patchouli:text",
       "anchor": "bunchberry",
-      "text": "Şu özelliklere sahip bölgelerde bulunabilir: $(br)$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): -14.2 - 1.4 °C$(br)$(bold)$(l:core_mechanics/climate#rainfall)Yağış$(): 280 - 500mm$(br2)Büyüme için gereken koşullar:$(br)$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): -15.4 - 2.6 °C$(br)$(bold)$(l:food/hydration)Hidrasyon$(): 25 - 100%$(br2)Bunchberry çalıları Mayıs'tan Temmuz'a kadar büyür, Ağustos ve Eylül aylarında çiçek açmaya başlar ve Ekim ayında meyve verir.$(br2)Ormanlarda bulunabilirler.",
+      "text": "Şu özelliklere sahip bölgelerde bulunabilir: $(br)$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): $(cfg:temperature:-14.2) - $(cfg:temperature:1.4)$(br)$(bold)$(l:core_mechanics/climate#rainfall)Yağış$(): 280 - 500mm$(br2)Büyüme için gereken koşullar:$(br)$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): $(cfg:climate.bunchberry.temperature)$(br)$(bold)$(l:food/hydration)Hidrasyon$(): $(cfg:climate.bunchberry.hydration)%$(br2)Bunchberry çalıları Mayıs'tan Temmuz'a kadar büyür, Ağustos ve Eylül aylarında çiçek açmaya başlar ve Ekim ayında meyve verir.$(br2)Ormanlarda bulunabilirler.",
       "title": "Bunchberry Çalısı"
     },
     {
@@ -3099,7 +3099,7 @@
     {
       "type": "patchouli:text",
       "anchor": "gooseberry",
-      "text": "Şu özelliklere sahip bölgelerde bulunabilir: $(br)$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): -7 - 12.2 °C$(br)$(bold)$(l:core_mechanics/climate#rainfall)Yağış$(): 200 - 500mm$(br2)Büyüme için gereken koşullar:$(br)$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): -8.2 - 13.4 °C$(br)$(bold)$(l:food/hydration)Hidrasyon$(): 17 - 100%$(br2)Bektaşi üzümü çalıları Nisan'dan Temmuz'a kadar büyür, Ağustos ve Eylül aylarında çiçek açmaya başlar ve Ekim ayında meyve verir.$(br2)Ormanlarda bulunabilirler.",
+      "text": "Şu özelliklere sahip bölgelerde bulunabilir: $(br)$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): $(cfg:temperature:-7) - $(cfg:temperature:12.2)$(br)$(bold)$(l:core_mechanics/climate#rainfall)Yağış$(): 200 - 500mm$(br2)Büyüme için gereken koşullar:$(br)$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): $(cfg:climate.gooseberry.temperature)$(br)$(bold)$(l:food/hydration)Hidrasyon$(): $(cfg:climate.gooseberry.hydration)%$(br2)Bektaşi üzümü çalıları Nisan'dan Temmuz'a kadar büyür, Ağustos ve Eylül aylarında çiçek açmaya başlar ve Ekim ayında meyve verir.$(br2)Ormanlarda bulunabilirler.",
       "title": "Bektaşi Üzümü Çalısı"
     },
     {
@@ -3163,7 +3163,7 @@
     {
       "type": "patchouli:text",
       "anchor": "snowberry",
-      "text": "Şu özelliklere sahip bölgelerde bulunabilir: $(br)$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): -10.6 - 5 °C$(br)$(bold)$(l:core_mechanics/climate#rainfall)Yağış$(): 200 - 500mm$(br2)Büyüme için gereken koşullar:$(br)$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): -11.8 - 6.2 °C$(br)$(bold)$(l:food/hydration)Hidrasyon$(): 17 - 100%$(br2)Kar yemişi çalıları Mart'tan Haziran'a kadar büyür, Temmuz ve Ağustos aylarında çiçek açmaya başlar ve Eylül ayında meyve verir.$(br2)Ormanlarda bulunabilirler.",
+      "text": "Şu özelliklere sahip bölgelerde bulunabilir: $(br)$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): $(cfg:temperature:-10.6) - $(cfg:temperature:5)$(br)$(bold)$(l:core_mechanics/climate#rainfall)Yağış$(): 200 - 500mm$(br2)Büyüme için gereken koşullar:$(br)$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): $(cfg:climate.snowberry.temperature)$(br)$(bold)$(l:food/hydration)Hidrasyon$(): $(cfg:climate.snowberry.hydration)%$(br2)Kar yemişi çalıları Mart'tan Haziran'a kadar büyür, Temmuz ve Ağustos aylarında çiçek açmaya başlar ve Eylül ayında meyve verir.$(br2)Ormanlarda bulunabilirler.",
       "title": "Kar Yemişi Çalısı"
     },
     {
@@ -3227,7 +3227,7 @@
     {
       "type": "patchouli:text",
       "anchor": "cloudberry",
-      "text": "Şu özelliklere sahip bölgelerde bulunabilir: $(br)$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): -14.2 - 6.8 °C$(br)$(bold)$(l:core_mechanics/climate#rainfall)Yağış$(): 80 - 320mm$(br2)Büyüme için gereken koşullar:$(br)$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): -15.4 - 8 °C$(br)$(bold)$(l:food/hydration)Hidrasyon$(): 5 - 80%$(br2)Dut çalısı (Cloudberry) Şubat'tan Mayıs'a kadar büyür, Haziran'dan Ağustos'a kadar çiçek açmaya başlar ve Eylül ayında meyve verir.$(br2)Ormanlarda bulunabilirler.",
+      "text": "Şu özelliklere sahip bölgelerde bulunabilir: $(br)$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): $(cfg:temperature:-14.2) - $(cfg:temperature:6.8)$(br)$(bold)$(l:core_mechanics/climate#rainfall)Yağış$(): 80 - 320mm$(br2)Büyüme için gereken koşullar:$(br)$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): $(cfg:climate.cloudberry.temperature)$(br)$(bold)$(l:food/hydration)Hidrasyon$(): $(cfg:climate.cloudberry.hydration)%$(br2)Dut çalısı (Cloudberry) Şubat'tan Mayıs'a kadar büyür, Haziran'dan Ağustos'a kadar çiçek açmaya başlar ve Eylül ayında meyve verir.$(br2)Ormanlarda bulunabilirler.",
       "title": "Dut Çalısı (Cloudberry)"
     },
     {
@@ -3291,7 +3291,7 @@
     {
       "type": "patchouli:text",
       "anchor": "strawberry",
-      "text": "Şu özelliklere sahip bölgelerde bulunabilir: $(br)$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): -1.6 - 17.6 °C$(br)$(bold)$(l:core_mechanics/climate#rainfall)Yağış$(): 140 - 400mm$(br2)Büyüme için gereken koşullar:$(br)$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): -2.8 - 18.8 °C$(br)$(bold)$(l:food/hydration)Hidrasyon$(): 11 - 90%$(br2)Çilek çalıları Ekim'den Aralık'a kadar büyür, Ocak ve Şubat aylarında çiçek açmaya başlar ve Mart ayında meyve verir.$(br2)Ormanlarda bulunabilirler.",
+      "text": "Şu özelliklere sahip bölgelerde bulunabilir: $(br)$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): $(cfg:temperature:-1.6) - $(cfg:temperature:17.6)$(br)$(bold)$(l:core_mechanics/climate#rainfall)Yağış$(): 140 - 400mm$(br2)Büyüme için gereken koşullar:$(br)$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): $(cfg:climate.strawberry.temperature)$(br)$(bold)$(l:food/hydration)Hidrasyon$(): $(cfg:climate.strawberry.hydration)%$(br2)Çilek çalıları Ekim'den Aralık'a kadar büyür, Ocak ve Şubat aylarında çiçek açmaya başlar ve Mart ayında meyve verir.$(br2)Ormanlarda bulunabilirler.",
       "title": "Çilek Çalısı"
     },
     {
@@ -3355,7 +3355,7 @@
     {
       "type": "patchouli:text",
       "anchor": "wintergreen_berry",
-      "text": "Şu özelliklere sahip bölgelerde bulunabilir: $(br)$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): -8.8 - 6.8 °C$(br)$(bold)$(l:core_mechanics/climate#rainfall)Yağış$(): 100 - 370mm$(br2)Büyüme için gereken koşullar:$(br)$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): -10 - 8 °C$(br)$(bold)$(l:food/hydration)Hidrasyon$(): 7 - 85%$(br2)Wintergreen (keklik üzümü) çalıları Mayıs'tan Eylül'e kadar büyür, Ekim ve Kasım aylarında çiçek açmaya başlar ve Aralık ayında meyve verir.$(br2)Ormanlarda bulunabilirler.",
+      "text": "Şu özelliklere sahip bölgelerde bulunabilir: $(br)$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): $(cfg:temperature:-8.8) - $(cfg:temperature:6.8)$(br)$(bold)$(l:core_mechanics/climate#rainfall)Yağış$(): 100 - 370mm$(br2)Büyüme için gereken koşullar:$(br)$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): $(cfg:climate.wintergreen_berry.temperature)$(br)$(bold)$(l:food/hydration)Hidrasyon$(): $(cfg:climate.wintergreen_berry.hydration)%$(br2)Wintergreen (keklik üzümü) çalıları Mayıs'tan Eylül'e kadar büyür, Ekim ve Kasım aylarında çiçek açmaya başlar ve Aralık ayında meyve verir.$(br2)Ormanlarda bulunabilirler.",
       "title": "Wintergreen (Keklik Üzümü) Çalısı"
     },
     {
@@ -3419,7 +3419,7 @@
     {
       "type": "patchouli:text",
       "anchor": "cranberry",
-      "text": "Şu özelliklere sahip bölgelerde bulunabilir: $(br)$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): -14.2 - 8.6 °C$(br)$(bold)$(l:core_mechanics/climate#rainfall)Yağış$(): 250 - 500mm$(br2)Büyüme için gereken koşullar:$(br)$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): -15.4 - 9.8 °C$(br)$(bold)$(l:food/hydration)Hidrasyon$(): 25 - 100%$(br2)Turna yemişi (cranberry) çalıları Mart'tan Haziran'a kadar büyür, Temmuz ve Ağustos aylarında çiçek açmaya başlar ve Eylül ayında meyve verir.$(br2)Ormanlarda bulunabilirler. Çoğu küçük çalının aksine, turna yemişi çalıları su altında yetiştirilir.",
+      "text": "Şu özelliklere sahip bölgelerde bulunabilir: $(br)$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): $(cfg:temperature:-14.2) - $(cfg:temperature:8.6)$(br)$(bold)$(l:core_mechanics/climate#rainfall)Yağış$(): 250 - 500mm$(br2)Büyüme için gereken koşullar:$(br)$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): $(cfg:climate.cranberry.temperature)$(br)$(bold)$(l:food/hydration)Hidrasyon$(): $(cfg:climate.cranberry.hydration)%$(br2)Turna yemişi (cranberry) çalıları Mart'tan Haziran'a kadar büyür, Temmuz ve Ağustos aylarında çiçek açmaya başlar ve Eylül ayında meyve verir.$(br2)Ormanlarda bulunabilirler. Çoğu küçük çalının aksine, turna yemişi çalıları su altında yetiştirilir.",
       "title": "Turna Yemişi Çalısı"
     },
     {

@@ -40,7 +40,7 @@
         }
       },
       "name": "蠟燭",
-      "text": "蠟燭可以燃燒11天, 並且同樣可以重新點燃.",
+      "text": "蠟燭可以燃燒$(cfg:candleTicks), 並且同樣可以重新點燃.",
       "enable_visualize": false
     },
     {
@@ -65,7 +65,7 @@
         }
       },
       "name": "南瓜燈",
-      "text": "南瓜燈是被點亮的$(thing)雕刻過的南瓜$(), 它可以持續發光4.5天, 然後就會變回雕刻過的南瓜.",
+      "text": "南瓜燈是被點亮的$(thing)雕刻過的南瓜$(), 它可以持續發光$(cfg:jackOLanternTicks), 然後就會變回雕刻過的南瓜.",
       "enable_visualize": false
     },
     {

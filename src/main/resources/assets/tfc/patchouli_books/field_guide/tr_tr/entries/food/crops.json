@@ -48,7 +48,7 @@
     {
       "type": "patchouli:text",
       "anchor": "barley",
-      "text": "$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): -7 - 23 °C$(br)$(bold)$(l:food/hydration)Hidrasyon$(): 10 - 70 %$(br)$(bold)Kategori$(): Tahıl$(br)$(br)$(bold)$(3)N: 75 $(bold)$(6)P: +20 $(bold)$(d)K: +20$()$(br)Arpa, tek blokluk bir ekindir. Arpa tohumları tarım arazisine ekilebilir ve ürün olarak $(thing)Arpa$() ve $(thing)Arpa Tohumu$() verir.",
+      "text": "$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): $(cfg:climate.barley.temperature)$(br)$(bold)$(l:food/hydration)Hidrasyon$(): $(cfg:climate.barley.hydration) %$(br)$(bold)Kategori$(): Tahıl$(br)$(br)$(bold)$(3)N: 75 $(bold)$(6)P: +20 $(bold)$(d)K: +20$()$(br)Arpa, tek blokluk bir ekindir. Arpa tohumları tarım arazisine ekilebilir ve ürün olarak $(thing)Arpa$() ve $(thing)Arpa Tohumu$() verir.",
       "title": "Arpa"
     },
     {
@@ -196,7 +196,7 @@
     {
       "type": "patchouli:text",
       "anchor": "oat",
-      "text": "$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): -7 - 22 °C$(br)$(bold)$(l:food/hydration)Hidrasyon$(): 25 - 85 %$(br)$(bold)Kategori$(): Tahıl$(br)$(br)$(bold)$(3)N: 100 $(bold)$(6)P: +40 $(bold)$(d)K: +30$()$(br)Yulaf, tek blokluk bir ekindir. Yulaf tohumları tarım arazisine ekilebilir ve ürün olarak $(thing)Yulaf$() ve $(thing)Yulaf Tohumu$() verir.",
+      "text": "$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): $(cfg:climate.oat.temperature)$(br)$(bold)$(l:food/hydration)Hidrasyon$(): $(cfg:climate.oat.hydration) %$(br)$(bold)Kategori$(): Tahıl$(br)$(br)$(bold)$(3)N: 100 $(bold)$(6)P: +40 $(bold)$(d)K: +30$()$(br)Yulaf, tek blokluk bir ekindir. Yulaf tohumları tarım arazisine ekilebilir ve ürün olarak $(thing)Yulaf$() ve $(thing)Yulaf Tohumu$() verir.",
       "title": "Yulaf"
     },
     {
@@ -344,7 +344,7 @@
     {
       "type": "patchouli:text",
       "anchor": "rye",
-      "text": "$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): -7 - 18 °C$(br)$(bold)$(l:food/hydration)Hidrasyon$(): 15 - 80 %$(br)$(bold)Kategori$(): Tahıl$(br)$(br)$(bold)$(3)N: 100 $(bold)$(6)P: +20 $(bold)$(d)K: +40$()$(br)Çavdar, tek blokluk bir ekindir. Çavdar tohumları tarım arazisine ekilebilir ve ürün olarak $(thing)Çavdar$() ve $(thing)Çavdar Tohumu$() verir.",
+      "text": "$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): $(cfg:climate.rye.temperature)$(br)$(bold)$(l:food/hydration)Hidrasyon$(): $(cfg:climate.rye.hydration) %$(br)$(bold)Kategori$(): Tahıl$(br)$(br)$(bold)$(3)N: 100 $(bold)$(6)P: +20 $(bold)$(d)K: +40$()$(br)Çavdar, tek blokluk bir ekindir. Çavdar tohumları tarım arazisine ekilebilir ve ürün olarak $(thing)Çavdar$() ve $(thing)Çavdar Tohumu$() verir.",
       "title": "Çavdar"
     },
     {
@@ -492,7 +492,7 @@
     {
       "type": "patchouli:text",
       "anchor": "maize",
-      "text": "$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): -7 - 27 °C$(br)$(bold)$(l:food/hydration)Hidrasyon$(): 50 - 100 %$(br)$(bold)Kategori$(): Tahıl$(br)$(br)$(bold)$(3)N: 90 $(bold)$(6)P: +25 $(bold)$(d)K: +25$()$(br)Mısır, iki blok yüksekliğinde bir ekindir. Mısır tohumları tarım arazisine ekilebilir, iki blok yüksekliğe kadar büyür ve ürün olarak $(thing)Mısır$() ve $(thing)Mısır Tohumu$() verir.",
+      "text": "$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): $(cfg:climate.maize.temperature)$(br)$(bold)$(l:food/hydration)Hidrasyon$(): $(cfg:climate.maize.hydration) %$(br)$(bold)Kategori$(): Tahıl$(br)$(br)$(bold)$(3)N: 90 $(bold)$(6)P: +25 $(bold)$(d)K: +25$()$(br)Mısır, iki blok yüksekliğinde bir ekindir. Mısır tohumları tarım arazisine ekilebilir, iki blok yüksekliğe kadar büyür ve ürün olarak $(thing)Mısır$() ve $(thing)Mısır Tohumu$() verir.",
       "title": "Mısır"
     },
     {
@@ -630,7 +630,7 @@
     {
       "type": "patchouli:text",
       "anchor": "wheat",
-      "text": "$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): -7 - 22 °C$(br)$(bold)$(l:food/hydration)Hidrasyon$(): 15 - 85 %$(br)$(bold)Kategori$(): Tahıl$(br)$(br)$(bold)$(3)N: 100 $(bold)$(6)P: +30 $(bold)$(d)K: +30$()$(br)Buğday, tek blokluk bir ekindir. Buğday tohumları tarım arazisine ekilebilir ve ürün olarak $(thing)Buğday$() ve $(thing)Buğday Tohumu$() verir.",
+      "text": "$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): $(cfg:climate.wheat.temperature)$(br)$(bold)$(l:food/hydration)Hidrasyon$(): $(cfg:climate.wheat.hydration) %$(br)$(bold)Kategori$(): Tahıl$(br)$(br)$(bold)$(3)N: 100 $(bold)$(6)P: +30 $(bold)$(d)K: +30$()$(br)Buğday, tek blokluk bir ekindir. Buğday tohumları tarım arazisine ekilebilir ve ürün olarak $(thing)Buğday$() ve $(thing)Buğday Tohumu$() verir.",
       "title": "Buğday"
     },
     {
@@ -778,7 +778,7 @@
     {
       "type": "patchouli:text",
       "anchor": "rice",
-      "text": "$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): 8 - 31 °C$(br)$(bold)$(l:food/hydration)Hidrasyon$(): 35 - 100 %$(br)$(bold)Kategori$(): Tahıl$(br)$(br)$(bold)$(3)N: 40 $(bold)$(6)P: 30 $(bold)$(d)K: 30$()$(br)Pirinç, tek blokluk bir ekindir. Pirinç su altında yetiştirilmelidir; tek blok derinliğindeki tatlı su içinde, tarım arazisine ekilmelidir. Ürün olarak $(thing)Pirinç$() ve $(thing)Pirinç Tohumu$() verir. Çoğu tahılın aksine, pirinç dengeli bir besin dağılımı gerektirir.",
+      "text": "$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): $(cfg:climate.rice.temperature)$(br)$(bold)$(l:food/hydration)Hidrasyon$(): $(cfg:climate.rice.hydration) %$(br)$(bold)Kategori$(): Tahıl$(br)$(br)$(bold)$(3)N: 40 $(bold)$(6)P: 30 $(bold)$(d)K: 30$()$(br)Pirinç, tek blokluk bir ekindir. Pirinç su altında yetiştirilmelidir; tek blok derinliğindeki tatlı su içinde, tarım arazisine ekilmelidir. Ürün olarak $(thing)Pirinç$() ve $(thing)Pirinç Tohumu$() verir. Çoğu tahılın aksine, pirinç dengeli bir besin dağılımı gerektirir.",
       "title": "Pirinç"
     },
     {
@@ -926,7 +926,7 @@
     {
       "type": "patchouli:text",
       "anchor": "cassava",
-      "text": "$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): 10 - 31 °C$(br)$(bold)$(l:food/hydration)Hidrasyon$(): 45 - 100 %$(br)$(bold)Kategori$(): Baklagil$(br)$(br)$(bold)$(3)N: +50 $(bold)$(6)P: 40 $(bold)$(d)K: 20$()$(br)Manyok, tek blokluk bir ekindir. Manyok tohumları tarım arazisine ekilebilir ve ürün olarak $(thing)Manyok$() ve $(thing)Manyok Tohumu$() verir.",
+      "text": "$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): $(cfg:climate.cassava.temperature)$(br)$(bold)$(l:food/hydration)Hidrasyon$(): $(cfg:climate.cassava.hydration) %$(br)$(bold)Kategori$(): Baklagil$(br)$(br)$(bold)$(3)N: +50 $(bold)$(6)P: 40 $(bold)$(d)K: 20$()$(br)Manyok, tek blokluk bir ekindir. Manyok tohumları tarım arazisine ekilebilir ve ürün olarak $(thing)Manyok$() ve $(thing)Manyok Tohumu$() verir.",
       "title": "Manyok"
     },
     {
@@ -1040,7 +1040,7 @@
     {
       "type": "patchouli:text",
       "anchor": "green_bean",
-      "text": "$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): -2 - 25 °C$(br)$(bold)$(l:food/hydration)Hidrasyon$(): 25 - 90 %$(br)$(bold)Kategori$(): Baklagil$(br)$(br)$(bold)$(3)N: +80 $(bold)$(6)P: 50 $(bold)$(d)K: 40$()$(br)Taze fasulye, tırmanıcı ve iki blok yüksekliğinde bir ekindir. Taze fasulye tohumları tarım arazisine ekilebilir, bir çubuk mevcutsa iki blok yüksekliğe kadar büyür ve ürün olarak $(thing)Taze Fasulye$() ve $(thing)Taze Fasulye Tohumu$() verir.",
+      "text": "$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): $(cfg:climate.green_bean.temperature)$(br)$(bold)$(l:food/hydration)Hidrasyon$(): $(cfg:climate.green_bean.hydration) %$(br)$(bold)Kategori$(): Baklagil$(br)$(br)$(bold)$(3)N: +80 $(bold)$(6)P: 50 $(bold)$(d)K: 40$()$(br)Taze fasulye, tırmanıcı ve iki blok yüksekliğinde bir ekindir. Taze fasulye tohumları tarım arazisine ekilebilir, bir çubuk mevcutsa iki blok yüksekliğe kadar büyür ve ürün olarak $(thing)Taze Fasulye$() ve $(thing)Taze Fasulye Tohumu$() verir.",
       "title": "Green Beans"
     },
     {
@@ -1220,7 +1220,7 @@
     {
       "type": "patchouli:text",
       "anchor": "lentil",
-      "text": "$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): -5 - 25 °C$(br)$(bold)$(l:food/hydration)Hidrasyon$(): 15 - 50 %$(br)$(bold)Kategori$(): Baklagil$(br)$(br)$(bold)$(3)N: +80 $(bold)$(6)P: 20 $(bold)$(d)K: 20$()$(br)Mercimek, tek blokluk bir ekindir. Mercimek tohumları tarım arazisine ekilebilir ve ürün olarak $(thing)Mercimek$() ve $(thing)Mercimek Tohumu$() verir.",
+      "text": "$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): $(cfg:climate.lentil.temperature)$(br)$(bold)$(l:food/hydration)Hidrasyon$(): $(cfg:climate.lentil.hydration) %$(br)$(bold)Kategori$(): Baklagil$(br)$(br)$(bold)$(3)N: +80 $(bold)$(6)P: 20 $(bold)$(d)K: 20$()$(br)Mercimek, tek blokluk bir ekindir. Mercimek tohumları tarım arazisine ekilebilir ve ürün olarak $(thing)Mercimek$() ve $(thing)Mercimek Tohumu$() verir.",
       "title": "Lentils"
     },
     {
@@ -1334,7 +1334,7 @@
     {
       "type": "patchouli:text",
       "anchor": "peanut",
-      "text": "$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): 11 - 31 °C$(br)$(bold)$(l:food/hydration)Hidrasyon$(): 20 - 80 %$(br)$(bold)Kategori$(): Baklagil$(br)$(br)$(bold)$(3)N: +90 $(bold)$(6)P: 50 $(bold)$(d)K: 50$()$(br)Yer fıstığı, tek blokluk bir ekindir. Yer fıstığı tohumları tarım arazisine ekilebilir ve ürün olarak $(thing)Yer Fıstığı$() ve $(thing)Yer Fıstığı Tohumu$() verir.",
+      "text": "$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): $(cfg:climate.peanut.temperature)$(br)$(bold)$(l:food/hydration)Hidrasyon$(): $(cfg:climate.peanut.hydration) %$(br)$(bold)Kategori$(): Baklagil$(br)$(br)$(bold)$(3)N: +90 $(bold)$(6)P: 50 $(bold)$(d)K: 50$()$(br)Yer fıstığı, tek blokluk bir ekindir. Yer fıstığı tohumları tarım arazisine ekilebilir ve ürün olarak $(thing)Yer Fıstığı$() ve $(thing)Yer Fıstığı Tohumu$() verir.",
       "title": "Peanuts"
     },
     {
@@ -1448,7 +1448,7 @@
     {
       "type": "patchouli:text",
       "anchor": "soybean",
-      "text": "$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): -7 - 22 °C$(br)$(bold)$(l:food/hydration)Hidrasyon$(): 25 - 90 %$(br)$(bold)Kategori$(): Baklagil$(br)$(br)$(bold)$(3)N: +80 $(bold)$(6)P: 60 $(bold)$(d)K: 30$()$(br)Soya fasulyesi, tek blokluk bir ekindir. Soya fasulyesi tohumları tarım arazisine ekilebilir ve ürün olarak $(thing)Soya Fasulyesi$() ve $(thing)Soya Fasulyesi Tohumu$() verir.",
+      "text": "$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): $(cfg:climate.soybean.temperature)$(br)$(bold)$(l:food/hydration)Hidrasyon$(): $(cfg:climate.soybean.hydration) %$(br)$(bold)Kategori$(): Baklagil$(br)$(br)$(bold)$(3)N: +80 $(bold)$(6)P: 60 $(bold)$(d)K: 30$()$(br)Soya fasulyesi, tek blokluk bir ekindir. Soya fasulyesi tohumları tarım arazisine ekilebilir ve ürün olarak $(thing)Soya Fasulyesi$() ve $(thing)Soya Fasulyesi Tohumu$() verir.",
       "title": "Soya Fasulyesi"
     },
     {
@@ -1579,7 +1579,7 @@
     {
       "type": "patchouli:text",
       "anchor": "beet",
-      "text": "$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): -10 - 27 °C$(br)$(bold)$(l:food/hydration)Hidrasyon$(): 10 - 70 %$(br)$(bold)Kategori$(): Sebze$(br)$(br)$(bold)$(3)N: 40 $(bold)$(6)P: 30 $(bold)$(d)K: 50$()$(br)Pancar, tek blokluk bir ekindir. Pancar tohumları tarım arazisine ekilebilir ve ürün olarak $(thing)Pancar$() ve $(thing)Pancar Tohumu$() verir.",
+      "text": "$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): $(cfg:climate.beet.temperature)$(br)$(bold)$(l:food/hydration)Hidrasyon$(): $(cfg:climate.beet.hydration) %$(br)$(bold)Kategori$(): Sebze$(br)$(br)$(bold)$(3)N: 40 $(bold)$(6)P: 30 $(bold)$(d)K: 50$()$(br)Pancar, tek blokluk bir ekindir. Pancar tohumları tarım arazisine ekilebilir ve ürün olarak $(thing)Pancar$() ve $(thing)Pancar Tohumu$() verir.",
       "title": "Pancar"
     },
     {
@@ -1693,7 +1693,7 @@
     {
       "type": "patchouli:text",
       "anchor": "cabbage",
-      "text": "$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): -10 - 27 °C$(br)$(bold)$(l:food/hydration)Hidrasyon$(): 10 - 65 %$(br)$(bold)Kategori$(): Sebze$(br)$(br)$(bold)$(3)N: 50 $(bold)$(6)P: 20 $(bold)$(d)K: 40$()$(br)Lahana, tek blokluk bir ekindir. Lahana tohumları tarım arazisine ekilebilir ve ürün olarak $(thing)Lahana$() ve $(thing)Lahana Tohumu$() verir.",
+      "text": "$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): $(cfg:climate.cabbage.temperature)$(br)$(bold)$(l:food/hydration)Hidrasyon$(): $(cfg:climate.cabbage.hydration) %$(br)$(bold)Kategori$(): Sebze$(br)$(br)$(bold)$(3)N: 50 $(bold)$(6)P: 20 $(bold)$(d)K: 40$()$(br)Lahana, tek blokluk bir ekindir. Lahana tohumları tarım arazisine ekilebilir ve ürün olarak $(thing)Lahana$() ve $(thing)Lahana Tohumu$() verir.",
       "title": "Lahana"
     },
     {
@@ -1807,7 +1807,7 @@
     {
       "type": "patchouli:text",
       "anchor": "carrot",
-      "text": "$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): -10 - 27 °C$(br)$(bold)$(l:food/hydration)Hidrasyon$(): 15 - 85 %$(br)$(bold)Kategori$(): Sebze$(br)$(br)$(bold)$(3)N: 50 $(bold)$(6)P: 30 $(bold)$(d)K: 40$()$(br)Havuç, tek blokluk bir ekindir. Havuç tohumları tarım arazisine ekilebilir ve ürün olarak $(thing)Havuç$() ve $(thing)Havuç Tohumu$() verir.",
+      "text": "$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): $(cfg:climate.carrot.temperature)$(br)$(bold)$(l:food/hydration)Hidrasyon$(): $(cfg:climate.carrot.hydration) %$(br)$(bold)Kategori$(): Sebze$(br)$(br)$(bold)$(3)N: 50 $(bold)$(6)P: 30 $(bold)$(d)K: 40$()$(br)Havuç, tek blokluk bir ekindir. Havuç tohumları tarım arazisine ekilebilir ve ürün olarak $(thing)Havuç$() ve $(thing)Havuç Tohumu$() verir.",
       "title": "Havuç"
     },
     {
@@ -1904,7 +1904,7 @@
     {
       "type": "patchouli:text",
       "anchor": "garlic",
-      "text": "$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): -3 - 22 °C$(br)$(bold)$(l:food/hydration)Hidrasyon$(): 10 - 70 %$(br)$(bold)Kategori$(): Sebze$(br)$(br)$(bold)$(3)N: 40 $(bold)$(6)P: 20 $(bold)$(d)K: 50$()$(br)Sarımsak, tek blokluk bir ekindir. Sarımsak tohumları tarım arazisine ekilebilir ve ürün olarak $(thing)Sarımsak$() ve $(thing)Sarımsak Tohumu$() verir.",
+      "text": "$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): $(cfg:climate.garlic.temperature)$(br)$(bold)$(l:food/hydration)Hidrasyon$(): $(cfg:climate.garlic.hydration) %$(br)$(bold)Kategori$(): Sebze$(br)$(br)$(bold)$(3)N: 40 $(bold)$(6)P: 20 $(bold)$(d)K: 50$()$(br)Sarımsak, tek blokluk bir ekindir. Sarımsak tohumları tarım arazisine ekilebilir ve ürün olarak $(thing)Sarımsak$() ve $(thing)Sarımsak Tohumu$() verir.",
       "title": "Sarımsak"
     },
     {
@@ -2001,7 +2001,7 @@
     {
       "type": "patchouli:text",
       "anchor": "potato",
-      "text": "$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): -7 - 22 °C$(br)$(bold)$(l:food/hydration)Hidrasyon$(): 35 - 90 %$(br)$(bold)Kategori$(): Sebze$(br)$(br)$(bold)$(3)N: 40 $(bold)$(6)P: 20 $(bold)$(d)K: 60$()$(br)Patates, tek blokluk bir ekindir. Patates tohumları tarım arazisine ekilebilir ve ürün olarak $(thing)Patates$() ve $(thing)Patates Tohumu$() verir.",
+      "text": "$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): $(cfg:climate.potato.temperature)$(br)$(bold)$(l:food/hydration)Hidrasyon$(): $(cfg:climate.potato.hydration) %$(br)$(bold)Kategori$(): Sebze$(br)$(br)$(bold)$(3)N: 40 $(bold)$(6)P: 20 $(bold)$(d)K: 60$()$(br)Patates, tek blokluk bir ekindir. Patates tohumları tarım arazisine ekilebilir ve ürün olarak $(thing)Patates$() ve $(thing)Patates Tohumu$() verir.",
       "title": "Potatoes"
     },
     {
@@ -2132,7 +2132,7 @@
     {
       "type": "patchouli:text",
       "anchor": "pumpkin",
-      "text": "$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): -7 - 27 °C$(br)$(bold)$(l:food/hydration)Hidrasyon$(): 20 - 85 %$(br)$(bold)Kategori$(): Yayılan Sebze$(br)$(br)$(bold)$(3)N: 40 $(bold)$(6)P: 30 $(bold)$(d)K: 60$()$(br)Balkabağı, yayılan bir ekindir. Balkabağı tohumları tarım arazisine ekilebilir ve olgunlaştığında yanındaki zemine iki adede kadar $(thing)Balkabağı Bloğu$() yerleştirir. Balkabağı blokları hasat edilirse ve bitki tekrar olgunlaşırsa, daha fazla balkabağı büyütebilir. Balkabakları $(l:core_mechanics/lighting#jack_o_lanterns)Cadılar Bayramı Feneri$() yapımında kullanılabilir.",
+      "text": "$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): $(cfg:climate.pumpkin.temperature)$(br)$(bold)$(l:food/hydration)Hidrasyon$(): $(cfg:climate.pumpkin.hydration) %$(br)$(bold)Kategori$(): Yayılan Sebze$(br)$(br)$(bold)$(3)N: 40 $(bold)$(6)P: 30 $(bold)$(d)K: 60$()$(br)Balkabağı, yayılan bir ekindir. Balkabağı tohumları tarım arazisine ekilebilir ve olgunlaştığında yanındaki zemine iki adede kadar $(thing)Balkabağı Bloğu$() yerleştirir. Balkabağı blokları hasat edilirse ve bitki tekrar olgunlaşırsa, daha fazla balkabağı büyütebilir. Balkabakları $(l:core_mechanics/lighting#jack_o_lanterns)Cadılar Bayramı Feneri$() yapımında kullanılabilir.",
       "title": "Pumpkins"
     },
     {
@@ -2304,7 +2304,7 @@
     {
       "type": "patchouli:text",
       "anchor": "melon",
-      "text": "$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): 5 - 31 °C$(br)$(bold)$(l:food/hydration)Hidrasyon$(): 35 - 100 %$(br)$(bold)Kategori$(): Yayılan Sebze$(br)$(br)$(bold)$(3)N: 30 $(bold)$(6)P: 40 $(bold)$(d)K: 65$()$(br)Kavun, yayılan bir ekindir. Kavun tohumları tarım arazisine ekilebilir ve olgunlaştığında yanındaki zemine iki adede kadar $(thing)Kavun Bloğu$() yerleştirir. Kavun blokları hasat edilirse ve bitki tekrar olgunlaşırsa, daha fazla kavun büyütebilir.",
+      "text": "$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): $(cfg:climate.melon.temperature)$(br)$(bold)$(l:food/hydration)Hidrasyon$(): $(cfg:climate.melon.hydration) %$(br)$(bold)Kategori$(): Yayılan Sebze$(br)$(br)$(bold)$(3)N: 30 $(bold)$(6)P: 40 $(bold)$(d)K: 65$()$(br)Kavun, yayılan bir ekindir. Kavun tohumları tarım arazisine ekilebilir ve olgunlaştığında yanındaki zemine iki adede kadar $(thing)Kavun Bloğu$() yerleştirir. Kavun blokları hasat edilirse ve bitki tekrar olgunlaşırsa, daha fazla kavun büyütebilir.",
       "title": "Melons"
     },
     {
@@ -2476,7 +2476,7 @@
     {
       "type": "patchouli:text",
       "anchor": "tomatoes",
-      "text": "$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): 2 - 31 °C$(br)$(bold)$(l:food/hydration)Hidrasyon$(): 20 - 85 %$(br)$(bold)Kategori$(): Sebze$(br)$(br)$(bold)$(3)N: 40 $(bold)$(6)P: 50 $(bold)$(d)K: 60$()$(br)Domates, tırmanıcı ve iki blok yüksekliğinde bir ekindir. Domates tohumları tarım arazisine ekilebilir, bir çubuk mevcutsa iki blok yüksekliğe kadar büyür ve ürün olarak $(thing)Domates$() ve $(thing)Domates Tohumu$() verir.",
+      "text": "$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): $(cfg:climate.tomato.temperature)$(br)$(bold)$(l:food/hydration)Hidrasyon$(): $(cfg:climate.tomato.hydration) %$(br)$(bold)Kategori$(): Sebze$(br)$(br)$(bold)$(3)N: 40 $(bold)$(6)P: 50 $(bold)$(d)K: 60$()$(br)Domates, tırmanıcı ve iki blok yüksekliğinde bir ekindir. Domates tohumları tarım arazisine ekilebilir, bir çubuk mevcutsa iki blok yüksekliğe kadar büyür ve ürün olarak $(thing)Domates$() ve $(thing)Domates Tohumu$() verir.",
       "title": "Tomatoes"
     },
     {
@@ -2656,7 +2656,7 @@
     {
       "type": "patchouli:text",
       "anchor": "red_bell_pepper",
-      "text": "$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): 11 - 31 °C$(br)$(bold)$(l:food/hydration)Hidrasyon$(): 30 - 95 %$(br)$(bold)Kategori$(): Toplanabilir Sebze$(br)$(br)$(bold)$(3)N: 30 $(bold)$(6)P: 40 $(bold)$(d)K: 50$()$(br)Kırmızı Dolmalık Biber, toplanabilir bir ekindir. Olgunlaşmaya yakın olduklarında, Yeşil Dolmalık Biber elde etmek için $(item)$(k:key.use)$() ile hasat edilebilirler. $(item)$(k:key.use)$() ile hasat etmek, bitkiyi yok etmek yerine gelecekte daha fazla biber büyümesini sağlar.",
+      "text": "$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): $(cfg:climate.red_bell_pepper.temperature)$(br)$(bold)$(l:food/hydration)Hidrasyon$(): $(cfg:climate.red_bell_pepper.hydration) %$(br)$(bold)Kategori$(): Toplanabilir Sebze$(br)$(br)$(bold)$(3)N: 30 $(bold)$(6)P: 40 $(bold)$(d)K: 50$()$(br)Kırmızı Dolmalık Biber, toplanabilir bir ekindir. Olgunlaşmaya yakın olduklarında, Yeşil Dolmalık Biber elde etmek için $(item)$(k:key.use)$() ile hasat edilebilirler. $(item)$(k:key.use)$() ile hasat etmek, bitkiyi yok etmek yerine gelecekte daha fazla biber büyümesini sağlar.",
       "title": "Kırmızı Dolmalık Biber"
     },
     {
@@ -2787,7 +2787,7 @@
     {
       "type": "patchouli:text",
       "anchor": "yellow_bell_pepper",
-      "text": "$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): 11 - 31 °C$(br)$(bold)$(l:food/hydration)Hidrasyon$(): 30 - 95 %$(br)$(bold)Kategori$(): Toplanabilir Sebze$(br)$(br)$(bold)$(3)N: 30 $(bold)$(6)P: 40 $(bold)$(d)K: 50$()$(br)Sarı Dolmalık Biber, toplanabilir bir ekindir. Olgunlaşmaya yakın olduklarında, Yeşil Dolmalık Biber elde etmek için $(item)$(k:key.use)$() ile hasat edilebilirler. $(item)$(k:key.use)$() ile hasat etmek, bitkiyi yok etmek yerine gelecekte daha fazla biber büyümesini sağlar.",
+      "text": "$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): $(cfg:climate.yellow_bell_pepper.temperature)$(br)$(bold)$(l:food/hydration)Hidrasyon$(): $(cfg:climate.yellow_bell_pepper.hydration) %$(br)$(bold)Kategori$(): Toplanabilir Sebze$(br)$(br)$(bold)$(3)N: 30 $(bold)$(6)P: 40 $(bold)$(d)K: 50$()$(br)Sarı Dolmalık Biber, toplanabilir bir ekindir. Olgunlaşmaya yakın olduklarında, Yeşil Dolmalık Biber elde etmek için $(item)$(k:key.use)$() ile hasat edilebilirler. $(item)$(k:key.use)$() ile hasat etmek, bitkiyi yok etmek yerine gelecekte daha fazla biber büyümesini sağlar.",
       "title": "Sarı Dolmalık Biber"
     },
     {
@@ -2918,7 +2918,7 @@
     {
       "type": "patchouli:text",
       "anchor": "onion",
-      "text": "$(bold)$(l:core_mechanics/climate#temperature)Temperature$(): -5 - 26 °C$(br)$(bold)$(l:food/hydration)Hydration$(): 15 - 85 %$(br)$(bold)Category$(): Vegetable$(br)$(br)$(bold)$(3)N: 40 $(bold)$(6)P: 40 $(bold)$(d)K: 40$()$(br)Onions are a single block crop. Onion seeds can be planted on farmland and will produce $(thing)Onions$() and $(thing)Onion Seeds$() as a product.",
+      "text": "$(bold)$(l:core_mechanics/climate#temperature)Temperature$(): $(cfg:climate.onion.temperature)$(br)$(bold)$(l:food/hydration)Hydration$(): $(cfg:climate.onion.hydration) %$(br)$(bold)Category$(): Vegetable$(br)$(br)$(bold)$(3)N: 40 $(bold)$(6)P: 40 $(bold)$(d)K: 40$()$(br)Onions are a single block crop. Onion seeds can be planted on farmland and will produce $(thing)Onions$() and $(thing)Onion Seeds$() as a product.",
       "title": "Onions"
     },
     {
@@ -3049,7 +3049,7 @@
     {
       "type": "patchouli:text",
       "anchor": "squash",
-      "text": "$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): -7 - 25 °C$(br)$(bold)$(l:food/hydration)Hidrasyon$(): 15 - 85 %$(br)$(bold)Kategori$(): Sebze$(br)$(br)$(bold)$(3)N: 25 $(bold)$(6)P: 45 $(bold)$(d)K: 50$()$(br)Kabak, tek blokluk bir ekindir. Kabak tohumları tarım arazisine ekilebilir ve ürün olarak $(thing)Kabak$() ve $(thing)Kabak Tohumu$() verir.",
+      "text": "$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): $(cfg:climate.squash.temperature)$(br)$(bold)$(l:food/hydration)Hidrasyon$(): $(cfg:climate.squash.hydration) %$(br)$(bold)Kategori$(): Sebze$(br)$(br)$(bold)$(3)N: 25 $(bold)$(6)P: 45 $(bold)$(d)K: 50$()$(br)Kabak, tek blokluk bir ekindir. Kabak tohumları tarım arazisine ekilebilir ve ürün olarak $(thing)Kabak$() ve $(thing)Kabak Tohumu$() verir.",
       "title": "Kabak"
     },
     {
@@ -3197,7 +3197,7 @@
     {
       "type": "patchouli:text",
       "anchor": "alfalfa",
-      "text": "$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): -32 - 8 °C$(br)$(bold)$(l:food/hydration)Hidrasyon$(): 40 - 100 %$(br)$(bold)Kategori$(): Örtü Bitkisi$(br)$(br)$(bold)$(3)N: +24.0 $(bold)$(6)P: +15.0 $(bold)$(d)K: +18.0$()$(br)Yonca, soğuk iklimlere uyum sağlamış tek blokluk bir ekindir. Yonca tohumları tarım arazisine ekilebilir ve ürün olarak $(thing)Yonca$() ve $(thing)Yonca Tohumu$() verirken aynı zamanda toprağı zenginleştirir. Yonca, saman veya kompost kaynağı olarak kullanılabilir.",
+      "text": "$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): $(cfg:climate.alfalfa.temperature)$(br)$(bold)$(l:food/hydration)Hidrasyon$(): $(cfg:climate.alfalfa.hydration) %$(br)$(bold)Kategori$(): Örtü Bitkisi$(br)$(br)$(bold)$(3)N: +24.0 $(bold)$(6)P: +15.0 $(bold)$(d)K: +18.0$()$(br)Yonca, soğuk iklimlere uyum sağlamış tek blokluk bir ekindir. Yonca tohumları tarım arazisine ekilebilir ve ürün olarak $(thing)Yonca$() ve $(thing)Yonca Tohumu$() verirken aynı zamanda toprağı zenginleştirir. Yonca, saman veya kompost kaynağı olarak kullanılabilir.",
       "title": "Yonca"
     },
     {
@@ -3311,7 +3311,7 @@
     {
       "type": "patchouli:text",
       "anchor": "canola",
-      "text": "$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): -30 - 6 °C$(br)$(bold)$(l:food/hydration)Hidrasyon$(): 20 - 75 %$(br)$(bold)Kategori$(): Örtü Bitkisi$(br)$(br)$(bold)$(3)N: +9.0 $(bold)$(6)P: +18.0 $(bold)$(d)K: +30.0$()$(br)Kanola, soğuk iklimlere uyum sağlamış tek blokluk bir ekindir. Kanola tohumları tarım arazisine ekilebilir ve ürün olarak $(thing)Kanola$() ve $(thing)Kanola Tohumu$() verirken aynı zamanda toprağı zenginleştirir. Kanola, saman veya kompost kaynağı olarak kullanılabilir ve tohumları yağ elde etmek için kullanılabilir.",
+      "text": "$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): $(cfg:climate.canola.temperature)$(br)$(bold)$(l:food/hydration)Hidrasyon$(): $(cfg:climate.canola.hydration) %$(br)$(bold)Kategori$(): Örtü Bitkisi$(br)$(br)$(bold)$(3)N: +9.0 $(bold)$(6)P: +18.0 $(bold)$(d)K: +30.0$()$(br)Kanola, soğuk iklimlere uyum sağlamış tek blokluk bir ekindir. Kanola tohumları tarım arazisine ekilebilir ve ürün olarak $(thing)Kanola$() ve $(thing)Kanola Tohumu$() verirken aynı zamanda toprağı zenginleştirir. Kanola, saman veya kompost kaynağı olarak kullanılabilir ve tohumları yağ elde etmek için kullanılabilir.",
       "title": "Kanola"
     },
     {
@@ -3425,7 +3425,7 @@
     {
       "type": "patchouli:text",
       "anchor": "radish",
-      "text": "$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): -28 - 10 °C$(br)$(bold)$(l:food/hydration)Hidrasyon$(): 30 - 90 %$(br)$(bold)Kategori$(): Örtü Bitkisi$(br)$(br)$(bold)$(3)N: +15.0 $(bold)$(6)P: +30.0 $(bold)$(d)K: +18.0$()$(br)Turp, soğuk iklimlere uyum sağlamış tek blokluk bir ekindir. Turp tohumları tarım arazisine ekilebilir ve ürün olarak $(thing)Turp$() ve $(thing)Turp Tohumu$() verirken aynı zamanda toprağı zenginleştirir. Turp çok besleyici bir sebze değildir ancak birçok hayvana yem olarak verilebilir.",
+      "text": "$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): $(cfg:climate.radish.temperature)$(br)$(bold)$(l:food/hydration)Hidrasyon$(): $(cfg:climate.radish.hydration) %$(br)$(bold)Kategori$(): Örtü Bitkisi$(br)$(br)$(bold)$(3)N: +15.0 $(bold)$(6)P: +30.0 $(bold)$(d)K: +18.0$()$(br)Turp, soğuk iklimlere uyum sağlamış tek blokluk bir ekindir. Turp tohumları tarım arazisine ekilebilir ve ürün olarak $(thing)Turp$() ve $(thing)Turp Tohumu$() verirken aynı zamanda toprağı zenginleştirir. Turp çok besleyici bir sebze değildir ancak birçok hayvana yem olarak verilebilir.",
       "title": "Turp"
     },
     {
@@ -3539,7 +3539,7 @@
     {
       "type": "patchouli:text",
       "anchor": "sugarcane",
-      "text": "$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): 16 - 31 °C$(br)$(bold)$(l:food/hydration)Hidrasyon$(): 25 - 100 %$(br)$(bold)Kategori$(): Çeşitli$(br)$(br)$(bold)$(3)N: 50 $(bold)$(6)P: 50 $(bold)$(d)K: 50$()$(br)Şeker kamışı, iki blok yüksekliğinde bir ekindir. Şeker kamışı tohumları tarım arazisine ekilebilir, iki blok yüksekliğe kadar büyür ve ürün olarak $(thing)Şeker Kamışı$() ve $(thing)Şeker Kamışı Tohumu$() verir. Şeker kamışı, $(thing)Şeker$() yapmak için kullanılabilir.",
+      "text": "$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): $(cfg:climate.sugarcane.temperature)$(br)$(bold)$(l:food/hydration)Hidrasyon$(): $(cfg:climate.sugarcane.hydration) %$(br)$(bold)Kategori$(): Çeşitli$(br)$(br)$(bold)$(3)N: 50 $(bold)$(6)P: 50 $(bold)$(d)K: 50$()$(br)Şeker kamışı, iki blok yüksekliğinde bir ekindir. Şeker kamışı tohumları tarım arazisine ekilebilir, iki blok yüksekliğe kadar büyür ve ürün olarak $(thing)Şeker Kamışı$() ve $(thing)Şeker Kamışı Tohumu$() verir. Şeker kamışı, $(thing)Şeker$() yapmak için kullanılabilir.",
       "title": "Şeker Kamışı"
     },
     {
@@ -3719,7 +3719,7 @@
     {
       "type": "patchouli:text",
       "anchor": "jute",
-      "text": "$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): 2 - 25 °C$(br)$(bold)$(l:food/hydration)Hidrasyon$(): 15 - 90 %$(br)$(bold)Kategori$(): Çeşitli$(br)$(br)$(bold)$(3)N: 60 $(bold)$(6)P: 40 $(bold)$(d)K: +40$()$(br)Jüt, iki blok yüksekliğinde bir ekindir. Jüt tohumları tarım arazisine ekilebilir, iki blok yüksekliğe kadar büyür ve ürün olarak $(thing)Jüt$() ve $(thing)Jüt Tohumu$() verir.",
+      "text": "$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): $(cfg:climate.jute.temperature)$(br)$(bold)$(l:food/hydration)Hidrasyon$(): $(cfg:climate.jute.hydration) %$(br)$(bold)Kategori$(): Çeşitli$(br)$(br)$(bold)$(3)N: 60 $(bold)$(6)P: 40 $(bold)$(d)K: +40$()$(br)Jüt, iki blok yüksekliğinde bir ekindir. Jüt tohumları tarım arazisine ekilebilir, iki blok yüksekliğe kadar büyür ve ürün olarak $(thing)Jüt$() ve $(thing)Jüt Tohumu$() verir.",
       "title": "Jüt"
     },
     {
@@ -3857,7 +3857,7 @@
     {
       "type": "patchouli:text",
       "anchor": "papyrus",
-      "text": "$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): 11 - 31 °C$(br)$(bold)$(l:food/hydration)Hidrasyon$(): 50 - 100 %$(br)$(bold)Kategori$(): Çeşitli$(br)$(br)$(bold)$(3)N: 60 $(bold)$(6)P: +40 $(bold)$(d)K: 40$()$(br)Papirüs, iki blok yüksekliğinde bir ekindir. Papirüs tohumları tarım arazisine ekilebilir, iki blok yüksekliğe kadar büyür ve ürün olarak $(l:crafting/papermaking)Papirüs$() ve $(thing)Papirüs Tohumu$() verir.",
+      "text": "$(bold)$(l:core_mechanics/climate#temperature)Sıcaklık$(): $(cfg:climate.papyrus.temperature)$(br)$(bold)$(l:food/hydration)Hidrasyon$(): $(cfg:climate.papyrus.hydration) %$(br)$(bold)Kategori$(): Çeşitli$(br)$(br)$(bold)$(3)N: 60 $(bold)$(6)P: +40 $(bold)$(d)K: 40$()$(br)Papirüs, iki blok yüksekliğinde bir ekindir. Papirüs tohumları tarım arazisine ekilebilir, iki blok yüksekliğe kadar büyür ve ürün olarak $(l:crafting/papermaking)Papirüs$() ve $(thing)Papirüs Tohumu$() verir.",
       "title": "Papirüs"
     },
     {

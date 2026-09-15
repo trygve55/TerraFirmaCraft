@@ -65,7 +65,7 @@
     },
     {
       "type": "patchouli:text",
-      "text": "Kompost makinesi ortalama koşullarda 12 günde dolar. Hazır olduğunda, toprak benzeri bir renge bürünür ve tepesinden gri parçacıklar yayılır. Kompost daha sonra boş bir elle $(item)$(k:key.use)$() ve $(item)$(k:key.sneak)$() tuşları kullanılarak alınabilir. Komposta $(c)et$() ve $(c)kemik$() gibi şeyler eklemek onu bozar, kırmızımsı bir renge dönüştürür ve iğrenç parçacıklar yaymasına neden olur. Çürük kompost, iyi kompostla aynı şekilde temizlenebilir. Bir ekin üzerinde kullanıldığında, onu anında öldürür."
+      "text": "Kompost makinesi ortalama koşullarda $(cfg:composterTicks)de dolar. Hazır olduğunda, toprak benzeri bir renge bürünür ve tepesinden gri parçacıklar yayılır. Kompost daha sonra boş bir elle $(item)$(k:key.use)$() ve $(item)$(k:key.sneak)$() tuşları kullanılarak alınabilir. Komposta $(c)et$() ve $(c)kemik$() gibi şeyler eklemek onu bozar, kırmızımsı bir renge dönüştürür ve iğrenç parçacıklar yaymasına neden olur. Çürük kompost, iyi kompostla aynı şekilde temizlenebilir. Bir ekin üzerinde kullanıldığında, onu anında öldürür."
     },
     {
       "type": "patchouli:multiblock",

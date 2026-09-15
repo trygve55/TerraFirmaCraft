@@ -40,7 +40,7 @@
         }
       },
       "name": "Свічки",
-      "text": "Свічка горить 11 днів, але ж її можна запалити знов.",
+      "text": "Свічка горить $(cfg:candleTicks), але ж її можна запалити знов.",
       "enable_visualize": false
     },
     {
@@ -65,7 +65,7 @@
         }
       },
       "name": "Світильник Джека",
-      "text": "Світильник Джека - це освітлена версія $(thing)різаних гарбузів$(), що світиться чотири з половиною дні.",
+      "text": "Jack 'o Lanterns are the lit version of $(thing)Carved Pumpkins$(), and last for $(cfg:jackOLanternTicks), before reverting to carved pumpkins.",
       "enable_visualize": false
     },
     {

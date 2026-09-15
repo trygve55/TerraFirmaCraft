@@ -15,7 +15,7 @@
     {
       "type": "patchouli:text",
       "anchor": "small_vessels",
-      "text": "가장 쉬운 보존 방법 중 하나는 $(thing)항아리$()입니다. $(thing)큰 항아리$()에는 최대 9종류의 아이템을 넣을 수 있으며, $(thing)밀봉$()할 시 내부의 아이템은 $(5)$(bold)보존됨$() 상태가 되어 보존 기간을 2배로 늘립니다.$(br2)$(thing)작은 항아리$()에는 최대 4종류의 아이템을 넣을 수 있으며, 역시나 내용물에 $(5)$(bold)보존됨$() 상태를 부여합니다.",
+      "text": "가장 쉬운 보존 방법 중 하나는 $(thing)항아리$()입니다. $(thing)큰 항아리$()에는 최대 9종류의 아이템을 넣을 수 있으며, $(thing)밀봉$()할 시 내부의 아이템은 $(5)$(bold)보존됨$() 상태가 되어 보존 기간을 $(cfg:traitPreservedModifier)배로 늘립니다.$(br2)$(thing)작은 항아리$()에는 최대 4종류의 아이템을 넣을 수 있으며, 역시나 내용물에 $(5)$(bold)보존됨$() 상태를 부여합니다.",
       "title": "§l항아리"
     },
     {
@@ -46,7 +46,7 @@
     {
       "type": "tfc:heat_recipe",
       "recipe": "tfc:heating/food/cooked_mutton",
-      "text": "대신, $(l:getting_started/firepit)모닥불$()이나 $(l:food/grill)석쇠$()를 사용하면 보존 기간에 보너스를 줍니다! 예를 들면, 위처럼 양고기를 $(thing)모닥불$()에 구우면 보존 기간이 1.33배 증가하며 $(thing)석쇠$()에 구우면 1.66배 증가합니다."
+      "text": "Instead, a $(l:food/grill)Grill$() can even provide a buff for using it! Cooking mutton (pictured above) in a $(thing)Grill$() gives it the $(thing)Wood Grilled$() trait, multiplying its remaining lifetime by $(cfg:traitWoodGrilledModifier)x. Cooking in a $(l:metalworking/charcoal_forge)Charcoal Forge$() instead gives the $(thing)Charcoal Grilled$() trait, which multiplies its lifetime by $(cfg:traitCharcoalGrilledModifier)x."
     },
     {
       "type": "patchouli:text",

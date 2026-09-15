@@ -57,23 +57,37 @@
       "text": "Bir diğer lamba yakıtı $(thing)İç Yağı$()dır. Bunu yapmak için 5 adet $(thing)Balina Yağı$()nı, su dolu bir $(l:food/pot)Tencere$() içinde pişirin. İç yağı, birim başına oyun içi 2 saat boyunca yanar. $(l:core_mechanics/lighting#candles)Mumlar$() yapmak için kullanılabilir."
     },
     {
-      "type": "patchouli:multiblock",
-      "multiblock": {
-        "pattern": [
-          [
-            "X"
-          ],
-          [
-            "0"
-          ]
-        ],
-        "mapping": {
-          "X": "tfc:metal/lamp/blue_steel[lit=true]"
-        }
-      },
+      "type": "tfc:multimultiblock",
       "name": "Lav Lambaları",
-      "text": "Lav sonsuza dek yanmaya devam eder, ancak yalnızca bir $(l:metalworking/steel#blue_steel)Mavi Çelik$() lambada tutulabilir.",
-      "enable_visualize": false
+      "text": "Lava will keep burning forever, but can only be held in a $(l:metalworking/steel#blue_steel)Blue Steel$() or $(l:metalworking/steel#red_steel)Red Steel$() lamp.",
+      "multiblocks": [
+        {
+          "pattern": [
+            [
+              "X"
+            ],
+            [
+              "0"
+            ]
+          ],
+          "mapping": {
+            "X": "tfc:metal/lamp/blue_steel[lit=true]"
+          }
+        },
+        {
+          "pattern": [
+            [
+              "X"
+            ],
+            [
+              "0"
+            ]
+          ],
+          "mapping": {
+            "X": "tfc:metal/lamp/red_steel[lit=true]"
+          }
+        }
+      ]
     },
     {
       "type": "tfc:anvil_recipe",

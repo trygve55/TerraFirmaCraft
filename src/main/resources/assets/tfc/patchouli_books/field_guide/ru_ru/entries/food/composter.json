@@ -65,7 +65,7 @@
     },
     {
       "type": "patchouli:text",
-      "text": "Компостеру требуется 12 дней для изготовления удобрения в умеренном климате. Готовый компост приобретёт цвет похожий на землю, и из него будут исходить серые частицы. Готовый компост можно извлечь с помощью $(item)$(k:key.use)$() и $(item)$(k:key.sneak)$() с пустой рукой. Добавление $(c)мяса$() и $(c)костей$() испортит компост, окрашивая его в красноватый и вызывая появление неприятных частиц. Гнилой компост можно удалить таким же образом, как и хороший. При использовании на культуре он мгновенно убивает её."
+      "text": "The composter takes $(cfg:composterTicks) to complete in average conditions. When it is ready, it will have a dirt-like color and gray particles will be emitted from the top of it. The compost can then be retrieved with  $(item)$(k:key.use)$() and  $(item)$(k:key.sneak)$() with an empty hand. Adding things like $(c)meat$() and $(c)bones$() to compost spoils it, turning it reddish and causing it to emit gross particles. The rotten compost can be removed in the same way as good compost. When used on a crop, it instantly kills it."
     },
     {
       "type": "patchouli:multiblock",

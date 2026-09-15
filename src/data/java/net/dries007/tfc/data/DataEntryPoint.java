@@ -44,6 +44,7 @@ import net.dries007.tfc.data.providers.BuiltinEntityLoot;
 import net.dries007.tfc.data.providers.BuiltinEntityTags;
 import net.dries007.tfc.data.providers.BuiltinFauna;
 import net.dries007.tfc.data.providers.BuiltinFertilizers;
+import net.dries007.tfc.data.providers.BuiltinFieldGuideConfig;
 import net.dries007.tfc.data.providers.BuiltinFluidHeat;
 import net.dries007.tfc.data.providers.BuiltinFluidTags;
 import net.dries007.tfc.data.providers.BuiltinFoods;
@@ -141,6 +142,7 @@ public final class DataEntryPoint
         add(event, new BuiltinSupports(output, lookup));
         add(event, new BuiltinClimateRanges(output, lookup));
         add(event, new BuiltinFauna(output, lookup));
+        add(event, new BuiltinFieldGuideConfig(output));
 
         add(event, new BuiltinDataMaps(output, lookup));
 

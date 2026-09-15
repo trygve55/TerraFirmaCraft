@@ -684,7 +684,7 @@
       "item": "tfc:kaolin_clay",
       "title": "高岭石",
       "link_recipes": false,
-      "text": "高岭石是一种柔软的$(thing)矿物$()，用于制作$(l:metalworking/fire_clay)耐火黏土$()。它可以在高原、古老山脉、丘陵和高地的海拔较高处生成，需要$(l:core_mechanics/climate#temperature)温度$()至少 18°C，$(l:core_mechanics/climate#rainfall)降雨量$()至少 300mm。$(thing)火球花$()生长在高岭土上。"
+      "text": "高岭石是一种柔软的$(thing)矿物$()，用于制作$(l:metalworking/fire_clay)耐火黏土$()。它可以在高原、古老山脉、丘陵和高地的海拔较高处生成，需要$(l:core_mechanics/climate#temperature)温度$()至少 $(cfg:temperature:18)，$(l:core_mechanics/climate#rainfall)降雨量$()至少 300mm。$(thing)火球花$()生长在高岭土上。"
     },
     {
       "type": "tfc:multimultiblock",

@@ -334,7 +334,7 @@
           "bold": true
         },
         {
-          "text": "Temperature (°C)",
+          "text": "Temperature",
           "bold": true
         },
         {
@@ -345,7 +345,7 @@
           "text": "Cassava"
         },
         {
-          "text": "10.4 - 40"
+          "text": "$(cfg:temperature:10.4) - $(cfg:temperature:40)"
         },
         {
           "text": "260 - 500"
@@ -354,7 +354,7 @@
           "text": "Green Bean"
         },
         {
-          "text": " -4 - 19.4"
+          "text": "$(cfg:temperature:-4) - $(cfg:temperature:19.4)"
         },
         {
           "text": "150 - 410"
@@ -363,7 +363,7 @@
           "text": "Lentil"
         },
         {
-          "text": "-7.6 - 19.4"
+          "text": "$(cfg:temperature:-7.6) - $(cfg:temperature:19.4)"
         },
         {
           "text": " 75 - 190"
@@ -372,7 +372,7 @@
           "text": "Peanut"
         },
         {
-          "text": "12.2 - 40"
+          "text": "$(cfg:temperature:12.2) - $(cfg:temperature:40)"
         },
         {
           "text": "130 - 360"
@@ -381,7 +381,7 @@
           "text": "§l대두"
         },
         {
-          "text": "-9.4 - 15.8"
+          "text": "$(cfg:temperature:-9.4) - $(cfg:temperature:15.8)"
         },
         {
           "text": "160 - 410"
@@ -390,7 +390,7 @@
           "text": "§l보리"
         },
         {
-          "text": "-9.4 - 17.6"
+          "text": "$(cfg:temperature:-9.4) - $(cfg:temperature:17.6)"
         },
         {
           "text": " 70 - 310"
@@ -399,7 +399,7 @@
           "text": "§l귀리"
         },
         {
-          "text": "-9.4 - 15.8"
+          "text": "$(cfg:temperature:-9.4) - $(cfg:temperature:15.8)"
         },
         {
           "text": "140 - 400"
@@ -408,7 +408,7 @@
           "text": "§l호밀"
         },
         {
-          "text": "-9.4 - 8.6"
+          "text": "$(cfg:temperature:-9.4) - $(cfg:temperature:8.6)"
         },
         {
           "text": "100 - 350"
@@ -417,7 +417,7 @@
           "text": "§l옥수수"
         },
         {
-          "text": "-9.4 - 23.0"
+          "text": "$(cfg:temperature:-9.4) - $(cfg:temperature:23.0)"
         },
         {
           "text": "300 - 500"
@@ -426,7 +426,7 @@
           "text": "§l밀"
         },
         {
-          "text": "-9.4 - 15.8"
+          "text": "$(cfg:temperature:-9.4) - $(cfg:temperature:15.8)"
         },
         {
           "text": "100 - 400"
@@ -435,7 +435,7 @@
           "text": "§l쌀"
         },
         {
-          "text": "8.6 - 40"
+          "text": "$(cfg:temperature:8.6) - $(cfg:temperature:40)"
         },
         {
           "text": "200 - 500"
@@ -444,7 +444,7 @@
           "text": "§l비트"
         },
         {
-          "text": "-13 - 23.0"
+          "text": "$(cfg:temperature:-13) - $(cfg:temperature:23.0)"
         },
         {
           "text": " 70 - 300"
@@ -473,7 +473,7 @@
           "bold": true
         },
         {
-          "text": "Temperature (°C)",
+          "text": "Temperature",
           "bold": true
         },
         {
@@ -484,7 +484,7 @@
           "text": "§l양배추"
         },
         {
-          "text": "-13 - 23.0"
+          "text": "$(cfg:temperature:-13) - $(cfg:temperature:23.0)"
         },
         {
           "text": " 60 - 280"
@@ -493,7 +493,7 @@
           "text": "§l당근"
         },
         {
-          "text": "-13 - 23.0"
+          "text": "$(cfg:temperature:-13) - $(cfg:temperature:23.0)"
         },
         {
           "text": "100 - 400"
@@ -502,7 +502,7 @@
           "text": "§l마늘"
         },
         {
-          "text": "-5.8 - 15.8"
+          "text": "$(cfg:temperature:-5.8) - $(cfg:temperature:15.8)"
         },
         {
           "text": " 60 - 310"
@@ -511,7 +511,7 @@
           "text": "Onion"
         },
         {
-          "text": "-7.6 - 21.2"
+          "text": "$(cfg:temperature:-7.6) - $(cfg:temperature:21.2)"
         },
         {
           "text": "100 - 390"
@@ -520,7 +520,7 @@
           "text": "Potato"
         },
         {
-          "text": "-9.4 - 15.8"
+          "text": "$(cfg:temperature:-9.4) - $(cfg:temperature:15.8)"
         },
         {
           "text": "200 - 420"
@@ -529,7 +529,7 @@
           "text": "§l애호박"
         },
         {
-          "text": "-9.4 - 19.4"
+          "text": "$(cfg:temperature:-9.4) - $(cfg:temperature:19.4)"
         },
         {
           "text": " 90 - 390"
@@ -538,7 +538,7 @@
           "text": "Tomato"
         },
         {
-          "text": "1.4 - 40"
+          "text": "$(cfg:temperature:1.4) - $(cfg:temperature:40)"
         },
         {
           "text": "120 - 390"
@@ -547,7 +547,7 @@
           "text": "Red Bell Pepper"
         },
         {
-          "text": "12.2 - 40"
+          "text": "$(cfg:temperature:12.2) - $(cfg:temperature:40)"
         },
         {
           "text": "190 - 450"
@@ -556,7 +556,7 @@
           "text": "Yellow Bell Pepper"
         },
         {
-          "text": "12.2 - 40"
+          "text": "$(cfg:temperature:12.2) - $(cfg:temperature:40)"
         },
         {
           "text": "190 - 450"
@@ -565,7 +565,7 @@
           "text": "Pumpkin"
         },
         {
-          "text": "-9.4 - 23.0"
+          "text": "$(cfg:temperature:-9.4) - $(cfg:temperature:23.0)"
         },
         {
           "text": "120 - 390"
@@ -574,7 +574,7 @@
           "text": "Melon"
         },
         {
-          "text": "  5 - 40"
+          "text": "$(cfg:temperature:5) - $(cfg:temperature:40)"
         },
         {
           "text": "200 - 500"
@@ -583,7 +583,7 @@
           "text": "Canola"
         },
         {
-          "text": "-13 - 3.2"
+          "text": "$(cfg:temperature:-13) - $(cfg:temperature:3.2)"
         },
         {
           "text": "120 - 320"
@@ -612,7 +612,7 @@
           "bold": true
         },
         {
-          "text": "Temperature (°C)",
+          "text": "Temperature",
           "bold": true
         },
         {
@@ -623,7 +623,7 @@
           "text": "Radish"
         },
         {
-          "text": "-11.2 - 6.8"
+          "text": "$(cfg:temperature:-11.2) - $(cfg:temperature:6.8)"
         },
         {
           "text": "190 - 410"
@@ -632,7 +632,7 @@
           "text": "Alfalfa"
         },
         {
-          "text": "-14.8 - 5"
+          "text": "$(cfg:temperature:-14.8) - $(cfg:temperature:5)"
         },
         {
           "text": "240 - 480"
@@ -641,7 +641,7 @@
           "text": "§l황마"
         },
         {
-          "text": "1.4 - 19.4"
+          "text": "$(cfg:temperature:1.4) - $(cfg:temperature:19.4)"
         },
         {
           "text": "100 - 410"
@@ -650,7 +650,7 @@
           "text": "Papyrus"
         },
         {
-          "text": "12.2 - 40"
+          "text": "$(cfg:temperature:12.2) - $(cfg:temperature:40)"
         },
         {
           "text": "310 - 500"
@@ -659,7 +659,7 @@
           "text": "§l사탕수수"
         },
         {
-          "text": "17.6 - 40"
+          "text": "$(cfg:temperature:17.6) - $(cfg:temperature:40)"
         },
         {
           "text": "160 - 500"

@@ -97,7 +97,7 @@
     {
       "type": "patchouli:text",
       "anchor": "pig",
-      "text": "$(thing)Domuzlar$(), -10 ile 35°C arasındaki $(l:core_mechanics/climate#temperature)sıcaklıkta$() ve en az 200mm $(l:core_mechanics/climate#rainfall)yağış$() alan ılıman ormanlarda ortaya çıkarlar. Özel yetenekleri olmayan $(l:food/animal_husbandry#mammals)Memelilerdir$(). Çürümüş olsa bile her türlü yiyeceği yerler. 1-10 arası yavru yaparlar, sadece 19 gün gebe kalırlar ve 80 günde yetişkinliğe ulaşırlar. 6 kez yavru yapabilirler.",
+      "text": "$(thing)Domuzlar$(), $(cfg:temperature:-10) ile $(cfg:temperature:35) arasındaki $(l:core_mechanics/climate#temperature)sıcaklıkta$() ve en az 200mm $(l:core_mechanics/climate#rainfall)yağış$() alan ılıman ormanlarda ortaya çıkarlar. Özel yetenekleri olmayan $(l:food/animal_husbandry#mammals)Memelilerdir$(). Çürümüş olsa bile her türlü yiyeceği yerler. 1-10 arası yavru yaparlar, sadece 19 gün gebe kalırlar ve 80 günde yetişkinliğe ulaşırlar. 6 kez yavru yapabilirler.",
       "title": "Domuzlar"
     },
     {
@@ -110,7 +110,7 @@
     {
       "type": "patchouli:text",
       "anchor": "rabbit",
-      "text": "$(thing)Rabbits$() spawn in $(l:core_mechanics/climate#temperature)temperatures$() above -16°C, and at least 15mm of $(l:core_mechanics/climate#rainfall)rainfall$(), changing their coat based on climate. They are $(l:food/animal_husbandry#mammals)Mammals$() with no special abilities, aside from being known for chewing on carrots and cabbage. They will eat any food, even if it is rotten. They have 1-6 children, are pregnant for just 19 days, and reach adulthood in 20 days. They can have children 6 times.",
+      "text": "$(thing)Rabbits$() spawn in $(l:core_mechanics/climate#temperature)temperatures$() above $(cfg:temperature:-16), and at least 15mm of $(l:core_mechanics/climate#rainfall)rainfall$(), changing their coat based on climate. They are $(l:food/animal_husbandry#mammals)Mammals$() with no special abilities, aside from being known for chewing on carrots and cabbage. They will eat any food, even if it is rotten. They have 1-6 children, are pregnant for just 19 days, and reach adulthood in 20 days. They can have children 6 times.",
       "title": "Tavşanlar"
     },
     {
@@ -123,7 +123,7 @@
     {
       "type": "patchouli:text",
       "anchor": "cow",
-      "text": "$(thing)İnekler$(), çoğu iklimde, -10 ile 35°C arasındaki $(l:core_mechanics/climate#temperature)sıcaklıkta$() ve en az 250mm $(l:core_mechanics/climate#rainfall)yağış$() alan yerlerde ortaya çıkarlar. $(l:food/animal_husbandry#dairy_animals)Süt Veren Hayvanlardır$(). Sadece çürümüş de olabilen $(thing)tahılları$() yerler. 1-2 arası yavru yaparlar, 58 gün gebe kalırlar ve 192 günde yetişkinliğe ulaşırlar. Hiç sağılmazlarsa 13 kez yavru yapabilirler veya hiç çiftleştirilmezlerse 128 kez sağılabilirler. Her gün süt üretirler.",
+      "text": "$(thing)İnekler$(), çoğu iklimde, $(cfg:temperature:-10) ile $(cfg:temperature:35) arasındaki $(l:core_mechanics/climate#temperature)sıcaklıkta$() ve en az 250mm $(l:core_mechanics/climate#rainfall)yağış$() alan yerlerde ortaya çıkarlar. $(l:food/animal_husbandry#dairy_animals)Süt Veren Hayvanlardır$(). Sadece çürümüş de olabilen $(thing)tahılları$() yerler. 1-2 arası yavru yaparlar, 58 gün gebe kalırlar ve 192 günde yetişkinliğe ulaşırlar. Hiç sağılmazlarsa 13 kez yavru yapabilirler veya hiç çiftleştirilmezlerse 128 kez sağılabilirler. Her gün süt üretirler.",
       "title": "İnekler"
     },
     {
@@ -136,7 +136,7 @@
     {
       "type": "patchouli:text",
       "anchor": "goat",
-      "text": "$(thing)Keçiler$(), ılıman iklimlerde, -12 ile 25°C arasındaki $(l:core_mechanics/climate#temperature)sıcaklıkta$() ve en az 300mm $(l:core_mechanics/climate#rainfall)yağış$() alan yerlerde ortaya çıkarlar. $(l:food/animal_husbandry#dairy_animals)Süt Veren Hayvanlardır$(). Çürümüş de olabilen $(thing)tahılları$(), $(thing)meyveleri$() ve $(thing)sebzeleri$() yerler. 1-2 arası yavru yaparlar, 32 gün gebe kalırlar ve 96 günde yetişkinliğe ulaşırlar. Hiç sağılmazlarsa 6 kez yavru yapabilirler veya hiç çiftleştirilmezlerse 60 kez sağılabilirler. Her 3 günde bir süt üretirler.",
+      "text": "$(thing)Keçiler$(), ılıman iklimlerde, $(cfg:temperature:-12) ile $(cfg:temperature:25) arasındaki $(l:core_mechanics/climate#temperature)sıcaklıkta$() ve en az 300mm $(l:core_mechanics/climate#rainfall)yağış$() alan yerlerde ortaya çıkarlar. $(l:food/animal_husbandry#dairy_animals)Süt Veren Hayvanlardır$(). Çürümüş de olabilen $(thing)tahılları$(), $(thing)meyveleri$() ve $(thing)sebzeleri$() yerler. 1-2 arası yavru yaparlar, 32 gün gebe kalırlar ve 96 günde yetişkinliğe ulaşırlar. Hiç sağılmazlarsa 6 kez yavru yapabilirler veya hiç çiftleştirilmezlerse 60 kez sağılabilirler. Her 3 günde bir süt üretirler.",
       "title": "Keçiler"
     },
     {
@@ -149,7 +149,7 @@
     {
       "type": "patchouli:text",
       "anchor": "yak",
-      "text": "$(thing)Yaklar$(), soğuk iklimlerde, en fazla -11°C $(l:core_mechanics/climate#temperature)sıcaklıkta$() ve en az 100mm $(l:core_mechanics/climate#rainfall)yağış$() alan yerlerde ortaya çıkarlar. $(l:food/animal_husbandry#dairy_animals)Süt Veren Hayvanlardır$(). Sadece taze $(thing)tahılları$() yerler. Her zaman 1 yavru yaparlar, 64 gün gebe kalırlar ve 180 günde yetişkinliğe ulaşırlar. Hiç sağılmazlarsa 23 kez yavru yapabilirler veya hiç çiftleştirilmezlerse 230 kez sağılabilirler. Günde bir kez süt üretirler.",
+      "text": "$(thing)Yaklar$(), soğuk iklimlerde, en fazla $(cfg:temperature:-11) $(l:core_mechanics/climate#temperature)sıcaklıkta$() ve en az 100mm $(l:core_mechanics/climate#rainfall)yağış$() alan yerlerde ortaya çıkarlar. $(l:food/animal_husbandry#dairy_animals)Süt Veren Hayvanlardır$(). Sadece taze $(thing)tahılları$() yerler. Her zaman 1 yavru yaparlar, 64 gün gebe kalırlar ve 180 günde yetişkinliğe ulaşırlar. Hiç sağılmazlarsa 23 kez yavru yapabilirler veya hiç çiftleştirilmezlerse 230 kez sağılabilirler. Günde bir kez süt üretirler.",
       "title": "Yak"
     },
     {
@@ -162,7 +162,7 @@
     {
       "type": "patchouli:text",
       "anchor": "alpaca",
-      "text": "$(thing)Alpakalar$(), ılıman iklimlerde, -8 ile 20°C arasındaki $(l:core_mechanics/climate#temperature)sıcaklıkta$() ve en az 250mm $(l:core_mechanics/climate#rainfall)yağış$() alan yerlerde ortaya çıkarlar. $(l:food/animal_husbandry#wooly_animals)Yün Veren Hayvanlardır$(). $(thing)Tahılları$() ve $(thing)meyveleri$() yerler. 1-2 arası yavru yaparlar, 36 gün gebe kalırlar ve 98 günde yetişkinliğe ulaşırlar. Hiç kırkılmazlarsa 13 kez yavru yapabilirler veya hiç çiftleştirilmezlerse 128 kez kırkılabilirler. Her 6 günde bir yünleri uzar.",
+      "text": "$(thing)Alpakalar$(), ılıman iklimlerde, $(cfg:temperature:-8) ile $(cfg:temperature:20) arasındaki $(l:core_mechanics/climate#temperature)sıcaklıkta$() ve en az 250mm $(l:core_mechanics/climate#rainfall)yağış$() alan yerlerde ortaya çıkarlar. $(l:food/animal_husbandry#wooly_animals)Yün Veren Hayvanlardır$(). $(thing)Tahılları$() ve $(thing)meyveleri$() yerler. 1-2 arası yavru yaparlar, 36 gün gebe kalırlar ve 98 günde yetişkinliğe ulaşırlar. Hiç kırkılmazlarsa 13 kez yavru yapabilirler veya hiç çiftleştirilmezlerse 128 kez kırkılabilirler. Her 6 günde bir yünleri uzar.",
       "title": "Alpaka"
     },
     {
@@ -175,7 +175,7 @@
     {
       "type": "patchouli:text",
       "anchor": "sheep",
-      "text": "$(thing)Koyunlar$(), daha kurak iklimlerde, 0 ile 35°C arasındaki $(l:core_mechanics/climate#temperature)sıcaklıkta$() ve 70 ile 300mm arasında $(l:core_mechanics/climate#rainfall)yağış$() alan yerlerde ortaya çıkarlar. $(l:food/animal_husbandry#wooly_animals)Yün Veren Hayvanlardır$(). $(thing)Tahılları$() yerler. 1-2 arası yavru yaparlar, 32 gün gebe kalırlar ve 56 günde yetişkinliğe ulaşırlar. Hiç kırkılmazlarsa 6 kez yavru yapabilirler veya hiç çiftleştirilmezlerse 60 kez kırkılabilirler. Her 9 günde bir yünleri uzar.",
+      "text": "$(thing)Koyunlar$(), daha kurak iklimlerde, $(cfg:temperature:0) ile $(cfg:temperature:35) arasındaki $(l:core_mechanics/climate#temperature)sıcaklıkta$() ve 70 ile 300mm arasında $(l:core_mechanics/climate#rainfall)yağış$() alan yerlerde ortaya çıkarlar. $(l:food/animal_husbandry#wooly_animals)Yün Veren Hayvanlardır$(). $(thing)Tahılları$() yerler. 1-2 arası yavru yaparlar, 32 gün gebe kalırlar ve 56 günde yetişkinliğe ulaşırlar. Hiç kırkılmazlarsa 6 kez yavru yapabilirler veya hiç çiftleştirilmezlerse 60 kez kırkılabilirler. Her 9 günde bir yünleri uzar.",
       "title": "Koyun"
     },
     {
@@ -188,7 +188,7 @@
     {
       "type": "patchouli:text",
       "anchor": "musk_ox",
-      "text": "$(thing)Misk Öküzleri$(), soğuk iklimlerde, -25 ile 0°C arasındaki $(l:core_mechanics/climate#temperature)sıcaklıkta$() ve en az 100mm $(l:core_mechanics/climate#rainfall)yağış$() alan yerlerde ortaya çıkarlar. $(l:food/animal_husbandry#wooly_animals)Yün Veren Hayvanlardır$(). $(thing)Tahılları$() yerler. Her zaman 1 yavru yaparlar, 64 gün gebe kalırlar ve 168 günde yetişkinliğe ulaşırlar. Hiç kırkılmazlarsa 16 kez yavru yapabilirler veya hiç çiftleştirilmezlerse 160 kez kırkılabilirler. Her 96 saatte bir yünleri uzar.",
+      "text": "$(thing)Misk Öküzleri$(), soğuk iklimlerde, $(cfg:temperature:-25) ile $(cfg:temperature:0) arasındaki $(l:core_mechanics/climate#temperature)sıcaklıkta$() ve en az 100mm $(l:core_mechanics/climate#rainfall)yağış$() alan yerlerde ortaya çıkarlar. $(l:food/animal_husbandry#wooly_animals)Yün Veren Hayvanlardır$(). $(thing)Tahılları$() yerler. Her zaman 1 yavru yaparlar, 64 gün gebe kalırlar ve 168 günde yetişkinliğe ulaşırlar. Hiç kırkılmazlarsa 16 kez yavru yapabilirler veya hiç çiftleştirilmezlerse 160 kez kırkılabilirler. Her 96 saatte bir yünleri uzar.",
       "title": "Misk Öküzü"
     },
     {
@@ -201,7 +201,7 @@
     {
       "type": "patchouli:text",
       "anchor": "bactrian_camel",
-      "text": "$(thing)Bactrian Camels$() spawn in cold deserts, with $(l:core_mechanics/climate#temperature)temperature$() of at most -5°C, and at most 100mm of $(l:core_mechanics/climate#rainfall)rainfall$(). They are $(l:food/animal_husbandry#wooly_animals)Wooly Animals$() and can be ridden. They are slower than horses, but faster on sand and snow. They eat $(thing)grains$() and $(thing)fruits$(). They have 1 child, are pregnant for 24 days, and become adults in 80 days. They can have children 8 times if they are never sheared, or be sheared 80 times if they are never bred. They grow wool every 7 days.",
+      "text": "$(thing)Bactrian Camels$() spawn in cold deserts, with $(l:core_mechanics/climate#temperature)temperature$() of at most $(cfg:temperature:-5), and at most 100mm of $(l:core_mechanics/climate#rainfall)rainfall$(). They are $(l:food/animal_husbandry#wooly_animals)Wooly Animals$() and can be ridden. They are slower than horses, but faster on sand and snow. They eat $(thing)grains$() and $(thing)fruits$(). They have 1 child, are pregnant for 24 days, and become adults in 80 days. They can have children 8 times if they are never sheared, or be sheared 80 times if they are never bred. They grow wool every 7 days.",
       "title": "Bactrian Camel"
     },
     {
@@ -214,7 +214,7 @@
     {
       "type": "patchouli:text",
       "anchor": "chicken",
-      "text": "$(thing)Tavuklar$(), en az 14°C $(l:core_mechanics/climate#temperature)sıcaklığa$() ve en az 225mm $(l:core_mechanics/climate#rainfall)yağışa$() sahip ılıman ormanlarda ortaya çıkarlar. $(l:food/animal_husbandry#oviparous_animals)Yumurta ile Çoğalan Hayvanlardır$(). Çürümüş de olabilen $(thing)tahılları$(), $(thing)meyveleri$(), $(thing)sebzeleri$() ve $(thing)tohumları$() yerler. Yumurtaları 8 günde çatlar ve 24 günde yetişkinliğe ulaşırlar. 100 kez yumurtlayabilirler. Her 30 saatte bir yumurta üretirler.",
+      "text": "$(thing)Tavuklar$(), en az $(cfg:temperature:14) $(l:core_mechanics/climate#temperature)sıcaklığa$() ve en az 225mm $(l:core_mechanics/climate#rainfall)yağışa$() sahip ılıman ormanlarda ortaya çıkarlar. $(l:food/animal_husbandry#oviparous_animals)Yumurta ile Çoğalan Hayvanlardır$(). Çürümüş de olabilen $(thing)tahılları$(), $(thing)meyveleri$(), $(thing)sebzeleri$() ve $(thing)tohumları$() yerler. Yumurtaları 8 günde çatlar ve 24 günde yetişkinliğe ulaşırlar. 100 kez yumurtlayabilirler. Her 30 saatte bir yumurta üretirler.",
       "title": "Tavuklar"
     },
     {
@@ -227,7 +227,7 @@
     {
       "type": "patchouli:text",
       "anchor": "duck",
-      "text": "$(thing)Ördekler$(), -25 ile 30°C arasındaki $(l:core_mechanics/climate#temperature)sıcaklıkta$() ve en az 100mm $(l:core_mechanics/climate#rainfall)yağış$() alan çoğu ovada ortaya çıkarlar. $(l:food/animal_husbandry#oviparous_animals)Yumurta ile Çoğalan Hayvanlardır$(). $(thing)Tahılları$(), $(thing)meyveleri$(), $(thing)sebzeleri$(), $(thing)ekmeği$() ve $(thing)tohumları$() yerler. Yumurtaları 8 günde çatlar ve 32 günde yetişkinliğe ulaşırlar. 72 kez yumurtlayabilirler. Her 32 saatte bir yumurta üretirler.",
+      "text": "$(thing)Ördekler$(), $(cfg:temperature:-25) ile $(cfg:temperature:30) arasındaki $(l:core_mechanics/climate#temperature)sıcaklıkta$() ve en az 100mm $(l:core_mechanics/climate#rainfall)yağış$() alan çoğu ovada ortaya çıkarlar. $(l:food/animal_husbandry#oviparous_animals)Yumurta ile Çoğalan Hayvanlardır$(). $(thing)Tahılları$(), $(thing)meyveleri$(), $(thing)sebzeleri$(), $(thing)ekmeği$() ve $(thing)tohumları$() yerler. Yumurtaları 8 günde çatlar ve 32 günde yetişkinliğe ulaşırlar. 72 kez yumurtlayabilirler. Her 32 saatte bir yumurta üretirler.",
       "title": "Ördekler"
     },
     {
@@ -240,7 +240,7 @@
     {
       "type": "patchouli:text",
       "anchor": "quail",
-      "text": "$(thing)Bıldırcınlar$(), daha soğuk iklimlerde, -15 ile 15°C arasındaki $(l:core_mechanics/climate#temperature)sıcaklıkta$() ve en az 200mm $(l:core_mechanics/climate#rainfall)yağış$() alan yerlerde ortaya çıkarlar. $(l:food/animal_husbandry#oviparous_animals)Yumurta ile Çoğalan Hayvanlardır$(). Çürümüş de olabilen $(thing)tahılları$(), $(thing)meyveleri$(), $(thing)sebzeleri$() ve $(thing)tohumları$() yerler. Yumurtaları 8 günde çatlar ve 22 günde yetişkinliğe ulaşırlar. 48 kez yumurtlayabilirler. Her 28 saatte bir yumurta üretirler.",
+      "text": "$(thing)Bıldırcınlar$(), daha soğuk iklimlerde, $(cfg:temperature:-15) ile $(cfg:temperature:15) arasındaki $(l:core_mechanics/climate#temperature)sıcaklıkta$() ve en az 200mm $(l:core_mechanics/climate#rainfall)yağış$() alan yerlerde ortaya çıkarlar. $(l:food/animal_husbandry#oviparous_animals)Yumurta ile Çoğalan Hayvanlardır$(). Çürümüş de olabilen $(thing)tahılları$(), $(thing)meyveleri$(), $(thing)sebzeleri$() ve $(thing)tohumları$() yerler. Yumurtaları 8 günde çatlar ve 22 günde yetişkinliğe ulaşırlar. 48 kez yumurtlayabilirler. Her 28 saatte bir yumurta üretirler.",
       "title": "Bıldırcın"
     },
     {
@@ -253,7 +253,7 @@
     {
       "type": "patchouli:text",
       "anchor": "donkey",
-      "text": "$(thing)Eşekler$(), daha nemli ovalarda, en az -15°C $(l:core_mechanics/climate#temperature)sıcaklıkta$() ve 130 ile 400mm arası $(l:core_mechanics/climate#rainfall)yağış$() alan yerlerde ortaya çıkarlar. $(thing)Sandık$() taşıyabilen bir tür $(l:food/animal_husbandry#horses)Atgildir$(). $(thing)Tahılları$() ve $(thing)meyveleri$() yerler. 1 yavru yaparlar, 19 gün gebe kalırlar ve 80 günde yetişkinliğe ulaşırlar. 6 kez yavru yapabilirler.",
+      "text": "$(thing)Eşekler$(), daha nemli ovalarda, en az $(cfg:temperature:-15) $(l:core_mechanics/climate#temperature)sıcaklıkta$() ve 130 ile 400mm arası $(l:core_mechanics/climate#rainfall)yağış$() alan yerlerde ortaya çıkarlar. $(thing)Sandık$() taşıyabilen bir tür $(l:food/animal_husbandry#horses)Atgildir$(). $(thing)Tahılları$() ve $(thing)meyveleri$() yerler. 1 yavru yaparlar, 19 gün gebe kalırlar ve 80 günde yetişkinliğe ulaşırlar. 6 kez yavru yapabilirler.",
       "title": "Eşekler"
     },
     {
@@ -266,7 +266,7 @@
     {
       "type": "patchouli:text",
       "anchor": "mule",
-      "text": "$(thing)Katırlar$(), en az -15°C $(l:core_mechanics/climate#temperature)sıcaklığa$() ve 130 ile 400mm arası $(l:core_mechanics/climate#rainfall)yağışa$() sahip ovalarda ortaya çıkarlar. $(thing)Sandık$() taşıyabilen bir tür $(l:food/animal_husbandry#horses)Atgildir$() ve $(thing)at$() ile $(thing)eşeğin$() kısır ürünüdürler. $(thing)Tahılları$() ve $(thing)meyveleri$() yerler. 80 günde yetişkinliğe ulaşırlar.",
+      "text": "$(thing)Katırlar$(), en az $(cfg:temperature:-15) $(l:core_mechanics/climate#temperature)sıcaklığa$() ve 130 ile 400mm arası $(l:core_mechanics/climate#rainfall)yağışa$() sahip ovalarda ortaya çıkarlar. $(thing)Sandık$() taşıyabilen bir tür $(l:food/animal_husbandry#horses)Atgildir$() ve $(thing)at$() ile $(thing)eşeğin$() kısır ürünüdürler. $(thing)Tahılları$() ve $(thing)meyveleri$() yerler. 80 günde yetişkinliğe ulaşırlar.",
       "title": "Katırlar"
     },
     {
@@ -279,7 +279,7 @@
     {
       "type": "patchouli:text",
       "anchor": "horse",
-      "text": "$(thing)Atlar$(), en az -15°C $(l:core_mechanics/climate#temperature)sıcaklığa$() ve 130 ile 400mm arası $(l:core_mechanics/climate#rainfall)yağışa$() sahip ovalarda ortaya çıkarlar. Bir tür $(l:food/animal_husbandry#horses)Atgildir$(). $(thing)Tahılları$() ve $(thing)meyveleri$() yerler. 1 yavru yaparlar, 19 gün gebe kalırlar ve 80 günde yetişkinliğe ulaşırlar. 6 kez yavru yapabilirler.",
+      "text": "$(thing)Atlar$(), en az $(cfg:temperature:-15) $(l:core_mechanics/climate#temperature)sıcaklığa$() ve 130 ile 400mm arası $(l:core_mechanics/climate#rainfall)yağışa$() sahip ovalarda ortaya çıkarlar. Bir tür $(l:food/animal_husbandry#horses)Atgildir$(). $(thing)Tahılları$() ve $(thing)meyveleri$() yerler. 1 yavru yaparlar, 19 gün gebe kalırlar ve 80 günde yetişkinliğe ulaşırlar. 6 kez yavru yapabilirler.",
       "title": "Atlar"
     },
     {
@@ -292,7 +292,7 @@
     {
       "type": "patchouli:text",
       "anchor": "dromedary_camel",
-      "text": "$(thing)Dromedary Camels$() spawn in drier climates, with $(l:core_mechanics/climate#temperature)temperature$() of at least -5°C, and at most 100mm of $(l:core_mechanics/climate#rainfall)rainfall$(). They are $(l:food/animal_husbandry#mammals)Mammals$() that can be ridden. They are slower than horses, but are immune to cacti and run fast on sand. They eat $(thing)grains$() and $(thing)fruits$(). They have 1 child, are pregnant for 19 days, and reach adulthood in 80 days. They can have children 6 times.",
+      "text": "$(thing)Dromedary Camels$() spawn in drier climates, with $(l:core_mechanics/climate#temperature)temperature$() of at least $(cfg:temperature:-5), and at most 100mm of $(l:core_mechanics/climate#rainfall)rainfall$(). They are $(l:food/animal_husbandry#mammals)Mammals$() that can be ridden. They are slower than horses, but are immune to cacti and run fast on sand. They eat $(thing)grains$() and $(thing)fruits$(). They have 1 child, are pregnant for 19 days, and reach adulthood in 80 days. They can have children 6 times.",
       "title": "Dromedary Camels"
     },
     {
@@ -305,7 +305,7 @@
     {
       "type": "patchouli:text",
       "anchor": "frog",
-      "text": "$(thing)Kurbağalar$(), -13°C üzerindeki $(l:core_mechanics/climate#temperature)sıcaklıklarda$() ve en az 150mm $(l:core_mechanics/climate#rainfall)yağış$() alan yerlerde ortaya çıkarlar. Evcilleştirilebilirler ve çiftleştirildiklerinde tatlı suya yumurta bırakırlar, bu yumurtalar iribaşlara dönüşür. Balık ve örümcek gözü yerler.",
+      "text": "$(thing)Kurbağalar$(), $(cfg:temperature:-13) üzerindeki $(l:core_mechanics/climate#temperature)sıcaklıklarda$() ve en az 150mm $(l:core_mechanics/climate#rainfall)yağış$() alan yerlerde ortaya çıkarlar. Evcilleştirilebilirler ve çiftleştirildiklerinde tatlı suya yumurta bırakırlar, bu yumurtalar iribaşlara dönüşür. Balık ve örümcek gözü yerler.",
       "title": "Kurbağalar"
     },
     {

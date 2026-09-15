@@ -334,7 +334,7 @@
           "bold": true
         },
         {
-          "text": "Температура (°C)",
+          "text": "Температура",
           "bold": true
         },
         {
@@ -345,7 +345,7 @@
           "text": "Маниок"
         },
         {
-          "text": "10.4 - 40"
+          "text": "$(cfg:temperature:10.4) - $(cfg:temperature:40)"
         },
         {
           "text": "260 - 500"
@@ -354,7 +354,7 @@
           "text": "Зелёная фасоль"
         },
         {
-          "text": " -4 - 19.4"
+          "text": "$(cfg:temperature:-4) - $(cfg:temperature:19.4)"
         },
         {
           "text": "150 - 410"
@@ -363,7 +363,7 @@
           "text": "Чечевица"
         },
         {
-          "text": "-7.6 - 19.4"
+          "text": "$(cfg:temperature:-7.6) - $(cfg:temperature:19.4)"
         },
         {
           "text": " 75 - 190"
@@ -372,7 +372,7 @@
           "text": "Арахис"
         },
         {
-          "text": "12.2 - 40"
+          "text": "$(cfg:temperature:12.2) - $(cfg:temperature:40)"
         },
         {
           "text": "130 - 360"
@@ -381,7 +381,7 @@
           "text": "Соя"
         },
         {
-          "text": "-9.4 - 15.8"
+          "text": "$(cfg:temperature:-9.4) - $(cfg:temperature:15.8)"
         },
         {
           "text": "160 - 410"
@@ -390,7 +390,7 @@
           "text": "Ячмень"
         },
         {
-          "text": "-9.4 - 17.6"
+          "text": "$(cfg:temperature:-9.4) - $(cfg:temperature:17.6)"
         },
         {
           "text": " 70 - 310"
@@ -399,7 +399,7 @@
           "text": "Овёс"
         },
         {
-          "text": "-9.4 - 15.8"
+          "text": "$(cfg:temperature:-9.4) - $(cfg:temperature:15.8)"
         },
         {
           "text": "140 - 400"
@@ -408,7 +408,7 @@
           "text": "Рожь"
         },
         {
-          "text": "-9.4 - 8.6"
+          "text": "$(cfg:temperature:-9.4) - $(cfg:temperature:8.6)"
         },
         {
           "text": "100 - 350"
@@ -417,7 +417,7 @@
           "text": "Кукуруза"
         },
         {
-          "text": "-9.4 - 23.0"
+          "text": "$(cfg:temperature:-9.4) - $(cfg:temperature:23.0)"
         },
         {
           "text": "300 - 500"
@@ -426,7 +426,7 @@
           "text": "Пшеница"
         },
         {
-          "text": "-9.4 - 15.8"
+          "text": "$(cfg:temperature:-9.4) - $(cfg:temperature:15.8)"
         },
         {
           "text": "100 - 400"
@@ -435,7 +435,7 @@
           "text": "Рис"
         },
         {
-          "text": "8.6 - 40"
+          "text": "$(cfg:temperature:8.6) - $(cfg:temperature:40)"
         },
         {
           "text": "200 - 500"
@@ -444,7 +444,7 @@
           "text": "Свёкла"
         },
         {
-          "text": "-13 - 23.0"
+          "text": "$(cfg:temperature:-13) - $(cfg:temperature:23.0)"
         },
         {
           "text": " 70 - 300"
@@ -473,7 +473,7 @@
           "bold": true
         },
         {
-          "text": "Температура (°C)",
+          "text": "Температура",
           "bold": true
         },
         {
@@ -484,7 +484,7 @@
           "text": "Капуста"
         },
         {
-          "text": "-13 - 23.0"
+          "text": "$(cfg:temperature:-13) - $(cfg:temperature:23.0)"
         },
         {
           "text": " 60 - 280"
@@ -493,7 +493,7 @@
           "text": "Морковь"
         },
         {
-          "text": "-13 - 23.0"
+          "text": "$(cfg:temperature:-13) - $(cfg:temperature:23.0)"
         },
         {
           "text": "100 - 400"
@@ -502,7 +502,7 @@
           "text": "Чеснок"
         },
         {
-          "text": "-5.8 - 15.8"
+          "text": "$(cfg:temperature:-5.8) - $(cfg:temperature:15.8)"
         },
         {
           "text": " 60 - 310"
@@ -511,7 +511,7 @@
           "text": "Лук"
         },
         {
-          "text": "-7.6 - 21.2"
+          "text": "$(cfg:temperature:-7.6) - $(cfg:temperature:21.2)"
         },
         {
           "text": "100 - 390"
@@ -520,7 +520,7 @@
           "text": "Картофель"
         },
         {
-          "text": "-9.4 - 15.8"
+          "text": "$(cfg:temperature:-9.4) - $(cfg:temperature:15.8)"
         },
         {
           "text": "200 - 420"
@@ -529,7 +529,7 @@
           "text": "Кабачок"
         },
         {
-          "text": "-9.4 - 19.4"
+          "text": "$(cfg:temperature:-9.4) - $(cfg:temperature:19.4)"
         },
         {
           "text": " 90 - 390"
@@ -538,7 +538,7 @@
           "text": "Помидор"
         },
         {
-          "text": "1.4 - 40"
+          "text": "$(cfg:temperature:1.4) - $(cfg:temperature:40)"
         },
         {
           "text": "120 - 390"
@@ -547,7 +547,7 @@
           "text": "Красный перец"
         },
         {
-          "text": "12.2 - 40"
+          "text": "$(cfg:temperature:12.2) - $(cfg:temperature:40)"
         },
         {
           "text": "190 - 450"
@@ -556,7 +556,7 @@
           "text": "Жёлтый перец"
         },
         {
-          "text": "12.2 - 40"
+          "text": "$(cfg:temperature:12.2) - $(cfg:temperature:40)"
         },
         {
           "text": "190 - 450"
@@ -565,7 +565,7 @@
           "text": "Тыква"
         },
         {
-          "text": "-9.4 - 23.0"
+          "text": "$(cfg:temperature:-9.4) - $(cfg:temperature:23.0)"
         },
         {
           "text": "120 - 390"
@@ -574,7 +574,7 @@
           "text": "Арбуз"
         },
         {
-          "text": "  5 - 40"
+          "text": "$(cfg:temperature:5) - $(cfg:temperature:40)"
         },
         {
           "text": "200 - 500"
@@ -583,7 +583,7 @@
           "text": "Канола"
         },
         {
-          "text": "-13 - 3.2"
+          "text": "$(cfg:temperature:-13) - $(cfg:temperature:3.2)"
         },
         {
           "text": "120 - 320"
@@ -612,7 +612,7 @@
           "bold": true
         },
         {
-          "text": "Температура (°C)",
+          "text": "Температура",
           "bold": true
         },
         {
@@ -623,7 +623,7 @@
           "text": "Редис"
         },
         {
-          "text": "-11.2 - 6.8"
+          "text": "$(cfg:temperature:-11.2) - $(cfg:temperature:6.8)"
         },
         {
           "text": "190 - 410"
@@ -632,7 +632,7 @@
           "text": "Люцерна"
         },
         {
-          "text": "-14.8 - 5"
+          "text": "$(cfg:temperature:-14.8) - $(cfg:temperature:5)"
         },
         {
           "text": "240 - 480"
@@ -641,7 +641,7 @@
           "text": "Джут"
         },
         {
-          "text": "1.4 - 19.4"
+          "text": "$(cfg:temperature:1.4) - $(cfg:temperature:19.4)"
         },
         {
           "text": "100 - 410"
@@ -650,7 +650,7 @@
           "text": "Папирус"
         },
         {
-          "text": "12.2 - 40"
+          "text": "$(cfg:temperature:12.2) - $(cfg:temperature:40)"
         },
         {
           "text": "310 - 500"
@@ -659,7 +659,7 @@
           "text": "Сахарный тростник"
         },
         {
-          "text": "17.6 - 40"
+          "text": "$(cfg:temperature:17.6) - $(cfg:temperature:40)"
         },
         {
           "text": "160 - 500"

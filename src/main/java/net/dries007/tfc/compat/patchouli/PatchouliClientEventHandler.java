@@ -56,6 +56,8 @@ public final class PatchouliClientEventHandler
         final IEventBus bus = NeoForge.EVENT_BUS;
 
         bus.addListener(PatchouliClientEventHandler::renderBookTooltipWithoutBook);
+
+        ConfigTextFunction.register();
     }
 
     public static void renderBookTooltipWithoutBook(RenderTooltipEvent.Pre event)

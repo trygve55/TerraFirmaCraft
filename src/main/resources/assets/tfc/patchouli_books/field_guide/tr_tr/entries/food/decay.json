@@ -15,7 +15,7 @@
     {
       "type": "patchouli:text",
       "anchor": "small_vessels",
-      "text": "Yiyecekleri saklamanın en kolay yollarından biri $(thing)Kap$() kullanmaktır. $(thing)Büyük Kaplar$(), dokuz eşyaya kadar depolayabilen bloklardır ve $(thing)mühürlendiklerinde$() içlerindeki eşyalar, kalan ömürlerini 2 katına çıkaran $(5)$(bold)Korunmuş$() durumunu kazanırlar.$(br2)$(thing)Küçük Kaplar$(), dört eşyaya kadar depolayabilen ve içindekilere $(5)$(bold)Korunmuş$() durumunu uygulayan eşyalardır.",
+      "text": "Yiyecekleri saklamanın en kolay yollarından biri $(thing)Kap$() kullanmaktır. $(thing)Büyük Kaplar$(), dokuz eşyaya kadar depolayabilen bloklardır ve $(thing)mühürlendiklerinde$() içlerindeki eşyalar, kalan ömürlerini $(cfg:traitPreservedModifier) katına çıkaran $(5)$(bold)Korunmuş$() durumunu kazanırlar.$(br2)$(thing)Küçük Kaplar$(), dört eşyaya kadar depolayabilen ve içindekilere $(5)$(bold)Korunmuş$() durumunu uygulayan eşyalardır.",
       "title": "Kaplar"
     },
     {
@@ -46,7 +46,7 @@
     {
       "type": "tfc:heat_recipe",
       "recipe": "tfc:heating/food/cooked_mutton",
-      "text": "Bunun yerine, bir $(l:getting_started/firepit)Ateş Çukuru$() veya $(l:food/grill)Izgara$() kullanmak size bir güçlendirme bile sağlayabilir! Örneğin, koyun etini (yukarıda gösterilen) bir $(thing)Ateş Çukuru$()'nda pişirmek ömrünü 1,33 kat artırırken, bir $(thing)Izgara$()'da pişirmek ömrünü 1,66 kat artıracaktır!"
+      "text": "Instead, a $(l:food/grill)Grill$() can even provide a buff for using it! Cooking mutton (pictured above) in a $(thing)Grill$() gives it the $(thing)Wood Grilled$() trait, multiplying its remaining lifetime by $(cfg:traitWoodGrilledModifier)x. Cooking in a $(l:metalworking/charcoal_forge)Charcoal Forge$() instead gives the $(thing)Charcoal Grilled$() trait, which multiplies its lifetime by $(cfg:traitCharcoalGrilledModifier)x."
     },
     {
       "type": "patchouli:text",

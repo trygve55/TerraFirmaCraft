@@ -27,8 +27,6 @@ import net.dries007.tfc.common.recipes.HeatingRecipe;
 import net.dries007.tfc.config.TFCConfig;
 import net.dries007.tfc.util.Helpers;
 
-import static net.dries007.tfc.TerraFirmaCraft.*;
-
 public class FirepitBlockEntity extends AbstractFirepitBlockEntity<ItemStackHandler>
 {
     public static final int SLOT_ITEM_INPUT = 4; // item to be cooked

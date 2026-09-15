@@ -15,7 +15,7 @@
     {
       "type": "patchouli:text",
       "anchor": "small_vessels",
-      "text": "Один із найпростіших способів зберегти їжу – використати $(thing)горщик та корчагу$(). $(thing)Корчага$() є контейнером, який може зберігати до дев’яти елементів, і після $(thing)запечатування$(), продукти будуть мати позначку $(5)$(bold)консервований$(), що подовжить термін придатності вдвічі.$(br2)$(thing)Горщик$() є предметом, який може зберігати до чотирьох предметів, і також застосовуватиме $(5)$(bold)консервований$() статус до їжі.",
+      "text": "One of the easiest ways to preserve food is to use a $(thing)Vessel$(). $(thing)Large Vessels$() are a block which can store up to nine items, and when $(thing)sealed$() the items inside will gain the $(5)$(bold)Preserved$() status, which extends their remaining lifetime by $(cfg:traitPreservedModifier)x.$(br2)$(thing)Small Vessels$() are a item which can store up to four other items, and will also apply the $(5)$(bold)Preserved$() status to their contents.",
       "title": "Збереження"
     },
     {
@@ -46,7 +46,7 @@
     {
       "type": "tfc:heat_recipe",
       "recipe": "tfc:heating/food/cooked_mutton",
-      "text": "Натомість, $(l:getting_started/firepit)багаття$() або $(l:food/grill)гриль$() можуть навіть надати бонус за своє використання! Наприклад, приготування баранини (картинка вище) у $(thing)багатті$() збільшить термін придатності на 1.33x, а на $(thing)грилі$() вже на 1.66x!"
+      "text": "Instead, a $(l:food/grill)Grill$() can even provide a buff for using it! Cooking mutton (pictured above) in a $(thing)Grill$() gives it the $(thing)Wood Grilled$() trait, multiplying its remaining lifetime by $(cfg:traitWoodGrilledModifier)x. Cooking in a $(l:metalworking/charcoal_forge)Charcoal Forge$() instead gives the $(thing)Charcoal Grilled$() trait, which multiplies its lifetime by $(cfg:traitCharcoalGrilledModifier)x."
     },
     {
       "type": "patchouli:text",

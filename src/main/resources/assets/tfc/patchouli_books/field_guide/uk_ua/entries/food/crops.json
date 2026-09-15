@@ -48,7 +48,7 @@
     {
       "type": "patchouli:text",
       "anchor": "barley",
-      "text": "$(bold)$(l:core_mechanics/climate#temperature)Temperature$(): -7 - 23 °C$(br)$(bold)$(l:food/hydration)Hydration$(): 10 - 70 %$(br)$(bold)Category$(): Cereal$(br)$(br)$(bold)$(3)N: 75 $(bold)$(6)P: +20 $(bold)$(d)K: +20$()$(br)Barley is a single block crop. Barley seeds can be planted on farmland and will produce $(thing)Barley$() and $(thing)Barley Seeds$() as a product.",
+      "text": "$(bold)$(l:core_mechanics/climate#temperature)Temperature$(): $(cfg:climate.barley.temperature)$(br)$(bold)$(l:food/hydration)Hydration$(): $(cfg:climate.barley.hydration) %$(br)$(bold)Category$(): Cereal$(br)$(br)$(bold)$(3)N: 75 $(bold)$(6)P: +20 $(bold)$(d)K: +20$()$(br)Barley is a single block crop. Barley seeds can be planted on farmland and will produce $(thing)Barley$() and $(thing)Barley Seeds$() as a product.",
       "title": "Ячмінь"
     },
     {
@@ -196,7 +196,7 @@
     {
       "type": "patchouli:text",
       "anchor": "oat",
-      "text": "$(bold)$(l:core_mechanics/climate#temperature)Temperature$(): -7 - 22 °C$(br)$(bold)$(l:food/hydration)Hydration$(): 25 - 85 %$(br)$(bold)Category$(): Cereal$(br)$(br)$(bold)$(3)N: 100 $(bold)$(6)P: +40 $(bold)$(d)K: +30$()$(br)Oat is a single block crop. Oat seeds can be planted on farmland and will produce $(thing)Oat$() and $(thing)Oat Seeds$() as a product.",
+      "text": "$(bold)$(l:core_mechanics/climate#temperature)Temperature$(): $(cfg:climate.oat.temperature)$(br)$(bold)$(l:food/hydration)Hydration$(): $(cfg:climate.oat.hydration) %$(br)$(bold)Category$(): Cereal$(br)$(br)$(bold)$(3)N: 100 $(bold)$(6)P: +40 $(bold)$(d)K: +30$()$(br)Oat is a single block crop. Oat seeds can be planted on farmland and will produce $(thing)Oat$() and $(thing)Oat Seeds$() as a product.",
       "title": "Овес"
     },
     {
@@ -344,7 +344,7 @@
     {
       "type": "patchouli:text",
       "anchor": "rye",
-      "text": "$(bold)$(l:core_mechanics/climate#temperature)Temperature$(): -7 - 18 °C$(br)$(bold)$(l:food/hydration)Hydration$(): 15 - 80 %$(br)$(bold)Category$(): Cereal$(br)$(br)$(bold)$(3)N: 100 $(bold)$(6)P: +20 $(bold)$(d)K: +40$()$(br)Rye is a single block crop. Rye seeds can be planted on farmland and will produce $(thing)Rye$() and $(thing)Rye Seeds$() as a product.",
+      "text": "$(bold)$(l:core_mechanics/climate#temperature)Temperature$(): $(cfg:climate.rye.temperature)$(br)$(bold)$(l:food/hydration)Hydration$(): $(cfg:climate.rye.hydration) %$(br)$(bold)Category$(): Cereal$(br)$(br)$(bold)$(3)N: 100 $(bold)$(6)P: +20 $(bold)$(d)K: +40$()$(br)Rye is a single block crop. Rye seeds can be planted on farmland and will produce $(thing)Rye$() and $(thing)Rye Seeds$() as a product.",
       "title": "Жито"
     },
     {
@@ -492,7 +492,7 @@
     {
       "type": "patchouli:text",
       "anchor": "maize",
-      "text": "$(bold)$(l:core_mechanics/climate#temperature)Temperature$(): -7 - 27 °C$(br)$(bold)$(l:food/hydration)Hydration$(): 50 - 100 %$(br)$(bold)Category$(): Cereal$(br)$(br)$(bold)$(3)N: 90 $(bold)$(6)P: +25 $(bold)$(d)K: +25$()$(br)Maize is a two block tall crop. Maize seeds can be planted on farmland, will grow two blocks tall, and will produce $(thing)Maize$() and $(thing)Maize Seeds$() as a product.",
+      "text": "$(bold)$(l:core_mechanics/climate#temperature)Temperature$(): $(cfg:climate.maize.temperature)$(br)$(bold)$(l:food/hydration)Hydration$(): $(cfg:climate.maize.hydration) %$(br)$(bold)Category$(): Cereal$(br)$(br)$(bold)$(3)N: 90 $(bold)$(6)P: +25 $(bold)$(d)K: +25$()$(br)Maize is a two block tall crop. Maize seeds can be planted on farmland, will grow two blocks tall, and will produce $(thing)Maize$() and $(thing)Maize Seeds$() as a product.",
       "title": "Кукурудза"
     },
     {
@@ -630,7 +630,7 @@
     {
       "type": "patchouli:text",
       "anchor": "wheat",
-      "text": "$(bold)$(l:core_mechanics/climate#temperature)Temperature$(): -7 - 22 °C$(br)$(bold)$(l:food/hydration)Hydration$(): 15 - 85 %$(br)$(bold)Category$(): Cereal$(br)$(br)$(bold)$(3)N: 100 $(bold)$(6)P: +30 $(bold)$(d)K: +30$()$(br)Wheat is a single block crop. Wheat seeds can be planted on farmland and will produce $(thing)Wheat$() and $(thing)Wheat Seeds$() as a product.",
+      "text": "$(bold)$(l:core_mechanics/climate#temperature)Temperature$(): $(cfg:climate.wheat.temperature)$(br)$(bold)$(l:food/hydration)Hydration$(): $(cfg:climate.wheat.hydration) %$(br)$(bold)Category$(): Cereal$(br)$(br)$(bold)$(3)N: 100 $(bold)$(6)P: +30 $(bold)$(d)K: +30$()$(br)Wheat is a single block crop. Wheat seeds can be planted on farmland and will produce $(thing)Wheat$() and $(thing)Wheat Seeds$() as a product.",
       "title": "Пшениця"
     },
     {
@@ -778,7 +778,7 @@
     {
       "type": "patchouli:text",
       "anchor": "rice",
-      "text": "$(bold)$(l:core_mechanics/climate#temperature)Temperature$(): 8 - 31 °C$(br)$(bold)$(l:food/hydration)Hydration$(): 35 - 100 %$(br)$(bold)Category$(): Cereal$(br)$(br)$(bold)$(3)N: 40 $(bold)$(6)P: 30 $(bold)$(d)K: 30$()$(br)Rice is a single block crop. Rice must be grown underwater - it must be planted on farmland, in freshwater that is a single block deep. It will produce $(thing)Rice$() and $(thing)Rice Seeds$() as a product. Unlike most cereal grains, rice requires an even balance of nutrients.",
+      "text": "$(bold)$(l:core_mechanics/climate#temperature)Temperature$(): $(cfg:climate.rice.temperature)$(br)$(bold)$(l:food/hydration)Hydration$(): $(cfg:climate.rice.hydration) %$(br)$(bold)Category$(): Cereal$(br)$(br)$(bold)$(3)N: 40 $(bold)$(6)P: 30 $(bold)$(d)K: 30$()$(br)Rice is a single block crop. Rice must be grown underwater - it must be planted on farmland, in freshwater that is a single block deep. It will produce $(thing)Rice$() and $(thing)Rice Seeds$() as a product. Unlike most cereal grains, rice requires an even balance of nutrients.",
       "title": "Рис"
     },
     {
@@ -926,7 +926,7 @@
     {
       "type": "patchouli:text",
       "anchor": "cassava",
-      "text": "$(bold)$(l:core_mechanics/climate#temperature)Temperature$(): 10 - 31 °C$(br)$(bold)$(l:food/hydration)Hydration$(): 45 - 100 %$(br)$(bold)Category$(): Legume$(br)$(br)$(bold)$(3)N: +50 $(bold)$(6)P: 40 $(bold)$(d)K: 20$()$(br)Cassava is a single block crop. Cassava seeds can be planted on farmland and will produce $(thing)Cassava$() and $(thing)Cassava Seeds$() as a product.",
+      "text": "$(bold)$(l:core_mechanics/climate#temperature)Temperature$(): $(cfg:climate.cassava.temperature)$(br)$(bold)$(l:food/hydration)Hydration$(): $(cfg:climate.cassava.hydration) %$(br)$(bold)Category$(): Legume$(br)$(br)$(bold)$(3)N: +50 $(bold)$(6)P: 40 $(bold)$(d)K: 20$()$(br)Cassava is a single block crop. Cassava seeds can be planted on farmland and will produce $(thing)Cassava$() and $(thing)Cassava Seeds$() as a product.",
       "title": "Cassava"
     },
     {
@@ -1040,7 +1040,7 @@
     {
       "type": "patchouli:text",
       "anchor": "green_bean",
-      "text": "$(bold)$(l:core_mechanics/climate#temperature)Temperature$(): -2 - 25 °C$(br)$(bold)$(l:food/hydration)Hydration$(): 25 - 90 %$(br)$(bold)Category$(): Legume$(br)$(br)$(bold)$(3)N: +80 $(bold)$(6)P: 50 $(bold)$(d)K: 40$()$(br)Green Beans is a climbing two block tall crop. Green Bean seeds can be planted on farmland, will grow two blocks tall if a stick is present, and will produce $(thing)Green Beans$() and $(thing)Green Bean Seeds$() as a product.",
+      "text": "$(bold)$(l:core_mechanics/climate#temperature)Temperature$(): $(cfg:climate.green_bean.temperature)$(br)$(bold)$(l:food/hydration)Hydration$(): $(cfg:climate.green_bean.hydration) %$(br)$(bold)Category$(): Legume$(br)$(br)$(bold)$(3)N: +80 $(bold)$(6)P: 50 $(bold)$(d)K: 40$()$(br)Green Beans is a climbing two block tall crop. Green Bean seeds can be planted on farmland, will grow two blocks tall if a stick is present, and will produce $(thing)Green Beans$() and $(thing)Green Bean Seeds$() as a product.",
       "title": "Green Beans"
     },
     {
@@ -1220,7 +1220,7 @@
     {
       "type": "patchouli:text",
       "anchor": "lentil",
-      "text": "$(bold)$(l:core_mechanics/climate#temperature)Temperature$(): -5 - 25 °C$(br)$(bold)$(l:food/hydration)Hydration$(): 15 - 50 %$(br)$(bold)Category$(): Legume$(br)$(br)$(bold)$(3)N: +80 $(bold)$(6)P: 20 $(bold)$(d)K: 20$()$(br)Lentils are a single block crop. Lentil seeds can be planted on farmland and will produce $(thing)Lentils$() and $(thing)Lentil Seeds$() as a product.",
+      "text": "$(bold)$(l:core_mechanics/climate#temperature)Temperature$(): $(cfg:climate.lentil.temperature)$(br)$(bold)$(l:food/hydration)Hydration$(): $(cfg:climate.lentil.hydration) %$(br)$(bold)Category$(): Legume$(br)$(br)$(bold)$(3)N: +80 $(bold)$(6)P: 20 $(bold)$(d)K: 20$()$(br)Lentils are a single block crop. Lentil seeds can be planted on farmland and will produce $(thing)Lentils$() and $(thing)Lentil Seeds$() as a product.",
       "title": "Lentils"
     },
     {
@@ -1334,7 +1334,7 @@
     {
       "type": "patchouli:text",
       "anchor": "peanut",
-      "text": "$(bold)$(l:core_mechanics/climate#temperature)Temperature$(): 11 - 31 °C$(br)$(bold)$(l:food/hydration)Hydration$(): 20 - 80 %$(br)$(bold)Category$(): Legume$(br)$(br)$(bold)$(3)N: +90 $(bold)$(6)P: 50 $(bold)$(d)K: 50$()$(br)Peanuts are a single block crop. Peanut seeds can be planted on farmland and will produce $(thing)Peanuts$() and $(thing)Peanut Seeds$() as a product.",
+      "text": "$(bold)$(l:core_mechanics/climate#temperature)Temperature$(): $(cfg:climate.peanut.temperature)$(br)$(bold)$(l:food/hydration)Hydration$(): $(cfg:climate.peanut.hydration) %$(br)$(bold)Category$(): Legume$(br)$(br)$(bold)$(3)N: +90 $(bold)$(6)P: 50 $(bold)$(d)K: 50$()$(br)Peanuts are a single block crop. Peanut seeds can be planted on farmland and will produce $(thing)Peanuts$() and $(thing)Peanut Seeds$() as a product.",
       "title": "Peanuts"
     },
     {
@@ -1448,7 +1448,7 @@
     {
       "type": "patchouli:text",
       "anchor": "soybean",
-      "text": "$(bold)$(l:core_mechanics/climate#temperature)Temperature$(): -7 - 22 °C$(br)$(bold)$(l:food/hydration)Hydration$(): 25 - 90 %$(br)$(bold)Category$(): Legume$(br)$(br)$(bold)$(3)N: +80 $(bold)$(6)P: 60 $(bold)$(d)K: 30$()$(br)Soybean is a single block crop. Soybean seeds can be planted on farmland and will produce $(thing)Soybean$() and $(thing)Soybean Seeds$() as a product.",
+      "text": "$(bold)$(l:core_mechanics/climate#temperature)Temperature$(): $(cfg:climate.soybean.temperature)$(br)$(bold)$(l:food/hydration)Hydration$(): $(cfg:climate.soybean.hydration) %$(br)$(bold)Category$(): Legume$(br)$(br)$(bold)$(3)N: +80 $(bold)$(6)P: 60 $(bold)$(d)K: 30$()$(br)Soybean is a single block crop. Soybean seeds can be planted on farmland and will produce $(thing)Soybean$() and $(thing)Soybean Seeds$() as a product.",
       "title": "Соєві боби"
     },
     {
@@ -1579,7 +1579,7 @@
     {
       "type": "patchouli:text",
       "anchor": "beet",
-      "text": "$(bold)$(l:core_mechanics/climate#temperature)Temperature$(): -10 - 27 °C$(br)$(bold)$(l:food/hydration)Hydration$(): 10 - 70 %$(br)$(bold)Category$(): Vegetable$(br)$(br)$(bold)$(3)N: 40 $(bold)$(6)P: 30 $(bold)$(d)K: 50$()$(br)Beets are a a single block crop. Beet seeds can be planted on farmland and will produce $(thing)Beet$() and $(thing)Beet Seeds$() as a product.",
+      "text": "$(bold)$(l:core_mechanics/climate#temperature)Temperature$(): $(cfg:climate.beet.temperature)$(br)$(bold)$(l:food/hydration)Hydration$(): $(cfg:climate.beet.hydration) %$(br)$(bold)Category$(): Vegetable$(br)$(br)$(bold)$(3)N: 40 $(bold)$(6)P: 30 $(bold)$(d)K: 50$()$(br)Beets are a a single block crop. Beet seeds can be planted on farmland and will produce $(thing)Beet$() and $(thing)Beet Seeds$() as a product.",
       "title": "Буряк"
     },
     {
@@ -1693,7 +1693,7 @@
     {
       "type": "patchouli:text",
       "anchor": "cabbage",
-      "text": "$(bold)$(l:core_mechanics/climate#temperature)Temperature$(): -10 - 27 °C$(br)$(bold)$(l:food/hydration)Hydration$(): 10 - 65 %$(br)$(bold)Category$(): Vegetable$(br)$(br)$(bold)$(3)N: 50 $(bold)$(6)P: 20 $(bold)$(d)K: 40$()$(br)Cabbage is a single block crop. Cabbage seeds can be planted on farmland and will produce $(thing)Cabbage$() and $(thing)Cabbage Seeds$() as a product.",
+      "text": "$(bold)$(l:core_mechanics/climate#temperature)Temperature$(): $(cfg:climate.cabbage.temperature)$(br)$(bold)$(l:food/hydration)Hydration$(): $(cfg:climate.cabbage.hydration) %$(br)$(bold)Category$(): Vegetable$(br)$(br)$(bold)$(3)N: 50 $(bold)$(6)P: 20 $(bold)$(d)K: 40$()$(br)Cabbage is a single block crop. Cabbage seeds can be planted on farmland and will produce $(thing)Cabbage$() and $(thing)Cabbage Seeds$() as a product.",
       "title": "Капуста"
     },
     {
@@ -1807,7 +1807,7 @@
     {
       "type": "patchouli:text",
       "anchor": "carrot",
-      "text": "$(bold)$(l:core_mechanics/climate#temperature)Temperature$(): -10 - 27 °C$(br)$(bold)$(l:food/hydration)Hydration$(): 15 - 85 %$(br)$(bold)Category$(): Vegetable$(br)$(br)$(bold)$(3)N: 50 $(bold)$(6)P: 30 $(bold)$(d)K: 40$()$(br)Carrot is a single block crop. Carrot seeds can be planted on farmland and will produce $(thing)Carrot$() and $(thing)Carrot Seeds$() as a product.",
+      "text": "$(bold)$(l:core_mechanics/climate#temperature)Temperature$(): $(cfg:climate.carrot.temperature)$(br)$(bold)$(l:food/hydration)Hydration$(): $(cfg:climate.carrot.hydration) %$(br)$(bold)Category$(): Vegetable$(br)$(br)$(bold)$(3)N: 50 $(bold)$(6)P: 30 $(bold)$(d)K: 40$()$(br)Carrot is a single block crop. Carrot seeds can be planted on farmland and will produce $(thing)Carrot$() and $(thing)Carrot Seeds$() as a product.",
       "title": "Морква"
     },
     {
@@ -1904,7 +1904,7 @@
     {
       "type": "patchouli:text",
       "anchor": "garlic",
-      "text": "$(bold)$(l:core_mechanics/climate#temperature)Temperature$(): -3 - 22 °C$(br)$(bold)$(l:food/hydration)Hydration$(): 10 - 70 %$(br)$(bold)Category$(): Vegetable$(br)$(br)$(bold)$(3)N: 40 $(bold)$(6)P: 20 $(bold)$(d)K: 50$()$(br)Garlic is a single block crop. Garlic seeds can be planted on farmland and will produce $(thing)Garlic$() and $(thing)Garlic Seeds$() as a product.",
+      "text": "$(bold)$(l:core_mechanics/climate#temperature)Temperature$(): $(cfg:climate.garlic.temperature)$(br)$(bold)$(l:food/hydration)Hydration$(): $(cfg:climate.garlic.hydration) %$(br)$(bold)Category$(): Vegetable$(br)$(br)$(bold)$(3)N: 40 $(bold)$(6)P: 20 $(bold)$(d)K: 50$()$(br)Garlic is a single block crop. Garlic seeds can be planted on farmland and will produce $(thing)Garlic$() and $(thing)Garlic Seeds$() as a product.",
       "title": "Часник"
     },
     {
@@ -2001,7 +2001,7 @@
     {
       "type": "patchouli:text",
       "anchor": "potato",
-      "text": "$(bold)$(l:core_mechanics/climate#temperature)Temperature$(): -7 - 22 °C$(br)$(bold)$(l:food/hydration)Hydration$(): 35 - 90 %$(br)$(bold)Category$(): Vegetable$(br)$(br)$(bold)$(3)N: 40 $(bold)$(6)P: 20 $(bold)$(d)K: 60$()$(br)Potatoes are a single block crop. Potato seeds can be planted on farmland and will produce $(thing)Potatoes$() and $(thing)Potato Seeds$() as a product.",
+      "text": "$(bold)$(l:core_mechanics/climate#temperature)Temperature$(): $(cfg:climate.potato.temperature)$(br)$(bold)$(l:food/hydration)Hydration$(): $(cfg:climate.potato.hydration) %$(br)$(bold)Category$(): Vegetable$(br)$(br)$(bold)$(3)N: 40 $(bold)$(6)P: 20 $(bold)$(d)K: 60$()$(br)Potatoes are a single block crop. Potato seeds can be planted on farmland and will produce $(thing)Potatoes$() and $(thing)Potato Seeds$() as a product.",
       "title": "Potatoes"
     },
     {
@@ -2132,7 +2132,7 @@
     {
       "type": "patchouli:text",
       "anchor": "pumpkin",
-      "text": "$(bold)$(l:core_mechanics/climate#temperature)Temperature$(): -7 - 27 °C$(br)$(bold)$(l:food/hydration)Hydration$(): 20 - 85 %$(br)$(bold)Category$(): Spreading Vegetable$(br)$(br)$(bold)$(3)N: 40 $(bold)$(6)P: 30 $(bold)$(d)K: 60$()$(br)Pumpkins are a spreading crop. Pumpkin seeds can be planted on farmland and will place up to two $(thing)Pumpkin Blocks$() on the ground next to it while it is mature. If the pumpkin blocks are harvested, and the plant matures again, it can grow more pumpkins. Pumpkins can be made into $(l:core_mechanics/lighting#jack_o_lanterns)Jack 'o Lanterns$().",
+      "text": "$(bold)$(l:core_mechanics/climate#temperature)Temperature$(): $(cfg:climate.pumpkin.temperature)$(br)$(bold)$(l:food/hydration)Hydration$(): $(cfg:climate.pumpkin.hydration) %$(br)$(bold)Category$(): Spreading Vegetable$(br)$(br)$(bold)$(3)N: 40 $(bold)$(6)P: 30 $(bold)$(d)K: 60$()$(br)Pumpkins are a spreading crop. Pumpkin seeds can be planted on farmland and will place up to two $(thing)Pumpkin Blocks$() on the ground next to it while it is mature. If the pumpkin blocks are harvested, and the plant matures again, it can grow more pumpkins. Pumpkins can be made into $(l:core_mechanics/lighting#jack_o_lanterns)Jack 'o Lanterns$().",
       "title": "Pumpkins"
     },
     {
@@ -2304,7 +2304,7 @@
     {
       "type": "patchouli:text",
       "anchor": "melon",
-      "text": "$(bold)$(l:core_mechanics/climate#temperature)Temperature$(): 5 - 31 °C$(br)$(bold)$(l:food/hydration)Hydration$(): 35 - 100 %$(br)$(bold)Category$(): Spreading Vegetable$(br)$(br)$(bold)$(3)N: 30 $(bold)$(6)P: 40 $(bold)$(d)K: 65$()$(br)Melons are a spreading crop. Melon seeds can be planted on farmland and will place up to two $(thing)Melon Blocks$() on the ground next to it while it is mature. If the melon blocks are harvested, and the plant matures again, it can grow more melon.",
+      "text": "$(bold)$(l:core_mechanics/climate#temperature)Temperature$(): $(cfg:climate.melon.temperature)$(br)$(bold)$(l:food/hydration)Hydration$(): $(cfg:climate.melon.hydration) %$(br)$(bold)Category$(): Spreading Vegetable$(br)$(br)$(bold)$(3)N: 30 $(bold)$(6)P: 40 $(bold)$(d)K: 65$()$(br)Melons are a spreading crop. Melon seeds can be planted on farmland and will place up to two $(thing)Melon Blocks$() on the ground next to it while it is mature. If the melon blocks are harvested, and the plant matures again, it can grow more melon.",
       "title": "Melons"
     },
     {
@@ -2476,7 +2476,7 @@
     {
       "type": "patchouli:text",
       "anchor": "tomatoes",
-      "text": "$(bold)$(l:core_mechanics/climate#temperature)Temperature$(): 2 - 31 °C$(br)$(bold)$(l:food/hydration)Hydration$(): 20 - 85 %$(br)$(bold)Category$(): Vegetable$(br)$(br)$(bold)$(3)N: 40 $(bold)$(6)P: 50 $(bold)$(d)K: 60$()$(br)Tomatoes are a climbing two block tall crop. Tomato seeds can be planted on farmland, will grow two blocks tall if a stick is present, and will produce $(thing)Tomatoes$() and $(thing)Tomato Seeds$() as a product.",
+      "text": "$(bold)$(l:core_mechanics/climate#temperature)Temperature$(): $(cfg:climate.tomato.temperature)$(br)$(bold)$(l:food/hydration)Hydration$(): $(cfg:climate.tomato.hydration) %$(br)$(bold)Category$(): Vegetable$(br)$(br)$(bold)$(3)N: 40 $(bold)$(6)P: 50 $(bold)$(d)K: 60$()$(br)Tomatoes are a climbing two block tall crop. Tomato seeds can be planted on farmland, will grow two blocks tall if a stick is present, and will produce $(thing)Tomatoes$() and $(thing)Tomato Seeds$() as a product.",
       "title": "Tomatoes"
     },
     {
@@ -2656,7 +2656,7 @@
     {
       "type": "patchouli:text",
       "anchor": "red_bell_pepper",
-      "text": "$(bold)$(l:core_mechanics/climate#temperature)Temperature$(): 11 - 31 °C$(br)$(bold)$(l:food/hydration)Hydration$(): 30 - 95 %$(br)$(bold)Category$(): Pickable Vegetable$(br)$(br)$(bold)$(3)N: 30 $(bold)$(6)P: 40 $(bold)$(d)K: 50$()$(br)Red Bell Peppers are a pickable crop. When they are near mature, they can be harvested with $(item)$(k:key.use)$() to obtain Green Bell Peppers. Harvesting with $(item)$(k:key.use)$() allows the plant to grow more peppers in the future rather than destroying the plant.",
+      "text": "$(bold)$(l:core_mechanics/climate#temperature)Temperature$(): $(cfg:climate.red_bell_pepper.temperature)$(br)$(bold)$(l:food/hydration)Hydration$(): $(cfg:climate.red_bell_pepper.hydration) %$(br)$(bold)Category$(): Pickable Vegetable$(br)$(br)$(bold)$(3)N: 30 $(bold)$(6)P: 40 $(bold)$(d)K: 50$()$(br)Red Bell Peppers are a pickable crop. When they are near mature, they can be harvested with $(item)$(k:key.use)$() to obtain Green Bell Peppers. Harvesting with $(item)$(k:key.use)$() allows the plant to grow more peppers in the future rather than destroying the plant.",
       "title": "Red Bell Peppers"
     },
     {
@@ -2787,7 +2787,7 @@
     {
       "type": "patchouli:text",
       "anchor": "yellow_bell_pepper",
-      "text": "$(bold)$(l:core_mechanics/climate#temperature)Temperature$(): 11 - 31 °C$(br)$(bold)$(l:food/hydration)Hydration$(): 30 - 95 %$(br)$(bold)Category$(): Pickable Vegetable$(br)$(br)$(bold)$(3)N: 30 $(bold)$(6)P: 40 $(bold)$(d)K: 50$()$(br)Yellow Bell Peppers are a pickable crop. When they are near mature, they can be harvested with $(item)$(k:key.use)$() to obtain Green Bell Peppers. Harvesting with $(item)$(k:key.use)$() allows the plant to grow more peppers in the future rather than destroying the plant.",
+      "text": "$(bold)$(l:core_mechanics/climate#temperature)Temperature$(): $(cfg:climate.yellow_bell_pepper.temperature)$(br)$(bold)$(l:food/hydration)Hydration$(): $(cfg:climate.yellow_bell_pepper.hydration) %$(br)$(bold)Category$(): Pickable Vegetable$(br)$(br)$(bold)$(3)N: 30 $(bold)$(6)P: 40 $(bold)$(d)K: 50$()$(br)Yellow Bell Peppers are a pickable crop. When they are near mature, they can be harvested with $(item)$(k:key.use)$() to obtain Green Bell Peppers. Harvesting with $(item)$(k:key.use)$() allows the plant to grow more peppers in the future rather than destroying the plant.",
       "title": "Yellow Bell Peppers"
     },
     {
@@ -2918,7 +2918,7 @@
     {
       "type": "patchouli:text",
       "anchor": "onion",
-      "text": "$(bold)$(l:core_mechanics/climate#temperature)Temperature$(): -5 - 26 °C$(br)$(bold)$(l:food/hydration)Hydration$(): 15 - 85 %$(br)$(bold)Category$(): Vegetable$(br)$(br)$(bold)$(3)N: 40 $(bold)$(6)P: 40 $(bold)$(d)K: 40$()$(br)Onions are a single block crop. Onion seeds can be planted on farmland and will produce $(thing)Onions$() and $(thing)Onion Seeds$() as a product.",
+      "text": "$(bold)$(l:core_mechanics/climate#temperature)Temperature$(): $(cfg:climate.onion.temperature)$(br)$(bold)$(l:food/hydration)Hydration$(): $(cfg:climate.onion.hydration) %$(br)$(bold)Category$(): Vegetable$(br)$(br)$(bold)$(3)N: 40 $(bold)$(6)P: 40 $(bold)$(d)K: 40$()$(br)Onions are a single block crop. Onion seeds can be planted on farmland and will produce $(thing)Onions$() and $(thing)Onion Seeds$() as a product.",
       "title": "Onions"
     },
     {
@@ -3049,7 +3049,7 @@
     {
       "type": "patchouli:text",
       "anchor": "squash",
-      "text": "$(bold)$(l:core_mechanics/climate#temperature)Temperature$(): -7 - 25 °C$(br)$(bold)$(l:food/hydration)Hydration$(): 15 - 85 %$(br)$(bold)Category$(): Vegetable$(br)$(br)$(bold)$(3)N: 25 $(bold)$(6)P: 45 $(bold)$(d)K: 50$()$(br)Squash is a single block crop. Squash seeds can be planted on farmland and will produce $(thing)Squash$() and $(thing)Squash Seeds$() as a product.",
+      "text": "$(bold)$(l:core_mechanics/climate#temperature)Temperature$(): $(cfg:climate.squash.temperature)$(br)$(bold)$(l:food/hydration)Hydration$(): $(cfg:climate.squash.hydration) %$(br)$(bold)Category$(): Vegetable$(br)$(br)$(bold)$(3)N: 25 $(bold)$(6)P: 45 $(bold)$(d)K: 50$()$(br)Squash is a single block crop. Squash seeds can be planted on farmland and will produce $(thing)Squash$() and $(thing)Squash Seeds$() as a product.",
       "title": "Кабачок"
     },
     {
@@ -3197,7 +3197,7 @@
     {
       "type": "patchouli:text",
       "anchor": "alfalfa",
-      "text": "$(bold)$(l:core_mechanics/climate#temperature)Temperature$(): -32 - 8 °C$(br)$(bold)$(l:food/hydration)Hydration$(): 40 - 100 %$(br)$(bold)Category$(): Cover$(br)$(br)$(bold)$(3)N: +24.0 $(bold)$(6)P: +15.0 $(bold)$(d)K: +18.0$()$(br)Alfalfa is a single block crop adapted to cold temperatures. Alfalfa seeds can be planted on farmland and will produce $(thing)Alfalfa$() and $(thing)Alfalfa Seeds$() as a product, while enriching the soil. Alfalfa can be used as a source of straw, or compost.",
+      "text": "$(bold)$(l:core_mechanics/climate#temperature)Temperature$(): $(cfg:climate.alfalfa.temperature)$(br)$(bold)$(l:food/hydration)Hydration$(): $(cfg:climate.alfalfa.hydration) %$(br)$(bold)Category$(): Cover$(br)$(br)$(bold)$(3)N: +24.0 $(bold)$(6)P: +15.0 $(bold)$(d)K: +18.0$()$(br)Alfalfa is a single block crop adapted to cold temperatures. Alfalfa seeds can be planted on farmland and will produce $(thing)Alfalfa$() and $(thing)Alfalfa Seeds$() as a product, while enriching the soil. Alfalfa can be used as a source of straw, or compost.",
       "title": "Alfalfa"
     },
     {
@@ -3311,7 +3311,7 @@
     {
       "type": "patchouli:text",
       "anchor": "canola",
-      "text": "$(bold)$(l:core_mechanics/climate#temperature)Temperature$(): -30 - 6 °C$(br)$(bold)$(l:food/hydration)Hydration$(): 20 - 75 %$(br)$(bold)Category$(): Cover$(br)$(br)$(bold)$(3)N: +9.0 $(bold)$(6)P: +18.0 $(bold)$(d)K: +30.0$()$(br)Canola is a single block crop adapted to cold temperatures. Canola seeds can be planted on farmland and will produce $(thing)Canola$() and $(thing)Canola Seeds$() as a product, while enriching the soil. Canola can be used as a source of straw, or compost, and the seeds can be used for oil.",
+      "text": "$(bold)$(l:core_mechanics/climate#temperature)Temperature$(): $(cfg:climate.canola.temperature)$(br)$(bold)$(l:food/hydration)Hydration$(): $(cfg:climate.canola.hydration) %$(br)$(bold)Category$(): Cover$(br)$(br)$(bold)$(3)N: +9.0 $(bold)$(6)P: +18.0 $(bold)$(d)K: +30.0$()$(br)Canola is a single block crop adapted to cold temperatures. Canola seeds can be planted on farmland and will produce $(thing)Canola$() and $(thing)Canola Seeds$() as a product, while enriching the soil. Canola can be used as a source of straw, or compost, and the seeds can be used for oil.",
       "title": "Canola"
     },
     {
@@ -3425,7 +3425,7 @@
     {
       "type": "patchouli:text",
       "anchor": "radish",
-      "text": "$(bold)$(l:core_mechanics/climate#temperature)Temperature$(): -28 - 10 °C$(br)$(bold)$(l:food/hydration)Hydration$(): 30 - 90 %$(br)$(bold)Category$(): Cover$(br)$(br)$(bold)$(3)N: +15.0 $(bold)$(6)P: +30.0 $(bold)$(d)K: +18.0$()$(br)Radishes are a single block crop adapted to cold temperatures. Radish seeds can be planted on farmland and will produce $(thing)Radishes$() and $(thing)Radish Seeds$() as a product, while enriching the soil. Radishes are not a very nutritious vegetable, but can be fed to many animals.",
+      "text": "$(bold)$(l:core_mechanics/climate#temperature)Temperature$(): $(cfg:climate.radish.temperature)$(br)$(bold)$(l:food/hydration)Hydration$(): $(cfg:climate.radish.hydration) %$(br)$(bold)Category$(): Cover$(br)$(br)$(bold)$(3)N: +15.0 $(bold)$(6)P: +30.0 $(bold)$(d)K: +18.0$()$(br)Radishes are a single block crop adapted to cold temperatures. Radish seeds can be planted on farmland and will produce $(thing)Radishes$() and $(thing)Radish Seeds$() as a product, while enriching the soil. Radishes are not a very nutritious vegetable, but can be fed to many animals.",
       "title": "Radish"
     },
     {
@@ -3539,7 +3539,7 @@
     {
       "type": "patchouli:text",
       "anchor": "sugarcane",
-      "text": "$(bold)$(l:core_mechanics/climate#temperature)Temperature$(): 16 - 31 °C$(br)$(bold)$(l:food/hydration)Hydration$(): 25 - 100 %$(br)$(bold)Category$(): Misc$(br)$(br)$(bold)$(3)N: 50 $(bold)$(6)P: 50 $(bold)$(d)K: 50$()$(br)Sugarcane is a two block tall crop. Sugarcane seeds can be planted on farmland, will grow two blocks tall, and will produce $(thing)Sugarcane$() and $(thing)Sugarcane Seeds$() as a product. Sugarcane can be used to make $(thing)Sugar$().",
+      "text": "$(bold)$(l:core_mechanics/climate#temperature)Temperature$(): $(cfg:climate.sugarcane.temperature)$(br)$(bold)$(l:food/hydration)Hydration$(): $(cfg:climate.sugarcane.hydration) %$(br)$(bold)Category$(): Misc$(br)$(br)$(bold)$(3)N: 50 $(bold)$(6)P: 50 $(bold)$(d)K: 50$()$(br)Sugarcane is a two block tall crop. Sugarcane seeds can be planted on farmland, will grow two blocks tall, and will produce $(thing)Sugarcane$() and $(thing)Sugarcane Seeds$() as a product. Sugarcane can be used to make $(thing)Sugar$().",
       "title": "Цукрова тростина"
     },
     {
@@ -3719,7 +3719,7 @@
     {
       "type": "patchouli:text",
       "anchor": "jute",
-      "text": "$(bold)$(l:core_mechanics/climate#temperature)Temperature$(): 2 - 25 °C$(br)$(bold)$(l:food/hydration)Hydration$(): 15 - 90 %$(br)$(bold)Category$(): Misc$(br)$(br)$(bold)$(3)N: 60 $(bold)$(6)P: 40 $(bold)$(d)K: +40$()$(br)Jute is a two block tall crop. Jute seeds can be planted on farmland, will grow two blocks tall, and will produce $(thing)Jute$() and $(thing)Jute Seeds$() as a product.",
+      "text": "$(bold)$(l:core_mechanics/climate#temperature)Temperature$(): $(cfg:climate.jute.temperature)$(br)$(bold)$(l:food/hydration)Hydration$(): $(cfg:climate.jute.hydration) %$(br)$(bold)Category$(): Misc$(br)$(br)$(bold)$(3)N: 60 $(bold)$(6)P: 40 $(bold)$(d)K: +40$()$(br)Jute is a two block tall crop. Jute seeds can be planted on farmland, will grow two blocks tall, and will produce $(thing)Jute$() and $(thing)Jute Seeds$() as a product.",
       "title": "Джут"
     },
     {
@@ -3857,7 +3857,7 @@
     {
       "type": "patchouli:text",
       "anchor": "papyrus",
-      "text": "$(bold)$(l:core_mechanics/climate#temperature)Temperature$(): 11 - 31 °C$(br)$(bold)$(l:food/hydration)Hydration$(): 50 - 100 %$(br)$(bold)Category$(): Misc$(br)$(br)$(bold)$(3)N: 60 $(bold)$(6)P: +40 $(bold)$(d)K: 40$()$(br)Papyrus is a two block tall crop. Papyrus seeds can be planted on farmland, will grow two blocks tall, and will produce $(l:crafting/papermaking)Papyrus$() and $(thing)Papyrus Seeds$() as a product.",
+      "text": "$(bold)$(l:core_mechanics/climate#temperature)Temperature$(): $(cfg:climate.papyrus.temperature)$(br)$(bold)$(l:food/hydration)Hydration$(): $(cfg:climate.papyrus.hydration) %$(br)$(bold)Category$(): Misc$(br)$(br)$(bold)$(3)N: 60 $(bold)$(6)P: +40 $(bold)$(d)K: 40$()$(br)Papyrus is a two block tall crop. Papyrus seeds can be planted on farmland, will grow two blocks tall, and will produce $(l:crafting/papermaking)Papyrus$() and $(thing)Papyrus Seeds$() as a product.",
       "title": "Папірус"
     },
     {

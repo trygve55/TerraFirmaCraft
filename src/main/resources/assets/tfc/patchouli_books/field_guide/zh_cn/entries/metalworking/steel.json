@@ -55,7 +55,7 @@
     },
     {
       "type": "patchouli:text",
-      "text": "$(thing)蓝钢$()可用于制作工具和$(l:mechanics/armor)盔甲$()，以及$(thing)蓝钢桶$()，后者可以运输 1000 mB 的液体，包括$(6)熔岩$()。"
+      "text": "$(thing)蓝钢$()可用于制作工具和$(l:mechanics/armor)盔甲$()，以及$(thing)蓝钢桶$()，后者可以运输 $(cfg:metalBucketCapacity) 的液体，包括$(6)熔岩$()。"
     },
     {
       "type": "patchouli:text",
@@ -77,7 +77,7 @@
     },
     {
       "type": "patchouli:text",
-      "text": "$(thing)红钢$()可用于制作工具和$(l:mechanics/armor)盔甲$()，以及$(thing)红钢桶$()，后者可以运输 1000 mB 的液体，包括$(6)熔岩$()。"
+      "text": "$(thing)红钢$()可用于制作工具和$(l:mechanics/armor)盔甲$()，以及$(thing)红钢桶$()，后者可以运输 $(cfg:metalBucketCapacity) 的液体，包括$(6)熔岩$()。"
     }
   ],
   "read_by_default": true,

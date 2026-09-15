@@ -15,7 +15,7 @@
     {
       "type": "patchouli:text",
       "anchor": "small_vessels",
-      "text": "把食物裝入$(thing)缸$()中是保存食物最簡單的方法之一。$(thing)大缸$()最多可以存儲九組物品。$(thing)密封$()時，裏面的物品將獲得$(5)$(bold)儲存$()詞條。擁有儲存詞條的食物的保質期是平常的 2 倍。$(br2)$(thing)小缸$()最多可以存儲四組物品，放入其中的食物也會獲得$(5)$(bold)儲存$()詞條。",
+      "text": "把食物裝入$(thing)缸$()中是保存食物最簡單的方法之一。$(thing)大缸$()最多可以存儲九組物品。$(thing)密封$()時，裏面的物品將獲得$(5)$(bold)儲存$()詞條。擁有儲存詞條的食物的保質期是平常的 $(cfg:traitPreservedModifier) 倍。$(br2)$(thing)小缸$()最多可以存儲四組物品，放入其中的食物也會獲得$(5)$(bold)儲存$()詞條。",
       "title": "缸"
     },
     {
@@ -46,7 +46,7 @@
     {
       "type": "tfc:heat_recipe",
       "recipe": "tfc:heating/food/cooked_mutton",
-      "text": "相反，用$(l:getting_started/firepit)篝火$()或$(l:food/grill)鍛鐵烤架$()做出來的食物會獲得保質期加成。比如，用$(thing)篝火$()烤制的羊肉保質期會延長 33 %，而用$(thing)鍛鐵烤架$()烤制的則會延長 66 %！"
+      "text": "Instead, a $(l:food/grill)Grill$() can even provide a buff for using it! Cooking mutton (pictured above) in a $(thing)Grill$() gives it the $(thing)Wood Grilled$() trait, multiplying its remaining lifetime by $(cfg:traitWoodGrilledModifier)x. Cooking in a $(l:metalworking/charcoal_forge)Charcoal Forge$() instead gives the $(thing)Charcoal Grilled$() trait, which multiplies its lifetime by $(cfg:traitCharcoalGrilledModifier)x."
     },
     {
       "type": "patchouli:text",

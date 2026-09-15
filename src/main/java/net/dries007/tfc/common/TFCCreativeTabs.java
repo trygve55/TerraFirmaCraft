@@ -1096,6 +1096,7 @@ public final class TFCCreativeTabs
                 out.accept(TFCItems.UNFIRED_FIRE_INGOT_MOLD);
             }
         }
+        out.accept(TFCItems.UNFIRED_BELL_MOLD);
         for (Metal.ItemType type : Metal.ItemType.values())
         {
             accept(out, TFCItems.MOLDS, type);
@@ -1104,7 +1105,6 @@ public final class TFCCreativeTabs
                 out.accept(TFCItems.FIRE_INGOT_MOLD);
             }
         }
-        out.accept(TFCItems.UNFIRED_BELL_MOLD);
         out.accept(TFCItems.BELL_MOLD);
         out.accept(TFCItems.UNFIRED_CHANNEL);
         out.accept(TFCItems.UNFIRED_MOLD_TABLE);

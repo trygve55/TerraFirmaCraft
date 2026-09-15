@@ -57,23 +57,37 @@
       "text": "もう 1 つのランプ燃料は $(thing)獣脂$() です。 作り方は、$(l:food/pot)ポット$() で水と 5 個の $(thing)脂肪$() を調理することです。 獣脂の燃焼時間は、ユニットごとにゲーム内で 2 時間です。 $(l:core_mechanics/lighting#candles)ろうそく$() を作成するために使用できます。"
     },
     {
-      "type": "patchouli:multiblock",
-      "multiblock": {
-        "pattern": [
-          [
-            "X"
-          ],
-          [
-            "0"
-          ]
-        ],
-        "mapping": {
-          "X": "tfc:metal/lamp/blue_steel[lit=true]"
-        }
-      },
+      "type": "tfc:multimultiblock",
       "name": "溶岩ランプ",
-      "text": "溶岩は永遠に燃え続けますが、$(l:metalworking/steel#blue_steel)青鋼$() ランプの中にのみ保持できます。",
-      "enable_visualize": false
+      "text": "Lava will keep burning forever, but can only be held in a $(l:metalworking/steel#blue_steel)Blue Steel$() or $(l:metalworking/steel#red_steel)Red Steel$() lamp.",
+      "multiblocks": [
+        {
+          "pattern": [
+            [
+              "X"
+            ],
+            [
+              "0"
+            ]
+          ],
+          "mapping": {
+            "X": "tfc:metal/lamp/blue_steel[lit=true]"
+          }
+        },
+        {
+          "pattern": [
+            [
+              "X"
+            ],
+            [
+              "0"
+            ]
+          ],
+          "mapping": {
+            "X": "tfc:metal/lamp/red_steel[lit=true]"
+          }
+        }
+      ]
     },
     {
       "type": "tfc:anvil_recipe",

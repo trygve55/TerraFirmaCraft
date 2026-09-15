@@ -10,7 +10,7 @@
     },
     {
       "type": "patchouli:text",
-      "text": "Bir eşyanın sıcaklığı, aşağıdaki değerler arasında değişen bir renkle temsil edilir:$(br2)$(7)$(bold)Isınıyor$(): 1 - 80 °C$(br)$(7)$(bold)Sıcak$(): 80 - 210 °C$(br)$(7)$(bold)Çok Sıcak$(): 210 - 480 °C$(br)$(4)$(bold)Hafif Kırmızı$(): 480 - 580 °C$(br)$(bold)$(4)Koyu Kırmızı$(): 580 - 730 °C$(br)$(c)$(bold)Parlak Kırmızı$(): 730 - 930 °C$(br)$(6)$(bold)Turuncu$(): 930 - 1100 °C$(br)$(#FFDD00)$(bold)$(t:Yellow)Sarı$(): 1100 - 1300 °C$(br)$(#FFDD00)$(t:Yellow White)$(bold)Sarı Beyaz$(): 1300 - 1400 °C$(br)$(d)$(bold)$(t:White)Beyaz$(): 1400 - 1500 °C$(br)$(d)$(bold)$(t:Brilliant White)Göz Alıcı Beyaz$(): >1500 °C"
+      "text": "Bir eşyanın sıcaklığı, aşağıdaki değerler arasında değişen bir renkle temsil edilir:$(br2)$(7)$(bold)Isınıyor$(): $(cfg:heat:1) - $(cfg:heat:80)$(br)$(7)$(bold)Sıcak$(): $(cfg:heat:80) - $(cfg:heat:210)$(br)$(7)$(bold)Çok Sıcak$(): $(cfg:heat:210) - $(cfg:heat:480)$(br)$(4)$(bold)Hafif Kırmızı$(): $(cfg:heat:480) - $(cfg:heat:580)$(br)$(bold)$(4)Koyu Kırmızı$(): $(cfg:heat:580) - $(cfg:heat:730)$(br)$(c)$(bold)Parlak Kırmızı$(): $(cfg:heat:730) - $(cfg:heat:930)$(br)$(6)$(bold)Turuncu$(): $(cfg:heat:930) - $(cfg:heat:1100)$(br)$(#FFDD00)$(bold)$(t:Yellow)Sarı$(): $(cfg:heat:1100) - $(cfg:heat:1300)$(br)$(#FFDD00)$(t:Yellow White)$(bold)Sarı Beyaz$(): $(cfg:heat:1300) - $(cfg:heat:1400)$(br)$(d)$(bold)$(t:White)Beyaz$(): $(cfg:heat:1400) - $(cfg:heat:1500)$(br)$(d)$(bold)$(t:Brilliant White)Göz Alıcı Beyaz$(): >$(cfg:heat:1500)"
     }
   ],
   "read_by_default": true,

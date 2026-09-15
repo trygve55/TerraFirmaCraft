@@ -97,7 +97,7 @@
     {
       "type": "patchouli:text",
       "anchor": "pig",
-      "text": "$(thing)Свині$() живуть у м'яких лісах з $(l:core_mechanics/climate#temperature)температурою$() від -10 до 35°C, та, принаймні 200mm $(l:core_mechanics/climate#rainfall)опадів$(). Це $(l:food/animal_husbandry#mammals)ссавці$() без особливих здібностей. Вони їдять будь-яку їжу, навіть якщо вона тухла. Свиня, при опоросі, може привести від 1 до 10 поросят через 19 днів після запліднення. Поросята дорослішають впрожовж 80 днів. Самка може заплідніти до 6 разів протягом життя.",
+      "text": "$(thing)Свині$() живуть у м'яких лісах з $(l:core_mechanics/climate#temperature)температурою$() від $(cfg:temperature:-10) до $(cfg:temperature:35), та, принаймні 200mm $(l:core_mechanics/climate#rainfall)опадів$(). Це $(l:food/animal_husbandry#mammals)ссавці$() без особливих здібностей. Вони їдять будь-яку їжу, навіть якщо вона тухла. Свиня, при опоросі, може привести від 1 до 10 поросят через 19 днів після запліднення. Поросята дорослішають впрожовж 80 днів. Самка може заплідніти до 6 разів протягом життя.",
       "title": "Свині"
     },
     {
@@ -110,7 +110,7 @@
     {
       "type": "patchouli:text",
       "anchor": "rabbit",
-      "text": "$(thing)Rabbits$() spawn in $(l:core_mechanics/climate#temperature)temperatures$() above -16°C, and at least 15mm of $(l:core_mechanics/climate#rainfall)rainfall$(), changing their coat based on climate. They are $(l:food/animal_husbandry#mammals)Mammals$() with no special abilities, aside from being known for chewing on carrots and cabbage. They will eat any food, even if it is rotten. They have 1-6 children, are pregnant for just 19 days, and reach adulthood in 20 days. They can have children 6 times.",
+      "text": "$(thing)Rabbits$() spawn in $(l:core_mechanics/climate#temperature)temperatures$() above $(cfg:temperature:-16), and at least 15mm of $(l:core_mechanics/climate#rainfall)rainfall$(), changing their coat based on climate. They are $(l:food/animal_husbandry#mammals)Mammals$() with no special abilities, aside from being known for chewing on carrots and cabbage. They will eat any food, even if it is rotten. They have 1-6 children, are pregnant for just 19 days, and reach adulthood in 20 days. They can have children 6 times.",
       "title": "Rabbits"
     },
     {
@@ -123,7 +123,7 @@
     {
       "type": "patchouli:text",
       "anchor": "cow",
-      "text": "$(thing)Корови$() живуть при $(l:core_mechanics/climate#temperature)температурі$() від -10 до 35°C, та 250мм $(l:core_mechanics/climate#rainfall)опадів$(). Вони є $(l:food/animal_husbandry#dairy_animals)молочними тваринами$(). Їдять лише $(thing)зерно$(), навіть згнивше. Корова народжує 1-2 теля через 58 днів після запліднення. Телята досягають зрілого віку за 192 дні. Як корову не доїти, то вона може отелитися 13 разів протягом зрілого життя. Якщо її доїти та не парувати, то вона даватиме молоко 128 разів. Доїти можна один раз на день.",
+      "text": "$(thing)Корови$() живуть при $(l:core_mechanics/climate#temperature)температурі$() від $(cfg:temperature:-10) до $(cfg:temperature:35), та 250мм $(l:core_mechanics/climate#rainfall)опадів$(). Вони є $(l:food/animal_husbandry#dairy_animals)молочними тваринами$(). Їдять лише $(thing)зерно$(), навіть згнивше. Корова народжує 1-2 теля через 58 днів після запліднення. Телята досягають зрілого віку за 192 дні. Як корову не доїти, то вона може отелитися 13 разів протягом зрілого життя. Якщо її доїти та не парувати, то вона даватиме молоко 128 разів. Доїти можна один раз на день.",
       "title": "Корови"
     },
     {
@@ -136,7 +136,7 @@
     {
       "type": "patchouli:text",
       "anchor": "goat",
-      "text": "$(thing)Кози$() хивуть у помірному кліматі, з $(l:core_mechanics/climate#temperature)температурою$() від -12 до 25°C, та 300мм $(l:core_mechanics/climate#rainfall)опадів$(). Вони є  $(l:food/animal_husbandry#dairy_animals)молочними тваринами$(). Годувати їх можна $(thing)зерном$(), $(thing)фруктами$(), та $(thing)овочами$(), навіть гнилими. Коза окочується через 32 дні, після зпліднення. Народжує 1-2 козеняти, які досягають зрілого віку за 96 днів. Як козу не доїти, то вона може запліднити 6 разів протягом зрілого життя. Якщо її доїти та не парувати, то вона даватиме молоко 60 разів. Доїти можна один раз на три дні.",
+      "text": "$(thing)Кози$() хивуть у помірному кліматі, з $(l:core_mechanics/climate#temperature)температурою$() від $(cfg:temperature:-12) до $(cfg:temperature:25), та 300мм $(l:core_mechanics/climate#rainfall)опадів$(). Вони є  $(l:food/animal_husbandry#dairy_animals)молочними тваринами$(). Годувати їх можна $(thing)зерном$(), $(thing)фруктами$(), та $(thing)овочами$(), навіть гнилими. Коза окочується через 32 дні, після зпліднення. Народжує 1-2 козеняти, які досягають зрілого віку за 96 днів. Як козу не доїти, то вона може запліднити 6 разів протягом зрілого життя. Якщо її доїти та не парувати, то вона даватиме молоко 60 разів. Доїти можна один раз на три дні.",
       "title": "Кози"
     },
     {
@@ -149,7 +149,7 @@
     {
       "type": "patchouli:text",
       "anchor": "yak",
-      "text": "$(thing)Як$() живе у холодному кліматі, з $(l:core_mechanics/climate#temperature)температурою$() менш -11°C, та 100мм $(l:core_mechanics/climate#rainfall)опадів$(). Є $(l:food/animal_husbandry#dairy_animals)молочною худобою$(). їсть тільки свіже $(thing)зерно$(). Корова нарджує 1 теля через 64 дні, після зпліднення. Телята досягають зрілого віку за 180 днів. Як корову не доїти, то вона може запліднити 23 рази протягом зрілого життя. Якщо її доїти, та не парувати, то вона даватиме молоко 230 разів. Доїти можна щодня.",
+      "text": "$(thing)Як$() живе у холодному кліматі, з $(l:core_mechanics/climate#temperature)температурою$() менш $(cfg:temperature:-11), та 100мм $(l:core_mechanics/climate#rainfall)опадів$(). Є $(l:food/animal_husbandry#dairy_animals)молочною худобою$(). їсть тільки свіже $(thing)зерно$(). Корова нарджує 1 теля через 64 дні, після зпліднення. Телята досягають зрілого віку за 180 днів. Як корову не доїти, то вона може запліднити 23 рази протягом зрілого життя. Якщо її доїти, та не парувати, то вона даватиме молоко 230 разів. Доїти можна щодня.",
       "title": "Як"
     },
     {
@@ -162,7 +162,7 @@
     {
       "type": "patchouli:text",
       "anchor": "alpaca",
-      "text": "$(thing)Альпака$() живе у помірному кліматі, з $(l:core_mechanics/climate#temperature)температурою$() від -8 до 20°C, та 250мм $(l:core_mechanics/climate#rainfall)опадів$(). Вона є $(l:food/animal_husbandry#wooly_animals)вовняною худобою$(). Годувати треба $(thing)зерномs$() та $(thing)фруктами$(). Альпака окочується за 26 днів, після зпліднення. Народжує 1-2 ягняти, які досягають зрілого віку за 98 днів. Як альпаку не стригти, то вона може запліднити 13 разів протягом життя. Якщо її стригти, та не парувати, то вона, протягом життя даватиме вовну 128 разів. Стригти можна один раз на 6 днів.",
+      "text": "$(thing)Альпака$() живе у помірному кліматі, з $(l:core_mechanics/climate#temperature)температурою$() від $(cfg:temperature:-8) до $(cfg:temperature:20), та 250мм $(l:core_mechanics/climate#rainfall)опадів$(). Вона є $(l:food/animal_husbandry#wooly_animals)вовняною худобою$(). Годувати треба $(thing)зерномs$() та $(thing)фруктами$(). Альпака окочується за 26 днів, після зпліднення. Народжує 1-2 ягняти, які досягають зрілого віку за 98 днів. Як альпаку не стригти, то вона може запліднити 13 разів протягом життя. Якщо її стригти, та не парувати, то вона, протягом життя даватиме вовну 128 разів. Стригти можна один раз на 6 днів.",
       "title": "Альпака"
     },
     {
@@ -175,7 +175,7 @@
     {
       "type": "patchouli:text",
       "anchor": "sheep",
-      "text": "$(thing)Вівця$() живе у більш сухому кліматі, з $(l:core_mechanics/climate#temperature)температурою$() від 0 до 35°C, та від 70 до 300мм $(l:core_mechanics/climate#rainfall)опадів$(). Вона є $(l:food/animal_husbandry#wooly_animals)вовняною худобою$(). Годувати треба $(thing)зерном$(). Вівця окочується за 32 дні, після зпліднення. Народжує 1-2 ягняти, які досягають зрілого віку за 56 днів. Якщо вівцю не стригти, то вона може запліднити 6 разів протягом зрілого життя. Якщо її стригти, та не парувати, то вона даватиме вовну 60 разів. Стригти можна один раз на 9 днів.",
+      "text": "$(thing)Вівця$() живе у більш сухому кліматі, з $(l:core_mechanics/climate#temperature)температурою$() від $(cfg:temperature:0) до $(cfg:temperature:35), та від 70 до 300мм $(l:core_mechanics/climate#rainfall)опадів$(). Вона є $(l:food/animal_husbandry#wooly_animals)вовняною худобою$(). Годувати треба $(thing)зерном$(). Вівця окочується за 32 дні, після зпліднення. Народжує 1-2 ягняти, які досягають зрілого віку за 56 днів. Якщо вівцю не стригти, то вона може запліднити 6 разів протягом зрілого життя. Якщо її стригти, та не парувати, то вона даватиме вовну 60 разів. Стригти можна один раз на 9 днів.",
       "title": "Вівця"
     },
     {
@@ -188,7 +188,7 @@
     {
       "type": "patchouli:text",
       "anchor": "musk_ox",
-      "text": "$(thing)Вівцебик$() живе у холодному кліматі, з $(l:core_mechanics/climate#temperature)температурою$() від -25 до 0°C, та 100мм $(l:core_mechanics/climate#rainfall)опадів$(). Є $(l:food/animal_husbandry#wooly_animals)вовняною твариною$(). Кормити треба $(thing)зерном$(). Корова народжує 1 теля, після 64 днів вагітності. Теля дорослішає 168 днів. Корова можуте народжувати 16 разів, як їх ніколи не стригти, або 160 разів, якщо їх ніколи не парувати. Кожні 96 годин можна стригти.",
+      "text": "$(thing)Вівцебик$() живе у холодному кліматі, з $(l:core_mechanics/climate#temperature)температурою$() від $(cfg:temperature:-25) до $(cfg:temperature:0), та 100мм $(l:core_mechanics/climate#rainfall)опадів$(). Є $(l:food/animal_husbandry#wooly_animals)вовняною твариною$(). Кормити треба $(thing)зерном$(). Корова народжує 1 теля, після 64 днів вагітності. Теля дорослішає 168 днів. Корова можуте народжувати 16 разів, як їх ніколи не стригти, або 160 разів, якщо їх ніколи не парувати. Кожні 96 годин можна стригти.",
       "title": "Вівцебик"
     },
     {
@@ -201,7 +201,7 @@
     {
       "type": "patchouli:text",
       "anchor": "bactrian_camel",
-      "text": "$(thing)Bactrian Camels$() spawn in cold deserts, with $(l:core_mechanics/climate#temperature)temperature$() of at most -5°C, and at most 100mm of $(l:core_mechanics/climate#rainfall)rainfall$(). They are $(l:food/animal_husbandry#wooly_animals)Wooly Animals$() and can be ridden. They are slower than horses, but faster on sand and snow. They eat $(thing)grains$() and $(thing)fruits$(). They have 1 child, are pregnant for 24 days, and become adults in 80 days. They can have children 8 times if they are never sheared, or be sheared 80 times if they are never bred. They grow wool every 7 days.",
+      "text": "$(thing)Bactrian Camels$() spawn in cold deserts, with $(l:core_mechanics/climate#temperature)temperature$() of at most $(cfg:temperature:-5), and at most 100mm of $(l:core_mechanics/climate#rainfall)rainfall$(). They are $(l:food/animal_husbandry#wooly_animals)Wooly Animals$() and can be ridden. They are slower than horses, but faster on sand and snow. They eat $(thing)grains$() and $(thing)fruits$(). They have 1 child, are pregnant for 24 days, and become adults in 80 days. They can have children 8 times if they are never sheared, or be sheared 80 times if they are never bred. They grow wool every 7 days.",
       "title": "Bactrian Camel"
     },
     {
@@ -214,7 +214,7 @@
     {
       "type": "patchouli:text",
       "anchor": "chicken",
-      "text": "$(thing)Кури$() з'являються у теплих лісах, з $(l:core_mechanics/climate#temperature)температурою$() від 14°C, та від 225мм $(l:core_mechanics/climate#rainfall)опадів$(). Вони є $(l:food/animal_husbandry#oviparous_animals)яйцекладними птахами$(). Кормити їх можна $(thing)зерном$(), $(thing)фруктами$(), $(thing)овочами$(), та $(thing)насінням$(), навіть прогнившими. Запліднені яйця курей вилупляться за 8 днів. Курчата стануть дорослими за 24 дні. Курка може відкладати яйця кожні 30 годин, та 100 разів за своє зріле життя.",
+      "text": "$(thing)Кури$() з'являються у теплих лісах, з $(l:core_mechanics/climate#temperature)температурою$() від $(cfg:temperature:14), та від 225мм $(l:core_mechanics/climate#rainfall)опадів$(). Вони є $(l:food/animal_husbandry#oviparous_animals)яйцекладними птахами$(). Кормити їх можна $(thing)зерном$(), $(thing)фруктами$(), $(thing)овочами$(), та $(thing)насінням$(), навіть прогнившими. Запліднені яйця курей вилупляться за 8 днів. Курчата стануть дорослими за 24 дні. Курка може відкладати яйця кожні 30 годин, та 100 разів за своє зріле життя.",
       "title": "Кури"
     },
     {
@@ -227,7 +227,7 @@
     {
       "type": "patchouli:text",
       "anchor": "duck",
-      "text": "$(thing)Качки$() з'являються на більшості рівнин, з $(l:core_mechanics/climate#temperature)температурою$() від -25 до 30°C, та принаймні 100мм $(l:core_mechanics/climate#rainfall)опадів$(). Вони є $(l:food/animal_husbandry#oviparous_animals)яйцекладними птахами$(). Кормити їх можна $(thing)зерном$(), $(thing)фруктами$(), $(thing)овочами$(), $(thing)хлібом$(), та $(thing)насінням$(). Запліднені яйця качок вилупляться за 8 днів. Каченята стануть дорослими за 32 дні. Качка може відкладати яйця кожні 32 годин, та 72 разів за своє зріле життя.",
+      "text": "$(thing)Качки$() з'являються на більшості рівнин, з $(l:core_mechanics/climate#temperature)температурою$() від $(cfg:temperature:-25) до $(cfg:temperature:30), та принаймні 100мм $(l:core_mechanics/climate#rainfall)опадів$(). Вони є $(l:food/animal_husbandry#oviparous_animals)яйцекладними птахами$(). Кормити їх можна $(thing)зерном$(), $(thing)фруктами$(), $(thing)овочами$(), $(thing)хлібом$(), та $(thing)насінням$(). Запліднені яйця качок вилупляться за 8 днів. Каченята стануть дорослими за 32 дні. Качка може відкладати яйця кожні 32 годин, та 72 разів за своє зріле життя.",
       "title": "Качки"
     },
     {
@@ -240,7 +240,7 @@
     {
       "type": "patchouli:text",
       "anchor": "quail",
-      "text": "$(thing)Перепілка$() поважає холодний клімат, з $(l:core_mechanics/climate#temperature)температурою$() від -15 до 15°C, та принаймні 200мм $(l:core_mechanics/climate#rainfall)опадів$(). Вона є $(l:food/animal_husbandry#oviparous_animals)яйцекладним птахом$(). Кормити її можна $(thing)зерном$(), $(thing)фруктами$(), $(thing)овочами$(), та $(thing)насінням$(), навіть прогнившим. Запліднені яйця перепілки вилупляться за 8 днів. Курчата стануть дорослими за 22 дні. Перепілка може відкладати яйця кожні 28 годин, та 48 разів за своє зріле життя.",
+      "text": "$(thing)Перепілка$() поважає холодний клімат, з $(l:core_mechanics/climate#temperature)температурою$() від $(cfg:temperature:-15) до $(cfg:temperature:15), та принаймні 200мм $(l:core_mechanics/climate#rainfall)опадів$(). Вона є $(l:food/animal_husbandry#oviparous_animals)яйцекладним птахом$(). Кормити її можна $(thing)зерном$(), $(thing)фруктами$(), $(thing)овочами$(), та $(thing)насінням$(), навіть прогнившим. Запліднені яйця перепілки вилупляться за 8 днів. Курчата стануть дорослими за 22 дні. Перепілка може відкладати яйця кожні 28 годин, та 48 разів за своє зріле життя.",
       "title": "Перепілка"
     },
     {
@@ -253,7 +253,7 @@
     {
       "type": "patchouli:text",
       "anchor": "donkey",
-      "text": "$(thing)Віслюку$() подобаються вологі рівнини, з $(l:core_mechanics/climate#temperature)температурою$() більше -15°C, та від 130 до 400мм $(l:core_mechanics/climate#rainfall)опадів$(). Це різновид їздових $(l:food/animal_husbandry#horses)коней$(), що можуть везти на собі $(thing)скриню$(). Кормити можна $(thing)зерном$() та $(thing)фруктами$(). Самка віслюка народжує лиш 1 лоша, після 19 днів вагітності. Лоша росте 80 днів до зрілості. Вагітнити самка може 6 разів за зріле життя",
+      "text": "$(thing)Віслюку$() подобаються вологі рівнини, з $(l:core_mechanics/climate#temperature)температурою$() більше $(cfg:temperature:-15), та від 130 до 400мм $(l:core_mechanics/climate#rainfall)опадів$(). Це різновид їздових $(l:food/animal_husbandry#horses)коней$(), що можуть везти на собі $(thing)скриню$(). Кормити можна $(thing)зерном$() та $(thing)фруктами$(). Самка віслюка народжує лиш 1 лоша, після 19 днів вагітності. Лоша росте 80 днів до зрілості. Вагітнити самка може 6 разів за зріле життя",
       "title": "Віслюки"
     },
     {
@@ -266,7 +266,7 @@
     {
       "type": "patchouli:text",
       "anchor": "mule",
-      "text": "$(thing)Мул$() живе на рівнинах з $(l:core_mechanics/climate#temperature)температурою$() щонайменше -15°C, та від 130 до 400мм $(l:core_mechanics/climate#rainfall)опадів$(). Вони є різновидом $(l:food/animal_husbandry#horses)коней$(), що можуть возити на собі $(thing)скриню$(). Він є гібридом від схрещення $(thing)кобили$() з $()віслюком$(). Кормити мула можна $(thing)зерном$() та $(thing)фруктами$(). Мале лоша виростає за 80 днів до зрілого віку.",
+      "text": "$(thing)Мул$() живе на рівнинах з $(l:core_mechanics/climate#temperature)температурою$() щонайменше $(cfg:temperature:-15), та від 130 до 400мм $(l:core_mechanics/climate#rainfall)опадів$(). Вони є різновидом $(l:food/animal_husbandry#horses)коней$(), що можуть возити на собі $(thing)скриню$(). Він є гібридом від схрещення $(thing)кобили$() з $()віслюком$(). Кормити мула можна $(thing)зерном$() та $(thing)фруктами$(). Мале лоша виростає за 80 днів до зрілого віку.",
       "title": "Мули"
     },
     {
@@ -279,7 +279,7 @@
     {
       "type": "patchouli:text",
       "anchor": "horse",
-      "text": "$(thing)Коні$() з'являються на рівнинах з  $(l:core_mechanics/climate#temperature)температурою$() вище -15°C, та від 130 до 400мм $(l:core_mechanics/climate#rainfall)опадів$(). Вони є їздовими $(l:food/animal_husbandry#horses)конями$(). Кормити їх треба $(thing)зерном$() та $(thing)фруктами$(). Кобила народжує одне лоша за 19 днів від запліднення. Мале лоша росте 80 днів до зрілості. За зріле життя кобила може запліднити 6 разів.",
+      "text": "$(thing)Коні$() з'являються на рівнинах з  $(l:core_mechanics/climate#temperature)температурою$() вище $(cfg:temperature:-15), та від 130 до 400мм $(l:core_mechanics/climate#rainfall)опадів$(). Вони є їздовими $(l:food/animal_husbandry#horses)конями$(). Кормити їх треба $(thing)зерном$() та $(thing)фруктами$(). Кобила народжує одне лоша за 19 днів від запліднення. Мале лоша росте 80 днів до зрілості. За зріле життя кобила може запліднити 6 разів.",
       "title": "Коні"
     },
     {
@@ -292,7 +292,7 @@
     {
       "type": "patchouli:text",
       "anchor": "dromedary_camel",
-      "text": "$(thing)Dromedary Camels$() spawn in drier climates, with $(l:core_mechanics/climate#temperature)temperature$() of at least -5°C, and at most 100mm of $(l:core_mechanics/climate#rainfall)rainfall$(). They are $(l:food/animal_husbandry#mammals)Mammals$() that can be ridden. They are slower than horses, but are immune to cacti and run fast on sand. They eat $(thing)grains$() and $(thing)fruits$(). They have 1 child, are pregnant for 19 days, and reach adulthood in 80 days. They can have children 6 times.",
+      "text": "$(thing)Dromedary Camels$() spawn in drier climates, with $(l:core_mechanics/climate#temperature)temperature$() of at least $(cfg:temperature:-5), and at most 100mm of $(l:core_mechanics/climate#rainfall)rainfall$(). They are $(l:food/animal_husbandry#mammals)Mammals$() that can be ridden. They are slower than horses, but are immune to cacti and run fast on sand. They eat $(thing)grains$() and $(thing)fruits$(). They have 1 child, are pregnant for 19 days, and reach adulthood in 80 days. They can have children 6 times.",
       "title": "Dromedary Camels"
     },
     {
@@ -305,7 +305,7 @@
     {
       "type": "patchouli:text",
       "anchor": "frog",
-      "text": "$(thing)Frogs$() spawn in $(l:core_mechanics/climate#temperature)temperatures$() above -13°C, and at least 150mm of $(l:core_mechanics/climate#rainfall)rainfall$(). They can be familiarized, and when bred they will lay eggs in fresh water, which hatch into tadpoles. They will eat fish and spider eyes. ",
+      "text": "$(thing)Frogs$() spawn in $(l:core_mechanics/climate#temperature)temperatures$() above $(cfg:temperature:-13), and at least 150mm of $(l:core_mechanics/climate#rainfall)rainfall$(). They can be familiarized, and when bred they will lay eggs in fresh water, which hatch into tadpoles. They will eat fish and spider eyes. ",
       "title": "Frogs"
     },
     {

@@ -65,7 +65,7 @@
     },
     {
       "type": "patchouli:text",
-      "text": "在平均条件下，堆肥桶需要 12 天完成。完成后，它会呈现泥土般的颜色，并从顶部散发灰色粒子。此时可以空手按住$(item)$(k:key.sneak)$()的同时按$(item)$(k:key.use)$()取出堆肥。向堆肥中添加$(c)肉$()和$(c)骨头$()等物体会使其变质，变成红色并散发恶心的粒子。腐败的堆肥的取出方法与好堆肥相同。施用在作物上会立即杀死它。"
+      "text": "The composter takes $(cfg:composterTicks) to complete in average conditions. When it is ready, it will have a dirt-like color and gray particles will be emitted from the top of it. The compost can then be retrieved with  $(item)$(k:key.use)$() and  $(item)$(k:key.sneak)$() with an empty hand. Adding things like $(c)meat$() and $(c)bones$() to compost spoils it, turning it reddish and causing it to emit gross particles. The rotten compost can be removed in the same way as good compost. When used on a crop, it instantly kills it."
     },
     {
       "type": "patchouli:multiblock",

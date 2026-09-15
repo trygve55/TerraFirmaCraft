@@ -28,6 +28,7 @@ import org.slf4j.Logger;
 import vazkii.patchouli.api.IComponentRenderContext;
 import vazkii.patchouli.api.IVariable;
 
+import net.dries007.tfc.compat.patchouli.ConfigTextFunction;
 import net.dries007.tfc.compat.patchouli.PatchouliIntegration;
 
 public class TableComponent extends CustomComponent
@@ -95,7 +96,7 @@ public class TableComponent extends CustomComponent
                 else
                 {
                     asTextComponent(element)
-                        .map(text -> new TableEntry(text.copy().withStyle(style -> style.withFont(Minecraft.UNIFORM_FONT)), 0))
+                        .map(text -> new TableEntry(ConfigTextFunction.substitute(text).copy().withStyle(style -> style.withFont(Minecraft.UNIFORM_FONT)), 0))
                         .ifPresent(entries::add);
                 }
             }

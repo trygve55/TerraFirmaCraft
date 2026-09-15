@@ -31,7 +31,7 @@
     },
     {
       "type": "patchouli:text",
-      "text": "When reading ambient temperature, the Thermometer will output a strong analog signal where signal 0 means -40C, and signal 15 means +40C. When reading device temperature, the Thermometer will output a weak analog signal where signal 0 means no heat, and signal 15 means Brilliant White. You do not need a comparator to read the Thermometer's signal strength."
+      "text": "When reading ambient temperature, the Thermometer will output a strong analog signal where signal 0 means $(cfg:temperature:-40), and signal 15 means $(cfg:temperature:40). When reading device temperature, the Thermometer will output a weak analog signal where signal 0 means no heat, and signal 15 means Brilliant White. You do not need a comparator to read the Thermometer's signal strength."
     },
     {
       "type": "patchouli:crafting",

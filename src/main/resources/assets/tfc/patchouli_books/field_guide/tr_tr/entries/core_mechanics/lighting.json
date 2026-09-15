@@ -40,7 +40,7 @@
         }
       },
       "name": "Mumlar",
-      "text": "Mumlar 11 gün boyunca yanar ve ayrıca yeniden yakılabilirler.",
+      "text": "Mumlar $(cfg:candleTicks) boyunca yanar ve ayrıca yeniden yakılabilirler.",
       "enable_visualize": false
     },
     {
@@ -65,7 +65,7 @@
         }
       },
       "name": "Balkabağı Fenerleri",
-      "text": "Balkabağı Fenerleri, $(thing)Oyulmuş Balkabaklarının$() yanar halidir ve oyulmuş balkabağına geri dönmeden önce 4,5 gün dayanırlar.",
+      "text": "Jack 'o Lanterns are the lit version of $(thing)Carved Pumpkins$(), and last for $(cfg:jackOLanternTicks), before reverting to carved pumpkins.",
       "enable_visualize": false
     },
     {

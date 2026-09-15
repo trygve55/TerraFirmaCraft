@@ -23,87 +23,87 @@
       "entity": "tfc:polar_bear",
       "scale": 0.55,
       "name": "Ведмідь білий",
-      "text": "Білий ведмідь живе у найхолодніших регіонах, $(l:core_mechanics/climate#temperature)температурою$() нижче 10°C, при $(l:core_mechanics/climate#rainfall)кількості опадів$() від 100мм."
+      "text": "Білий ведмідь живе у найхолодніших регіонах, $(l:core_mechanics/climate#temperature)температурою$() нижче $(cfg:temperature:10), при $(l:core_mechanics/climate#rainfall)кількості опадів$() від 100мм."
     },
     {
       "type": "patchouli:entity",
       "entity": "tfc:grizzly_bear",
       "scale": 0.55,
       "name": "Ведмідь грізлі",
-      "text": "Ведмідь грізлі живе в лісах помірного клімату, з $(l:core_mechanics/climate#temperature)температурою$() від -15 дo 15°C, та принаймні 200мм $(l:core_mechanics/climate#rainfall)опадів$()."
+      "text": "Ведмідь грізлі живе в лісах помірного клімату, з $(l:core_mechanics/climate#temperature)температурою$() від $(cfg:temperature:-15) дo $(cfg:temperature:15), та принаймні 200мм $(l:core_mechanics/climate#rainfall)опадів$()."
     },
     {
       "type": "patchouli:entity",
       "entity": "tfc:black_bear",
       "scale": 0.55,
       "name": "Ведмідь чорний",
-      "text": "Чорний ведмідь живе у лісах із теплішим кліматом, $(l:core_mechanics/climate#temperature)температурою$() від 5 до 20°C, та близько 250мм $(l:core_mechanics/climate#rainfall)опадів$()."
+      "text": "Чорний ведмідь живе у лісах із теплішим кліматом, $(l:core_mechanics/climate#temperature)температурою$() від $(cfg:temperature:5) до $(cfg:temperature:20), та близько 250мм $(l:core_mechanics/climate#rainfall)опадів$()."
     },
     {
       "type": "patchouli:entity",
       "entity": "tfc:cougar",
       "scale": 0.6,
       "name": "Пума",
-      "text": "Пума віддає перевагу найбільш помірному клімату з $(l:core_mechanics/climate#temperature)температурою$() від -10 до 21°C і щонайменше 150мм $(l:core_mechanics/climate#rainfall)опадів$()."
+      "text": "Пума віддає перевагу найбільш помірному клімату з $(l:core_mechanics/climate#temperature)температурою$() від $(cfg:temperature:-10) до $(cfg:temperature:21) і щонайменше 150мм $(l:core_mechanics/climate#rainfall)опадів$()."
     },
     {
       "type": "patchouli:entity",
       "entity": "tfc:panther",
       "scale": 0.6,
       "name": "Пантера",
-      "text": "Пантера живе у помірному кліматі з $(l:core_mechanics/climate#temperature)температурою$() від -10 до 21°C та кількістю $(l:core_mechanics/climate#rainfall)опадів$() не менше 150мм."
+      "text": "Пантера живе у помірному кліматі з $(l:core_mechanics/climate#temperature)температурою$() від $(cfg:temperature:-10) до $(cfg:temperature:21) та кількістю $(l:core_mechanics/climate#rainfall)опадів$() не менше 150мм."
     },
     {
       "type": "patchouli:entity",
       "entity": "tfc:lion",
       "scale": 0.55,
       "name": "Лев",
-      "text": "Лев оселився на рівнинах із середньою $(l:core_mechanics/climate#temperature)температурою$() не менше 16°C, та кількістю  $(l:core_mechanics/climate#rainfall)опадів$() від 50 до 300мм."
+      "text": "Лев оселився на рівнинах із середньою $(l:core_mechanics/climate#temperature)температурою$() не менше $(cfg:temperature:16), та кількістю  $(l:core_mechanics/climate#rainfall)опадів$() від 50 до 300мм."
     },
     {
       "type": "patchouli:entity",
       "entity": "tfc:tiger",
       "scale": 0.55,
       "name": "Tiger",
-      "text": "The tiger spawns in forests with an average $(l:core_mechanics/climate#temperature)temperature$() of at least 13°C, and $(l:core_mechanics/climate#rainfall)rainfall$() above 100mm."
+      "text": "The tiger spawns in forests with an average $(l:core_mechanics/climate#temperature)temperature$() of at least $(cfg:temperature:13), and $(l:core_mechanics/climate#rainfall)rainfall$() above 100mm."
     },
     {
       "type": "patchouli:entity",
       "entity": "tfc:sabertooth",
       "scale": 0.6,
       "name": "Шаблезубий тигр",
-      "text": "Шаблезубий тигр живе на рівнинах із середньою $(l:core_mechanics/climate#temperature)температурою$() вище 0°C, та $(l:core_mechanics/climate#rainfall)опадами$() більш за 250мм."
+      "text": "Шаблезубий тигр живе на рівнинах із середньою $(l:core_mechanics/climate#temperature)температурою$() вище $(cfg:temperature:0), та $(l:core_mechanics/climate#rainfall)опадами$() більш за 250мм."
     },
     {
       "type": "patchouli:entity",
       "entity": "tfc:wolf",
       "scale": 0.7,
-      "text": "Вовки зустрічаються біомах з $(l:core_mechanics/climate#temperature)температурою$() до 22°C, та кількістю $(l:core_mechanics/climate#rainfall)опадів$() від 150 до 420мм. Полюють зграями. Як годувати вовка, то можна його приручити."
+      "text": "Вовки зустрічаються біомах з $(l:core_mechanics/climate#temperature)температурою$() до $(cfg:temperature:22), та кількістю $(l:core_mechanics/climate#rainfall)опадів$() від 150 до 420мм. Полюють зграями. Як годувати вовка, то можна його приручити."
     },
     {
       "type": "patchouli:entity",
       "entity": "tfc:direwolf",
       "scale": 0.7,
-      "text": "Люті вовки з'являються у регіонах з $(l:core_mechanics/climate#temperature)температурою$() нижче 0°C, та кількістю $(l:core_mechanics/climate#rainfall)опадів$() від 150 до 420мм. Полюють зграями. Вони не піддаються прирученню."
+      "text": "Люті вовки з'являються у регіонах з $(l:core_mechanics/climate#temperature)температурою$() нижче $(cfg:temperature:0), та кількістю $(l:core_mechanics/climate#rainfall)опадів$() від 150 до 420мм. Полюють зграями. Вони не піддаються прирученню."
     },
     {
       "type": "patchouli:entity",
       "entity": "tfc:hyena",
       "scale": 0.7,
-      "text": "The hyena spawns at any $(l:core_mechanics/climate#temperature)temperature$() warmer than 15°C, and $(l:core_mechanics/climate#rainfall)rainfall$() between 80 and 380mm. They hunt in packs. They are not tamable."
+      "text": "The hyena spawns at any $(l:core_mechanics/climate#temperature)temperature$() warmer than $(cfg:temperature:15), and $(l:core_mechanics/climate#rainfall)rainfall$() between 80 and 380mm. They hunt in packs. They are not tamable."
     },
     {
       "type": "patchouli:entity",
       "entity": "tfc:crocodile",
       "scale": 0.7,
       "name": "Crocodile",
-      "text": "The crocodile spawns near rivers, lakes, and marshes at any $(l:core_mechanics/climate#temperature)temperature$() warmer than 15°C, and at any $(l:core_mechanics/climate#rainfall)rainfall$(). They are nocturnal, and most dangerous in the water."
+      "text": "The crocodile spawns near rivers, lakes, and marshes at any $(l:core_mechanics/climate#temperature)temperature$() warmer than $(cfg:temperature:15), and at any $(l:core_mechanics/climate#rainfall)rainfall$(). They are nocturnal, and most dangerous in the water."
     },
     {
       "type": "patchouli:entity",
       "entity": "tfc:ocelot",
       "scale": 0.7,
-      "text": "The ocelot attacks small animals. It spawns at any $(l:core_mechanics/climate#temperature)temperature$() from 15 to 30°C, and $(l:core_mechanics/climate#rainfall)rainfall$() between 300 and 500mm, in forests. Feeding an ocelot enough times will tame it into a $(l:food/pets)Cat$(). Ocelots can eat raw fish"
+      "text": "The ocelot attacks small animals. It spawns at any $(l:core_mechanics/climate#temperature)temperature$() from $(cfg:temperature:15) to $(cfg:temperature:30), and $(l:core_mechanics/climate#rainfall)rainfall$() between 300 and 500mm, in forests. Feeding an ocelot enough times will tame it into a $(l:food/pets)Cat$(). Ocelots can eat raw fish"
     },
     {
       "type": "patchouli:text",
@@ -116,26 +116,26 @@
       "entity": "tfc:boar",
       "scale": 0.8,
       "name": "Дикий кабан",
-      "text": "Для появи оленя достатньо $(l:core_mechanics/climate#temperature)температури$() нижче 25°C, але вище -15°C, та $(l:core_mechanics/climate#rainfall)опадів$() від 130 до 400мм."
+      "text": "Для появи оленя достатньо $(l:core_mechanics/climate#temperature)температури$() нижче $(cfg:temperature:25), але вище $(cfg:temperature:-15), та $(l:core_mechanics/climate#rainfall)опадів$() від 130 до 400мм."
     },
     {
       "type": "patchouli:entity",
       "entity": "tfc:moose",
       "scale": 0.7,
-      "text": "Лосю треба $(l:core_mechanics/climate#temperature)температура$() між -15°C та 10°C, з $(l:core_mechanics/climate#rainfall)опадами$() від 150 до 300мм."
+      "text": "Лосю треба $(l:core_mechanics/climate#temperature)температура$() між $(cfg:temperature:-15) та $(cfg:temperature:10), з $(l:core_mechanics/climate#rainfall)опадами$() від 150 до 300мм."
     },
     {
       "type": "patchouli:entity",
       "entity": "tfc:wildebeest",
       "scale": 0.7,
-      "text": "The wildebeest spawns in open plains at any $(l:core_mechanics/climate#temperature)temperature$() above 13°C, and $(l:core_mechanics/climate#rainfall)rainfall$() between 90 and 380mm."
+      "text": "The wildebeest spawns in open plains at any $(l:core_mechanics/climate#temperature)temperature$() above $(cfg:temperature:13), and $(l:core_mechanics/climate#rainfall)rainfall$() between 90 and 380mm."
     },
     {
       "type": "patchouli:entity",
       "entity": "tfc:bison",
       "scale": 0.6,
       "name": "Bison",
-      "text": "The bison spawns in open plains at any $(l:core_mechanics/climate#temperature)temperature$() above -10°C and below 15°C, and $(l:core_mechanics/climate#rainfall)rainfall$() between 160 and 420mm."
+      "text": "The bison spawns in open plains at any $(l:core_mechanics/climate#temperature)temperature$() above $(cfg:temperature:-10) and below $(cfg:temperature:15), and $(l:core_mechanics/climate#rainfall)rainfall$() between 160 and 420mm."
     },
     {
       "type": "patchouli:empty"
@@ -151,65 +151,65 @@
       "entity": "tfc:fox",
       "scale": 0.7,
       "name": "Лисиця",
-      "text": "Лисиця їсть ягоди з кущів. Зустрічають у лісах з $(l:core_mechanics/climate#temperature)температурою$() нижче 25°C, та кількістю $(l:core_mechanics/climate#rainfall)опадів$() між 130 та 400мм."
+      "text": "Лисиця їсть ягоди з кущів. Зустрічають у лісах з $(l:core_mechanics/climate#temperature)температурою$() нижче $(cfg:temperature:25), та кількістю $(l:core_mechanics/climate#rainfall)опадів$() між 130 та 400мм."
     },
     {
       "type": "patchouli:entity",
       "entity": "tfc:deer",
       "scale": 0.7,
-      "text": "Для появи оленя достатньо $(l:core_mechanics/climate#temperature)температури$() нижче 25°C, але вище -15°C, та $(l:core_mechanics/climate#rainfall)опадів$() від 130 до 400мм."
+      "text": "Для появи оленя достатньо $(l:core_mechanics/climate#temperature)температури$() нижче $(cfg:temperature:25), але вище $(cfg:temperature:-15), та $(l:core_mechanics/climate#rainfall)опадів$() від 130 до 400мм."
     },
     {
       "type": "patchouli:entity",
       "entity": "tfc:caribou",
       "scale": 0.5,
       "name": "Caribou",
-      "text": "The caribou spawns at any $(l:core_mechanics/climate#temperature)temperature$() below -9°C, and $(l:core_mechanics/climate#rainfall)rainfall$() between 110 and 500mm."
+      "text": "The caribou spawns at any $(l:core_mechanics/climate#temperature)temperature$() below $(cfg:temperature:-9), and $(l:core_mechanics/climate#rainfall)rainfall$() between 110 and 500mm."
     },
     {
       "type": "patchouli:entity",
       "entity": "tfc:gazelle",
       "scale": 0.7,
-      "text": "The gazelle spawns in open plains at any $(l:core_mechanics/climate#temperature)temperature$() above 12°C, and $(l:core_mechanics/climate#rainfall)rainfall$() between 90 and 380mm."
+      "text": "The gazelle spawns in open plains at any $(l:core_mechanics/climate#temperature)temperature$() above $(cfg:temperature:12), and $(l:core_mechanics/climate#rainfall)rainfall$() between 90 and 380mm."
     },
     {
       "type": "patchouli:entity",
       "entity": "tfc:bongo",
       "scale": 0.7,
       "name": "Bongo",
-      "text": "The bongo spawns in forests at any $(l:core_mechanics/climate#temperature)temperature$() above 15°C, and $(l:core_mechanics/climate#rainfall)rainfall$() between 230 and 500mm."
+      "text": "The bongo spawns in forests at any $(l:core_mechanics/climate#temperature)temperature$() above $(cfg:temperature:15), and $(l:core_mechanics/climate#rainfall)rainfall$() between 230 and 500mm."
     },
     {
       "type": "patchouli:entity",
       "entity": "tfc:grouse",
       "scale": 0.7,
-      "text": "Рябчики живуть при $(l:core_mechanics/climate#temperature)температурі$() від -12°C до 13°C, при $(l:core_mechanics/climate#rainfall)опадах$() від 150 до 400мм."
+      "text": "Рябчики живуть при $(l:core_mechanics/climate#temperature)температурі$() від $(cfg:temperature:-12) до $(cfg:temperature:13), при $(l:core_mechanics/climate#rainfall)опадах$() від 150 до 400мм."
     },
     {
       "type": "patchouli:entity",
       "entity": "tfc:pheasant",
       "scale": 0.7,
-      "text": "Фазану потрібна $(l:core_mechanics/climate#temperature)температура$() між -5°C та 17°C, з кількістю $(l:core_mechanics/climate#rainfall)опадів$() від 100 до 300мм."
+      "text": "Фазану потрібна $(l:core_mechanics/climate#temperature)температура$() між $(cfg:temperature:-5) та $(cfg:temperature:17), з кількістю $(l:core_mechanics/climate#rainfall)опадів$() від 100 до 300мм."
     },
     {
       "type": "patchouli:entity",
       "entity": "tfc:turkey",
       "scale": 0.7,
-      "text": "Індичці треба $(l:core_mechanics/climate#temperature)температура$() від 0°C до 17°C, та $(l:core_mechanics/climate#rainfall)опади$() між 250 та 450мм."
+      "text": "Індичці треба $(l:core_mechanics/climate#temperature)температура$() від $(cfg:temperature:0) до $(cfg:temperature:17), та $(l:core_mechanics/climate#rainfall)опади$() між 250 та 450мм."
     },
     {
       "type": "patchouli:entity",
       "entity": "tfc:peafowl",
       "scale": 0.8,
       "name": "Peafowl",
-      "text": "The peafowl spawns in forests at any $(l:core_mechanics/climate#temperature)temperature$() above 14°C, and $(l:core_mechanics/climate#rainfall)rainfall$() between 190 and 500mm."
+      "text": "The peafowl spawns in forests at any $(l:core_mechanics/climate#temperature)temperature$() above $(cfg:temperature:14), and $(l:core_mechanics/climate#rainfall)rainfall$() between 190 and 500mm."
     },
     {
       "type": "patchouli:entity",
       "entity": "tfc:armadillo",
       "scale": 0.7,
       "name": "Armadillo",
-      "text": "The armadillo sheds scutes every 30 hours. It can be found at any $(l:core_mechanics/climate#temperature)temperature$() above 12°C, and $(l:core_mechanics/climate#rainfall)rainfall$() between 100 and 400mm."
+      "text": "The armadillo sheds scutes every 30 hours. It can be found at any $(l:core_mechanics/climate#temperature)temperature$() above $(cfg:temperature:12), and $(l:core_mechanics/climate#rainfall)rainfall$() between 100 and 400mm."
     },
     {
       "type": "patchouli:empty"
@@ -229,21 +229,21 @@
       "entity": "tfc:penguin",
       "scale": 0.7,
       "name": "Пінгвін",
-      "text": "The penguin spawns on only the coldest beaches, ice sheet edges, and sea ice with $(l:core_mechanics/climate#temperature)temperature$() of at most -14°C and $(l:core_mechanics/climate#rainfall)rainfall$() of at least 75mm."
+      "text": "The penguin spawns on only the coldest beaches, ice sheet edges, and sea ice with $(l:core_mechanics/climate#temperature)temperature$() of at most $(cfg:temperature:-14) and $(l:core_mechanics/climate#rainfall)rainfall$() of at least 75mm."
     },
     {
       "type": "patchouli:entity",
       "entity": "tfc:leopard_seal",
       "scale": 0.7,
       "name": "Leopard Seal",
-      "text": "The Leopard Seal spawns on cold beaches, ice sheet edges, and sea ice with $(l:core_mechanics/climate#temperature)temperatures$() of at most -9°C and $(l:core_mechanics/climate#rainfall)rainfall$() of at least 105mm."
+      "text": "The Leopard Seal spawns on cold beaches, ice sheet edges, and sea ice with $(l:core_mechanics/climate#temperature)temperatures$() of at most $(cfg:temperature:-9) and $(l:core_mechanics/climate#rainfall)rainfall$() of at least 105mm."
     },
     {
       "type": "patchouli:entity",
       "entity": "tfc:turtle",
       "scale": 0.7,
       "name": "Морська черепаха",
-      "text": "Морській черепасі до вподоби тепла вода, $(l:core_mechanics/climate#temperature)температурою$() вище 21°C та кількість $(l:core_mechanics/climate#rainfall)опадів$() більше за 250мм."
+      "text": "Морській черепасі до вподоби тепла вода, $(l:core_mechanics/climate#temperature)температурою$() вище $(cfg:temperature:21) та кількість $(l:core_mechanics/climate#rainfall)опадів$() більше за 250мм."
     },
     {
       "type": "patchouli:empty"
@@ -258,140 +258,140 @@
       "entity": "tfc:cod",
       "scale": 0.7,
       "name": "Тріска",
-      "text": "Тріска віддає перевагу холоднішим океанам, $(l:core_mechanics/climate#temperature)температура$() яких нижче 18°C. Її можна ловити."
+      "text": "Тріска віддає перевагу холоднішим океанам, $(l:core_mechanics/climate#temperature)температура$() яких нижче $(cfg:temperature:18). Її можна ловити."
     },
     {
       "type": "patchouli:entity",
       "entity": "tfc:pufferfish",
       "scale": 0.7,
       "name": "Риба фугу",
-      "text": "Риба фугу живе в будь-якому океані, де є принаймні  $(l:core_mechanics/climate#temperature)температура$() вища за 10°C."
+      "text": "Риба фугу живе в будь-якому океані, де є принаймні  $(l:core_mechanics/climate#temperature)температура$() вища за $(cfg:temperature:10)."
     },
     {
       "type": "patchouli:entity",
       "entity": "tfc:jellyfish",
       "scale": 0.7,
       "name": "Медуза",
-      "text": "Медузи живуть у теплих океанах,  $(l:core_mechanics/climate#temperature)температурою$() не менш ніж 18°C."
+      "text": "Медузи живуть у теплих океанах,  $(l:core_mechanics/climate#temperature)температурою$() не менш ніж $(cfg:temperature:18)."
     },
     {
       "type": "patchouli:entity",
       "entity": "tfc:tropical_fish",
       "scale": 0.7,
       "name": "Тропічна риба",
-      "text": "Тропічні риби живуть у теплих океанах, з $(l:core_mechanics/climate#temperature)температурою$() не нижче 18°C."
+      "text": "Тропічні риби живуть у теплих океанах, з $(l:core_mechanics/climate#temperature)температурою$() не нижче $(cfg:temperature:18)."
     },
     {
       "type": "patchouli:entity",
       "entity": "tfc:salmon",
       "scale": 0.7,
       "name": "Лосось",
-      "text": "Salmon spawn in any river or lake with a $(l:core_mechanics/climate#temperature)temperature$() of at least -8°C and at most 12°C and with rainfall of at least 250 mm."
+      "text": "Salmon spawn in any river or lake with a $(l:core_mechanics/climate#temperature)temperature$() of at least $(cfg:temperature:-8) and at most $(cfg:temperature:12) and with rainfall of at least 250 mm."
     },
     {
       "type": "patchouli:entity",
       "entity": "tfc:rainbow_trout",
       "scale": 0.7,
       "name": "Rainbow Trout",
-      "text": "Rainbow Trout spawn in any river or lake with a $(l:core_mechanics/climate#temperature)temperature$() of at least -12°C and at most 10°C and with rainfall of at least 150 mm."
+      "text": "Rainbow Trout spawn in any river or lake with a $(l:core_mechanics/climate#temperature)temperature$() of at least $(cfg:temperature:-12) and at most $(cfg:temperature:10) and with rainfall of at least 150 mm."
     },
     {
       "type": "patchouli:entity",
       "entity": "tfc:lake_trout",
       "scale": 0.7,
       "name": "Lake Trout",
-      "text": "Lake Trout spawn in any lake with a $(l:core_mechanics/climate#temperature)temperature$() of at least -5°C and at most 15°C and with rainfall of at least 250 mm."
+      "text": "Lake Trout spawn in any lake with a $(l:core_mechanics/climate#temperature)temperature$() of at least $(cfg:temperature:-5) and at most $(cfg:temperature:15) and with rainfall of at least 250 mm."
     },
     {
       "type": "patchouli:entity",
       "entity": "tfc:largemouth_bass",
       "scale": 0.7,
       "name": "Largemouth Bass",
-      "text": "Largemouth Bass spawn in any river or lake with a $(l:core_mechanics/climate#temperature)temperature$() of at least -14°C and at most 16°C and with rainfall of at least 200 mm."
+      "text": "Largemouth Bass spawn in any river or lake with a $(l:core_mechanics/climate#temperature)temperature$() of at least $(cfg:temperature:-14) and at most $(cfg:temperature:16) and with rainfall of at least 200 mm."
     },
     {
       "type": "patchouli:entity",
       "entity": "tfc:smallmouth_bass",
       "scale": 0.7,
       "name": "Smallmouth Bass",
-      "text": "Smallmouth Bass spawn in any river or lake with a $(l:core_mechanics/climate#temperature)temperature$() of at least -14°C and at most 16°C and with rainfall of less than 300 mm."
+      "text": "Smallmouth Bass spawn in any river or lake with a $(l:core_mechanics/climate#temperature)temperature$() of at least $(cfg:temperature:-14) and at most $(cfg:temperature:16) and with rainfall of less than 300 mm."
     },
     {
       "type": "patchouli:entity",
       "entity": "tfc:crappie",
       "scale": 0.7,
       "name": "Crappie",
-      "text": "Синьозябровий окунь мешкає в річках та озерах з $(l:the_world/climate#temperature)температурою$() між -10°C та 26°C."
+      "text": "Синьозябровий окунь мешкає в річках та озерах з $(l:the_world/climate#temperature)температурою$() між $(cfg:temperature:-10) та $(cfg:temperature:26)."
     },
     {
       "type": "patchouli:entity",
       "entity": "tfc:bluegill",
       "scale": 0.7,
       "name": "Синьозябровий окунь",
-      "text": "Синьозябровий окунь мешкає в річках та озерах з $(l:the_world/climate#temperature)температурою$() між -10°C та 26°C."
+      "text": "Синьозябровий окунь мешкає в річках та озерах з $(l:the_world/climate#temperature)температурою$() між $(cfg:temperature:-10) та $(cfg:temperature:26)."
     },
     {
       "type": "patchouli:entity",
       "entity": "tfc:northern_pike",
       "scale": 0.7,
       "name": "Northern Pike",
-      "text": "Northern Pike spawn in any river or lake with a $(l:core_mechanics/climate#temperature)temperature$() of at least -10°C and at most 26°C with rainfall between 150 mm and 400 mm."
+      "text": "Northern Pike spawn in any river or lake with a $(l:core_mechanics/climate#temperature)temperature$() of at least $(cfg:temperature:-10) and at most $(cfg:temperature:26) with rainfall between 150 mm and 400 mm."
     },
     {
       "type": "patchouli:entity",
       "entity": "tfc:peacock_bass",
       "scale": 0.7,
       "name": "Peacock Bass",
-      "text": "Peacock Bass spawn in any river or lake with a $(l:core_mechanics/climate#temperature)temperature$() of at least 12°C and at most 25°C with rainfall between 200 mm and 400 mm."
+      "text": "Peacock Bass spawn in any river or lake with a $(l:core_mechanics/climate#temperature)temperature$() of at least $(cfg:temperature:12) and at most $(cfg:temperature:25) with rainfall between 200 mm and 400 mm."
     },
     {
       "type": "patchouli:entity",
       "entity": "tfc:arctic_char",
       "scale": 0.7,
       "name": "Arctic Char",
-      "text": "Arctic Char spawn in any river or lake with a $(l:core_mechanics/climate#temperature)temperature$() of at least -20°C and at most -8°C with rainfall between 150mm and 400 mm."
+      "text": "Arctic Char spawn in any river or lake with a $(l:core_mechanics/climate#temperature)temperature$() of at least $(cfg:temperature:-20) and at most $(cfg:temperature:-8) with rainfall between 150mm and 400 mm."
     },
     {
       "type": "patchouli:entity",
       "entity": "tfc:muksun",
       "scale": 0.7,
       "name": "Muksun",
-      "text": "Muksun spawn in any river or lake with a $(l:core_mechanics/climate#temperature)temperature$() of at least -20°C and at most -10°C with rainfall of at least 250 mm."
+      "text": "Muksun spawn in any river or lake with a $(l:core_mechanics/climate#temperature)temperature$() of at least $(cfg:temperature:-20) and at most $(cfg:temperature:-10) with rainfall of at least 250 mm."
     },
     {
       "type": "patchouli:entity",
       "entity": "tfc:burbot",
       "scale": 0.7,
       "name": "Burbot",
-      "text": "Burbot spawn in any river or lake with a $(l:core_mechanics/climate#temperature)temperature$() of at least -16°C and at most -9°C with rainfall less than 350 mm."
+      "text": "Burbot spawn in any river or lake with a $(l:core_mechanics/climate#temperature)temperature$() of at least $(cfg:temperature:-16) and at most $(cfg:temperature:-9) with rainfall less than 350 mm."
     },
     {
       "type": "patchouli:entity",
       "entity": "tfc:tilapia",
       "scale": 0.7,
       "name": "Tilapia",
-      "text": "Tilapia spawn in any river or lake with a $(l:core_mechanics/climate#temperature)temperature$() of at least 10°C and at most 32°C with rainfall less than 300 mm."
+      "text": "Tilapia spawn in any river or lake with a $(l:core_mechanics/climate#temperature)temperature$() of at least $(cfg:temperature:10) and at most $(cfg:temperature:32) with rainfall less than 300 mm."
     },
     {
       "type": "patchouli:entity",
       "entity": "tfc:spotted_gudgeon",
       "scale": 0.7,
       "name": "Spotted Gudgeon",
-      "text": "Spotted Gudgeon spawn in any river or lake with a $(l:core_mechanics/climate#temperature)temperature$() of at least 6°C and at most 24°C with rainfall less than 250 mm."
+      "text": "Spotted Gudgeon spawn in any river or lake with a $(l:core_mechanics/climate#temperature)temperature$() of at least $(cfg:temperature:6) and at most $(cfg:temperature:24) with rainfall less than 250 mm."
     },
     {
       "type": "patchouli:entity",
       "entity": "tfc:pacu",
       "scale": 0.7,
       "name": "Pacu",
-      "text": "Pacu spawn in any river or lake with a $(l:core_mechanics/climate#temperature)temperature$() of at least 20°C and at most 35°C with rainfall above 200 mm."
+      "text": "Pacu spawn in any river or lake with a $(l:core_mechanics/climate#temperature)temperature$() of at least $(cfg:temperature:20) and at most $(cfg:temperature:35) with rainfall above 200 mm."
     },
     {
       "type": "patchouli:entity",
       "entity": "tfc:red_piranha",
       "scale": 0.7,
       "name": "Red Piranha",
-      "text": "Red Piranha spawn in any river or lake with a $(l:core_mechanics/climate#temperature)temperature$() of at least 22°C and at most 35°C with rainfall above 300 mm."
+      "text": "Red Piranha spawn in any river or lake with a $(l:core_mechanics/climate#temperature)temperature$() of at least $(cfg:temperature:22) and at most $(cfg:temperature:35) with rainfall above 300 mm."
     },
     {
       "type": "patchouli:text",
@@ -404,28 +404,28 @@
       "entity": "tfc:isopod",
       "scale": 0.7,
       "name": "Рівноніг",
-      "text": "Рівноногі мешкають у найглибших частинах океанів $(l:core_mechanics/climate#temperature)температурою$() нижче ніж 14°C."
+      "text": "Рівноногі мешкають у найглибших частинах океанів $(l:core_mechanics/climate#temperature)температурою$() нижче ніж $(cfg:temperature:14)."
     },
     {
       "type": "patchouli:entity",
       "entity": "tfc:lobster",
       "scale": 0.7,
       "name": "Лобстер",
-      "text": "Лобстери живуть в будь-якому океані, з $(l:core_mechanics/climate#temperature)температурою$() нижче 21°C."
+      "text": "Лобстери живуть в будь-якому океані, з $(l:core_mechanics/climate#temperature)температурою$() нижче $(cfg:temperature:21)."
     },
     {
       "type": "patchouli:entity",
       "entity": "tfc:crayfish",
       "scale": 0.7,
       "name": "Раки",
-      "text": "Рак живе у річці, або озері. Йому потрібна $(l:core_mechanics/climate#temperature)температура$() більша за 5°C та кількість $(l:core_mechanics/climate#rainfall)опадів$() не менше 125мм."
+      "text": "Рак живе у річці, або озері. Йому потрібна $(l:core_mechanics/climate#temperature)температура$() більша за $(cfg:temperature:5) та кількість $(l:core_mechanics/climate#rainfall)опадів$() не менше 125мм."
     },
     {
       "type": "patchouli:entity",
       "entity": "tfc:horseshoe_crab",
       "scale": 0.7,
       "name": "Краб-підкова",
-      "text": "Підковоподібні краби мешкають в океанах з помірним кліматом, $(l:core_mechanics/climate#temperature)температурою$() від 10 до 21°C та кількістю $(l:core_mechanics/climate#rainfall)опадів$() менше 400мм."
+      "text": "Підковоподібні краби мешкають в океанах з помірним кліматом, $(l:core_mechanics/climate#temperature)температурою$() від $(cfg:temperature:10) до $(cfg:temperature:21) та кількістю $(l:core_mechanics/climate#rainfall)опадів$() менше 400мм."
     },
     {
       "type": "patchouli:text",
@@ -437,21 +437,21 @@
       "entity": "tfc:orca",
       "scale": 0.25,
       "name": "Косатка",
-      "text": "Косатки живуть у глибоких океанах з $(l:core_mechanics/climate#temperature)температурою$() не вище за 19°C та кількістю $(l:core_mechanics/climate#rainfall)опадів$() не менше 100мм."
+      "text": "Косатки живуть у глибоких океанах з $(l:core_mechanics/climate#temperature)температурою$() не вище за $(cfg:temperature:19) та кількістю $(l:core_mechanics/climate#rainfall)опадів$() не менше 100мм."
     },
     {
       "type": "patchouli:entity",
       "entity": "tfc:dolphin",
       "scale": 0.4,
       "name": "Дельфін",
-      "text": "Дельфіни живуть у глибоких океанах з $(l:core_mechanics/climate#temperature)температурою$() не нижче 10°C та кількістю $(l:core_mechanics/climate#rainfall)опадів$() не менш ніж 200мм."
+      "text": "Дельфіни живуть у глибоких океанах з $(l:core_mechanics/climate#temperature)температурою$() не нижче $(cfg:temperature:10) та кількістю $(l:core_mechanics/climate#rainfall)опадів$() не менш ніж 200мм."
     },
     {
       "type": "patchouli:entity",
       "entity": "tfc:manatee",
       "scale": 0.25,
       "name": "Ламантин",
-      "text": "Ламантин живе в будь-якому теплому озері, з $(l:core_mechanics/climate#temperature)температурою$() вище 20°C та кількістю $(l:core_mechanics/climate#rainfall)опадів$() не більше 300мм."
+      "text": "Ламантин живе в будь-якому теплому озері, з $(l:core_mechanics/climate#temperature)температурою$() вище $(cfg:temperature:20) та кількістю $(l:core_mechanics/climate#rainfall)опадів$() не більше 300мм."
     },
     {
       "type": "patchouli:text",
