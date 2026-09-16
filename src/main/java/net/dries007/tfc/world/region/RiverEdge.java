@@ -17,9 +17,9 @@ import net.dries007.tfc.world.river.RiverHelpers;
 
 public final class RiverEdge
 {
-    public static final int MIN_WIDTH = 3;
+    public static final int MIN_WIDTH = 2;
     public static final int MAX_WIDTH = 100;
-    public static final int MIN_VALLEY_WIDTH = 40;
+    public static final int MIN_VALLEY_WIDTH = 30;
 
     private static final int MAX_AFFECTING_GRID_DISTANCE = 1 + Mth.ceil(1.5f * River.INITIAL_RIVER_EDGE_LENGTH);
 
@@ -123,6 +123,10 @@ public final class RiverEdge
     }
 
     private static int waterflowToWidth(float waterflow) {
-        return Math.min((int) Math.ceil(Math.pow(waterflow, 0.67) / 300), MAX_WIDTH);
+        return Math.max(
+            MIN_WIDTH,
+            Math.min(
+                MAX_WIDTH,
+                (int) Math.ceil(Math.pow(waterflow, 0.67) / 300)));
     }
 }
