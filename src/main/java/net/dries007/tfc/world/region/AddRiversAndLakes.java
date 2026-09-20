@@ -34,72 +34,75 @@ public enum AddRiversAndLakes implements RegionTask
         context.region.setRivers(rivers);
         if (!rivers.isEmpty())
         {
-            annotateRiverGridScale(region, random, rivers);
+            annotateRiverGridScale(region, rivers);
+            annotateLakesGridScale(region, riverGenerator.getLakes());
         }
     }
 
-    private @Nonnull Function<River.Vertex, Region.Point> vertex2point(Region region) {
-        return vertex -> {
-            final int gridX = (int) Math.floor(vertex.x());
-            final int gridZ = (int) Math.floor(vertex.y());
-            return region.at(gridX, gridZ);
-        };
-    }
-
-    private void annotateRiverGridScale(Region region, RandomSource random, List<RiverEdge> rivers)
+    private void annotateRiverGridScale(Region region, List<RiverEdge> rivers)
     {
-        // Place lakes around the source of rivers.
         for (RiverEdge edge : rivers) {
-            if (River.LAKE_GENERATION_ENABLED &&
-                (!edge.sourceEdge()
-                    && random.nextFloat() <= River.LAKE_GENERATION_AT_SOURCE_CHANCE
-                    && edge.width >= River.LAKE_GENERATION_AT_SOURCE_MINIMUM_WIDTH))
-            {
-                // todo make lakes connect to rivers always
-                // Try and place a lake near this source
-                placeLakeNear(region, edge, 1, 1);
-                placeLakeNear(region, edge, -1, 1);
-                placeLakeNear(region, edge, 1, -1);
-                placeLakeNear(region, edge, -1, -1);
-            }
-            else if (edge.width > RiverEdge.MIN_VALLEY_WIDTH)
+            if (edge.width > RiverEdge.MIN_VALLEY_WIDTH)
             {
                 annotateRiverGridScale(region, edge);
             }
         }
+    }
 
-        // Place lakes around the drain of rivers into endorheic basin.
-        for (RiverEdge edge : rivers)
-        {
-            if (edge.drainEdge() == null)
-            {
-                Region.Point point = vertex2point(region).apply(edge.drain());
-                if (point == null || point.distanceToOcean < 4) {
-                    continue;
+    private void annotateLakesGridScale(Region region, List<River.Lake> lakes)
+    {
+        if (!River.Constants.LAKE_GENERATION_ENABLED) {
+            return;
+        }
+
+        for (River.Lake lake : lakes) {
+            int gridX = (int) lake.center().toGridAligned().x();
+            int gridZ = (int) lake.center().toGridAligned().y();
+
+            int minOffset = (int) Math.ceil((lake.lakeSize() - 1) / 2.);
+            int maxOffset = (int) Math.floor((lake.lakeSize() - 1) / 2.);
+            for (int offsetX = -minOffset; offsetX <= maxOffset; offsetX++) {
+                for (int offsetZ = -minOffset; offsetZ <= maxOffset; offsetZ++) {
+                    if (lake.endorheic()) {
+                        placeEndorheicLakeAt(region, gridX + offsetX, gridZ + offsetZ);
+                    } else {
+                        placeLakeAt(region, gridX + offsetX, gridZ + offsetZ);
+                    }
                 }
-                // todo make sure it ends in the middle of the lake
-
-                // Try and place a lake near this endorheic basin
-                placeLakeNear(region, edge, 1, 1);
-                placeLakeNear(region, edge, -1, 1);
-                placeLakeNear(region, edge, 1, -1);
-                placeLakeNear(region, edge, -1, -1);
             }
+        }
+    }
+
+    private void placeEndorheicLakeAt(Region region, int gridX, int gridZ) {
+        final Region.Point point = region.at(gridX, gridZ);
+
+        if (point != null) {
+            point.setLake();
+            point.setEndorheicLake();
+        }
+    }
+
+    private void placeLakeAt(Region region, int gridX, int gridZ) {
+        final Region.Point point = region.at(gridX, gridZ);
+
+        if (point != null) {
+            point.setLake();
+            point.rainfall += 0.09f * (500f - point.rainfall); // Small, localized rainfall increase around lakes of ~45mm max
         }
     }
 
     private void annotateRiverGridScale(Region region, RiverEdge edge)
     {
         // todo make size dependent on river width
-        final int ux = (int) (edge.source().x());
-        final int uy = (int) (edge.source().y());
-        final int vx = (int) (edge.drain().x());
-        final int vy = (int) (edge.drain().y());
-        int dx = vx - ux;
-        int dy = vy - uy;
-        final double mag = Math.sqrt(dx * dx + dy * dy);
-        final double unitX = (double) dx / mag;
-        final double unitY = (double) dy / mag;
+        final double ux = edge.source().x();
+        final double uy = edge.source().y();
+        final double vx = edge.drain().x();
+        final double vy = edge.drain().y();
+        double dx = vx - ux;
+        double dy = vy - uy;
+        final double mag = Math.sqrt(dx * dx + dy * dy) + 1;
+        final double unitX = dx / mag;
+        final double unitY = dy / mag;
 
         double i = 0;
         while (i <= mag)
@@ -108,8 +111,9 @@ public enum AddRiversAndLakes implements RegionTask
             int y = (int) (uy + unitY * i);
             setRiver(region.at(x, y));
             setRiver(region.at(x + 1, y));
+            setRiver(region.at(x - 1, y));
             setRiver(region.at(x, y + 1));
-            setRiver(region.at(x + 1, y + 1));
+            setRiver(region.at(x, y - 1));
             i = i + 1;
         }
     }
@@ -120,19 +124,6 @@ public enum AddRiversAndLakes implements RegionTask
         {
             point.setRiver();
             point.rainfall += 0.09f * (500f - point.rainfall); // Small, localized rainfall increase around river valleys of ~45mm max
-        }
-    }
-
-    private void placeLakeNear(Region region, RiverEdge edge, int offsetX, int offsetZ)
-    {
-        final int gridX = (int) (edge.source().x() + 0.3f * offsetX);
-        final int gridZ = (int) (edge.source().y() + 0.3f * offsetZ);
-
-        final Region.Point point = region.at(gridX, gridZ);
-        if (point != null && point.land() && point.distanceToOcean >= 2 && point.distanceToEdge >= 2)
-        {
-            point.setLake();
-            point.rainfall += 0.09f * (500f - point.rainfall); // Small, localized rainfall increase around lakes of ~45mm max
         }
     }
 }

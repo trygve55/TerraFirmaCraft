@@ -209,6 +209,7 @@ public final class Region
         static final short FLAG_COASTAL_MOUNTAIN = 0b100000;
         static final short FLAG_VOLCANIC = 0b1000000;
         static final short FLAG_BARRIER_ISLAND = 0b10000000;
+        static final short FLAG_ENDORHEIC_LAKE = 0b100000000;
 
         /** Distance to the nearest ocean. Note the actual distance may be lower if {@code distanceToEdge} is smaller than this. Negative values indicate an ocean, where {@code -2} indicates an ocean adjacent to land. */
         public byte distanceToOcean = 0;
@@ -254,6 +255,7 @@ public final class Region
         public boolean volcanic() { return (flags & FLAG_VOLCANIC) != 0; }
         public boolean hotSpot() { return hotSpotAge > 0; }
         public boolean barrierIsland() { return (flags & FLAG_BARRIER_ISLAND) != 0; }
+        public boolean endorheicLake() { return (flags & FLAG_ENDORHEIC_LAKE) != 0; }
 
         public int discreteBiomeAltitude() { return Math.floorDiv(biomeAltitude, AnnotateBiomeAltitude.WIDTH); }
 
@@ -266,5 +268,6 @@ public final class Region
         public void setCoastalMountain() { flags |= FLAG_COASTAL_MOUNTAIN; }
         public void setVolcanic() { flags |= FLAG_VOLCANIC; }
         public void setBarrierIsland() { flags |= FLAG_BARRIER_ISLAND; }
+        public void setEndorheicLake() { flags |= FLAG_ENDORHEIC_LAKE; }
     }
 }

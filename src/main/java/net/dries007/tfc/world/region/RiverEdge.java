@@ -21,7 +21,7 @@ public final class RiverEdge
     public static final int MAX_WIDTH = 100;
     public static final int MIN_VALLEY_WIDTH = 30;
 
-    private static final int MAX_AFFECTING_GRID_DISTANCE = 1 + Mth.ceil(1.5f * River.INITIAL_RIVER_EDGE_LENGTH);
+    private static final int MAX_AFFECTING_GRID_DISTANCE = 1 + Mth.ceil(1.5f * River.Constants.INITIAL_RIVER_EDGE_LENGTH);
 
     public int width;
     public float waterflowTotal;
@@ -41,7 +41,8 @@ public final class RiverEdge
         this.width = waterflowToWidth(waterflowTotal);
         this.source = edge.source();
         this.drain = edge.drain();
-        this.fractal = edge.fractal(random, 3); // testing generation with straight edges
+
+        this.fractal = edge.fractal(random, getFractalBisections());
 
         final int centerGridX = (int) Math.round(0.5f * (edge.source().x() + edge.drain().x()));
         final int centerGridZ = (int) Math.round(0.5f * (edge.source().y() + edge.drain().y()));
@@ -127,6 +128,18 @@ public final class RiverEdge
             MIN_WIDTH,
             Math.min(
                 MAX_WIDTH,
-                (int) Math.ceil(Math.pow(waterflow, 0.67) / 300)));
+                (int) Math.ceil(Math.pow(waterflow, 0.65) / 300)));
+    }
+
+    private int getFractalBisections() {
+        if (River.Constants.DEBUG_STRAIGHT_RIVER_EDGES) {
+            return 0;
+        }
+
+        return (int) Math.min(9, getLength() * 4.5 - (1.5 * width / MAX_WIDTH));
+    }
+
+    private double getLength() {
+        return RiverHelpers.distanceVertex(source, drain);
     }
 }

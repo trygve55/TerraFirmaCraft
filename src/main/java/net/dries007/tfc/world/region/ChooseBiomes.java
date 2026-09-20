@@ -382,9 +382,13 @@ public enum ChooseBiomes implements RegionTask
                 point.biome = SALT_MARSH;
             }
 
-            if (point.lake() && TFCLayers.hasLake(point.biome))
+            if ((point.lake() || point.endorheicLake()) && TFCLayers.hasLake(point.biome))
             {
                 point.biome = TFCLayers.lakeFor(point.biome);
+            }
+
+            if (point.endorheicLake() && point.rainfall < minRainForLowFreshWaterBiomes) {
+                point.biome = SALT_FLATS;
             }
         }
     }

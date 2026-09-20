@@ -58,7 +58,7 @@ public final class RegionChunkDataGenerator implements ChunkDataGenerator
         return LAYER_OFFSETS[((layer & LAYER_OFFSET_MASK) << 1) | 0b1];
     }
 
-    private static final int MIN_RIVER_WIDTH = 12; // Rivers must be this wide to influence rainfall
+    private static final int MIN_RIVER_WIDTH_TO_INFLUENCE_RAINFALL = 12;
     private static final float RIVER_INFLUENCE = (float) Units.blockToGridExact(40);
     private static final float RIVER_INFLUENCE_SQ = RIVER_INFLUENCE * RIVER_INFLUENCE;
 
@@ -142,10 +142,10 @@ public final class RegionChunkDataGenerator implements ChunkDataGenerator
         for (RiverEdge edge : regionGenerator.getOrCreatePartitionPoint(gridX, gridZ).rivers())
         {
             final MidpointFractal fractal = edge.fractal();
-            if (edge.width >= MIN_RIVER_WIDTH && // Note that all downstream segments will always be the same or larger width
+            if (edge.width >= MIN_RIVER_WIDTH_TO_INFLUENCE_RAINFALL && // Note that all downstream segments will always be the same or larger width
                 fractal.maybeIntersect(exactGridX, exactGridZ, RIVER_INFLUENCE))
             {
-                final float widthInfluence = Mth.map(edge.width, MIN_RIVER_WIDTH, RiverEdge.MAX_WIDTH, 0f, 1.0f);
+                final float widthInfluence = Mth.map(edge.width, MIN_RIVER_WIDTH_TO_INFLUENCE_RAINFALL, RiverEdge.MAX_WIDTH, 0f, 1.0f);
 
                 groundwater00 = adjustGroundwaterNearRiver(groundwater00, widthInfluence, fractal, exactGridX, exactGridZ);
                 groundwater01 = adjustGroundwaterNearRiver(groundwater01, widthInfluence, fractal, exactGridX, exactGridZ + dG);

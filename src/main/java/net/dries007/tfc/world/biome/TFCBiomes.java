@@ -134,7 +134,7 @@ public final class TFCBiomes
 
     // Dry Biomes
     public static final BiomeExtension MUD_FLATS = register("mud_flats", builder().heightmap(BiomeNoise::flats).surface(FlatsSurfaceBuilder.MUDDY).aquiferHeightOffset(-24).spawnable().type(RiverBlendType.TALL_BANKED).noSandyRiverShores());
-    public static final BiomeExtension SALT_FLATS = register("salt_flats", builder().heightmap(BiomeNoise::saltFlats).surface(FlatsSurfaceBuilder.SALTY).aquiferHeightOffset(-24).salty().spawnable().type(RiverBlendType.TALL_BANKED).noSandyRiverShores());
+    public static final BiomeExtension SALT_FLATS = register("salt_flats", builder().heightmap(BiomeNoise::saltFlats).surface(FlatsSurfaceBuilder.SALTY).aquiferHeightOffset(-24).salty().spawnable().type(RiverBlendType.BANKED).noSandyRiverShores().noRivers());
     public static final BiomeExtension DUNE_SEA = register("dune_sea", builder().heightmap(seed -> BiomeNoise.dunes(seed, 2, 16)).surface(DuneSurfaceBuilder.INSTANCE).aquiferHeightOffset(-24).spawnable().type(RiverBlendType.WIDE));
     public static final BiomeExtension GRASSY_DUNES = register("grassy_dunes", builder().heightmap(seed -> BiomeNoise.dunes(seed, 2, 16)).surface(GrassyDunesSurfaceBuilder.INSTANCE).aquiferHeightOffset(-24).spawnable().type(RiverBlendType.WIDE));
     public static final BiomeExtension WHORLED_CANYONS = register("whorled_canyons", builder().heightmap(seed -> BiomeNoise.canyons(seed, 8, 60)).surface(BadlandsSurfaceBuilder.WARPED).aquiferHeightOffset(-24).spawnable().type(RiverBlendType.TALL_CANYON)); // Zhangye danxia

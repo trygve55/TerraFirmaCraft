@@ -19,6 +19,7 @@ import java.util.stream.StreamSupport;
 
 public class RegionRiverContext {
     private final List<River.Builder> builders = new ArrayList<>();
+    private final List<River.Lake> lakes = new ArrayList<>();
 
     private final Region region;
     private final RandomSource random;
@@ -35,7 +36,7 @@ public class RegionRiverContext {
         for (final var point : randomOrderRegionPoints()) {
             if (point.land()
                 && point.distanceToOcean > 1
-                && point.rainfall > River.MIN_RAINFALL_TO_CONTRIBUTE_TO_RIVERS_MM
+                && point.rainfall > River.Constants.MIN_RAINFALL_TO_CONTRIBUTE_TO_RIVERS_MM
                 && isSurroundedByLand(point)) {
                 final XoroshiroRandomSource rng = new XoroshiroRandomSource(random.nextLong());
                 builders.add(new River.Builder(this, rng, point));
@@ -63,6 +64,10 @@ public class RegionRiverContext {
             if (!builder.haveDrainageBasin() && !builder.addRainfallToClosestRiverOrSea(this)) {
                 builder.drawDebugEdge();
             }
+        }
+
+        for (River.Builder builder : builders) {
+            builder.attemptAddLakeAtSources();
         }
     }
 
@@ -111,10 +116,19 @@ public class RegionRiverContext {
         return riverEdges;
     }
 
+    @Nonnull
+    public List<River.Lake> getLakes() {
+        return lakes;
+    }
+
+    void addLake(River.Lake lake) {
+        lakes.add(lake);
+    }
+
     @Nullable
     Region.Point vertex2point(River.Vertex vertex) {
-        final int gridX = (int) Math.floor(vertex.x());
-        final int gridZ = (int) Math.floor(vertex.y());
+        final int gridX = (int) Math.round(vertex.x() - 0.5);
+        final int gridZ = (int) Math.round(vertex.y() - 0.5);
         return region.at(gridX, gridZ);
     }
 
@@ -143,5 +157,27 @@ public class RegionRiverContext {
             }
         }
         return closestEdge;
+    }
+
+    List<River.Edge> allEdgesInRange(River.Vertex vertex, double maxDistance) {
+        List<River.Edge> allEdgesInRange = new ArrayList<>();
+
+        double maxDistanceSquared = maxDistance * maxDistance;
+
+        for (River.Builder river : builders) {
+
+            for (River.Edge e : river.edges) {
+                if (RiverHelpers.distanceVertexFastSquared(e.drain, vertex) > maxDistanceSquared + 4
+                    && RiverHelpers.distanceVertexFastSquared(e.source, vertex) > maxDistanceSquared + 4) {
+                    continue;
+                }
+
+                double distanceSquared = RiverHelpers.distanceSq(e, vertex);
+                if (distanceSquared < maxDistanceSquared) {
+                    allEdgesInRange.add(e);
+                }
+            }
+        }
+        return allEdgesInRange;
     }
 }

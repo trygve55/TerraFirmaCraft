@@ -44,7 +44,7 @@ public interface BiomeSourceExtension
 
             for (RiverEdge edge : partitionPoint.rivers())
             {
-                if (edge.fractal().intersect(exactGridX, exactGridZ, Units.blockToGridExact(edge.width)))
+                if (edge.fractal().intersect(exactGridX, exactGridZ, Units.blockToGridExact(edge.width) * 0.85))
                 {
                     return TFCBiomes.RIVER;
                 }
