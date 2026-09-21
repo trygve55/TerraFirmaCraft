@@ -31,11 +31,6 @@ public class River {
         public static final double SOURCE_MIN_DISTANCE_TO_NEAREST_RIVER = 3.5;
         public static final double SOURCE_MIN_DISTANCE_TO_NEAREST_RIVER_RAINFALL_INFLUENCE = 0.4;
 
-    public static final float LAKE_GENERATION_AT_SOURCE_CHANCE = 0.1f;
-    public static final float LAKE_GENERATION_ALONG_RIVER_CHANCE = 0.02f;
-    public static final int LAKE_GENERATION_ALONG_RIVER_MINIMUM_DISTANCE_FROM_SOURCE = 4;
-    public static final int LAKE_GENERATION_AT_SOURCE_MINIMUM_WIDTH = 5;
-    public static final boolean LAKE_GENERATION_ENABLED = true;
         public static final boolean LAKE_GENERATION_ENABLED = true;
         public static final float LAKE_GENERATION_AT_SOURCE_CHANCE = 0.7f;
         public static final float LAKE_GENERATION_AT_SOURCE_CHANCE_RAINFALL_INFLUENCE = 0.7f;
