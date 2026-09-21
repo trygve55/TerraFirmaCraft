@@ -738,7 +738,7 @@ public class ChunkNoiseFiller extends ChunkHeightFiller
     {
         final RegionPartition.Point point = biomeSource.getPartition(blockX, blockZ);
 
-        double minDist = Float.MAX_VALUE;
+        double minDistSq = Float.MAX_VALUE;
         RiverEdge minEdge = null;
 
         double exactGridX = Units.blockToGridExact(blockX);
@@ -747,17 +747,17 @@ public class ChunkNoiseFiller extends ChunkHeightFiller
         for (RiverEdge edge : point.rivers())
         {
             final MidpointFractal fractal = edge.fractal();
-            if (fractal.maybeIntersect(exactGridX, exactGridZ, minDist))
+            if (fractal.maybeIntersect(exactGridX, exactGridZ, minDistSq))
             {
-                double dist = fractal.intersectDistance(exactGridX, exactGridZ);
-                if (dist < minDist)
+                double distSq = fractal.intersectDistance(exactGridX, exactGridZ);
+                if (distSq < minDistSq)
                 {
-                    minDist = dist;
+                    minDistSq = distSq;
                     minEdge = edge;
                 }
             }
         }
-        return minEdge != null && minDist * Units.GRID_WIDTH_IN_BLOCK * Units.GRID_WIDTH_IN_BLOCK <= minEdge.width * minEdge.width;
+        return minEdge != null && minDistSq * Units.GRID_WIDTH_IN_BLOCK * Units.GRID_WIDTH_IN_BLOCK <= minEdge.width * minEdge.width;
     }
 
     private Flow calculateFlowAt(int cellX, int cellZ)
