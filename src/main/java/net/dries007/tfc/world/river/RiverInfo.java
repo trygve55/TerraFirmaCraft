@@ -10,7 +10,7 @@ import net.dries007.tfc.world.region.RiverEdge;
 
 /**
  * @param distSq Square distance, in blocks, to this river edge.
- * @param widthSq Square width, in blocks, of this river edge. The raw value is clamped between [8, 18] so the square value is between [64, 324]
+ * @param widthSq Square width, in blocks, of this river edge. The raw value is clamped between [2, 100] so the square value is between [4, 10000]
  */
 public record RiverInfo(RiverEdge edge, Flow flow, double distSq, double widthSq)
 {

@@ -96,7 +96,7 @@ public final class RiverNoise
     {
         return new RiverNoiseSampler()
         {
-            final Noise2D distNoise = new OpenSimplex2D(seed.next()).octaves(4).spread(0.05f).scaled(-0.2f, 0.2f);
+            final Noise2D distNoise = new OpenSimplex2D(seed.forkStable().next()).octaves(4).spread(0.05f).scaled(-0.8f, 0.8f);
 
             double height;
 
@@ -154,7 +154,13 @@ public final class RiverNoise
             public double setColumnAndSampleHeight(RiverInfo info, int x, int z, double heightIn, double thisWeight)
             {
                 final double distFac = info.normDistSq() * 0.8f + distNoise.noise(x, z);
-                final double riverHeight = 58 + distFac * 7 + baseNoise.noise(x, z);
+                double riverHeight;
+                if (distFac < 1) {
+                    double depth = Math.ceil(Math.sqrt(info.widthSq()) / 2.5);
+                    riverHeight = SEA_LEVEL_Y - 1 + (1 - distFac) * depth + baseNoise.noise(x, z);
+                } else {
+                    riverHeight = SEA_LEVEL_Y - 1 + (distFac - 1) * 0.3 * Math.sqrt(info.widthSq()) + baseNoise.noise(x, z);
+                }
 
                 return height = Math.min(riverHeight, heightIn);
             }

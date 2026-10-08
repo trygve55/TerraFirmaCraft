@@ -103,7 +103,7 @@ public class River {
             this.river = river;
         }
 
-        public Edge(Vertex source, Vertex drain, Builder river, @Nonnull Edge downstreamEdge) {
+        public Edge(Vertex source, Vertex drain, Builder river, Edge downstreamEdge) {
             this.source = source;
             this.drain = drain;
             this.river = river;

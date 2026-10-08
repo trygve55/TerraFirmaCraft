@@ -30,6 +30,7 @@ import net.dries007.tfc.world.shore.ShoreNoiseSampler;
 import net.dries007.tfc.world.volcano.CenteredFeatureBlendType;
 import net.dries007.tfc.world.volcano.CenteredFeatureNoiseSampler;
 
+import static net.dries007.tfc.world.TFCChunkGenerator.SEA_LEVEL_Y;
 import static net.dries007.tfc.world.region.RiverEdge.MAX_WIDTH;
 
 public class ChunkHeightFiller
